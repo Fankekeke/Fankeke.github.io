@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Electron on Alili</title>
+    <link>https://alili.tech/tags/electron/</link>
+    <description>Recent content in Electron on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 20 Dec 2018 19:02:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/electron/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>推荐一个Angular Electron 开箱即用的项目工程模板</title>
+      <link>https://alili.tech/archive/cr8ze8vvvbw/</link>
+      <pubDate>Thu, 20 Dec 2018 19:02:36 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/cr8ze8vvvbw/</guid>
+      <description>在angular官网是有提供官方的 electron 的angular版本的模板. 但是版本是2.0的实在是太旧了.估计也不会再有人维护了吧. 但是至今还挂载官网上. 让很多新手,至少让我刚开始的时候误以为没有一个比较新的好用的electron的模板,可以快速的创建项目.
+Angular-electron 这里推荐一个完成度非常高的模板,开箱即用
+https://github.com/maximegris/angular-electron</description>
+    </item>
+    
+    <item>
+      <title>Angular7 &#43; Electron主进程与渲染进程通讯问题</title>
+      <link>https://alili.tech/archive/pw9ygknqvso/</link>
+      <pubDate>Wed, 19 Dec 2018 19:02:36 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/pw9ygknqvso/</guid>
+      <description>Electron 中的进程分类 在 Electron 中，存在两种进程：主进程和渲染进程。
+渲染进程你可以理解为view层,也就是我们非常熟悉的显示页面的进程. 在这里你可以调用nodejs接口的能力,也可以做我们已经非常熟悉的浏览器操作. 但是你想要调用主进程才能做的一些操作的时候,就需要一个通讯机制,告诉主进程你要干嘛干嘛.
+IPC通讯 渲染层向主进程发送通知 //index.html,渲染进程发送通知 onst electron = require(&#39;electron&#39;) const ipcRenderer = electron.ipcRenderer ipcRenderer.send(&#39;main-process-messages&#39;,&#39;hellow&#39;)  // main.js 主进程接收通知 const { ipcMain } = require(&#39;electron&#39;); ipcMain.on(&#39;main-process-messages&#39;, function(event, message) { console.log(message) });  主进程向渲染进程发送通知 // main.js mainWindow.webContents.send(&#39;main-process-messages&#39;, &#39;main-process-messages show&#39;)  //index.html,渲染进程中接收消息 const electron = require(&#39;electron&#39;) const ipcRenderer = electron.ipcRenderer ipcRenderer.on(&#39;main-process-messages&#39;, function(event, message){ alert(message) })  在Angular工程中如何使用 当你在angular工程中直接require(&#39;electron&#39;)是会直接报错的.
+ERROR in ./node_modules/electron/index.js Module not found: Error: Can&#39;t resolve &#39;fs&#39; in &#39;###/node_modules/electron&#39; ERROR in .</description>
+    </item>
+    
+    <item>
+      <title>从零搭建 Angular7 &#43; Electron 桌面应用</title>
+      <link>https://alili.tech/archive/i15aswl1v4s/</link>
+      <pubDate>Tue, 18 Dec 2018 19:02:36 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/i15aswl1v4s/</guid>
+      <description>Electron 是什么？ Electron 是一个可以用 JavaScript、HTML 和 CSS 构建桌面应用程序的库。这些应用程序能打包到 Mac、Windows 和 Linux 系统上运行，也能上架到 Mac 和 Windows 的 App Store。 意思就是说,你只要拥有前端开发的能力,也可以轻松开发跨平台的桌面应用.
+Electron的『主进程』和『渲染进程』 Electron 有两种进程：『主进程』和『渲染进程』。部分模块只能在两者之一上运行，而有些则无限制。主进程更多地充当幕后角色，而渲染进程则是应用程序的各个窗口。
+主进程 主进程，通常是一个命名为 main.js 的文件，该文件是每个 Electron 应用的入口。它控制了应用的生命周期（从打开到关闭）。它既能调用原生元素，也能创建新的（多个）渲染进程。另外，Node API 是内置其中的。
+渲染进程 渲染进程是应用的一个浏览器窗口。与主进程不同，它能存在多个（注：一个 Electron 应用只能存在一个主进程）并且相互独立（它也能是隐藏的）。
+主窗口通常被命名为 index.html。它们就像典型的 HTML 文件，但 Electron 赋予了它们完整的 Node API。因此，这也是它与浏览器的区别。
+进程之间的通讯 (IPC) 想要再网页里调用主进程的功能,比如关闭窗口,最小化全屏等主线程才能控制的功能. Electron提供了通讯的机制,这就是IPC.后续会慢慢介绍IPC的使用.
+Angular7 + Electron 介绍完Electron的一些基础概念之后, 这里教大家徒手搭建一个基于ng7的桌面应用工程.
+1. 安装最新angular-cli npm i -g @angular/cli  2. 生成一个angular工程 ng new electro-angular7  3. 安装最新版electron cd electro-angular7 npm install --save-dev electron@latest  4.</description>
+    </item>
+    
+  </channel>
+</rss>

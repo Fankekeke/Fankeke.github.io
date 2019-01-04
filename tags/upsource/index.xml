@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Upsource on Alili</title>
+    <link>https://alili.tech/tags/upsource/</link>
+    <description>Recent content in Upsource on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 29 Sep 2018 19:33:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/upsource/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos7环境下启动Upsource失败解决办法</title>
+      <link>https://alili.tech/archive/66c1c154/</link>
+      <pubDate>Sat, 29 Sep 2018 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/66c1c154/</guid>
+      <description>报错 Centos7环境下启动Upsource的时候出现以下报错,我在Mac上启动upsource的时候一切正常.
+[Upsource Error] Failed to start JetBrains Upsource 2018.2 due to unexpected exception: Native random generator does not seem to have enough entropy for JetBrains Upsource 2018.2 to start. [Upsource Error] You can fix it by switching to PRNG (with -Djava.security.egd=/dev/zrandom) or by reconfiguring your operation system to provide more random bits.12  解决办法  复制 upsource.jvmoptions.dist ==&amp;gt; upsource.jvmoptions  cp $upsource_path/conf/upsource.jvmoptions.dist $upsource_path/conf/upsource.jvmoptions   编辑 $upsource_path/conf/upsource.jvmoptions文件,最后一行加上:  -Djava.</description>
+    </item>
+    
+  </channel>
+</rss>

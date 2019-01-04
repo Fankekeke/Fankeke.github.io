@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="zh"><head><meta name="generator" content="Hugo 0.51"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="HandheldFriendly" content="True"><meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta name="wap-font-scale" content="no"><meta name="360-site-verification" content="0903ba33c82867d1f7bd8831e32a7e34"><meta name="sogou_site_verification" content="E8uWFBcf4a"><meta name="author" content="Fan"><meta name="description" itemprop="description" content="现在的js的项目越来越多。如果我们把代码开源。我们会把这些代码发布到npm。 但是npm是公共的，公司的代码毕竟不会公开在网上。 于是我们就有必要搭建一个自己的npm服务器。把公司私有的代码发布在自己公司的npm服务器上。 这样我们就可以即方便的下载我们想要的代码。也可以不把这些代码放在开源平台上面
+安装的基本步骤  在linu安装mysql npm install cnpm.org 下载cnpm"><meta name="keywords" content="Nodejs,ts,私有,服务器,typescript,verdaccio,npm,浏览器,cnpm"><meta property="og:locale" content="en_US"><meta property="og:title" content="在公司搭建私有的cnpm服务器"><meta property="og:image" content="https://alili.tech/images/logo2.png"><meta property="og:description" content="现在的js的项目越来越多。如果我们把代码开源。我们会把这些代码发布到npm。 但是npm是公共的，公司的代码毕竟不会公开在网上。 于是我们就有必要搭建一个自己的npm服务器。把公司私有的代码发布在自己公司的npm服务器上。 这样我们就可以即方便的下载我们想要的代码。也可以不把这些代码放在开源平台上面
+安装的基本步骤  在linu安装mysql npm install cnpm.org 下载cnpm"><meta property="og:site_name" content="Alili"><title>在公司搭建私有的cnpm服务器 | 前端大爆炸! - WEB BANG! BANG!! BANG!!!</title><link rel="shortcut icon" href="https://alili.tech/images/favicon.ico"><link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="https://alili.tech/lib/font-awesome/css/font-awesome.min.css"><link rel="stylesheet" href="https://alili.tech/lib/justified-gallery/justifiedGallery.min.css"><link rel="stylesheet" href="https://alili.tech/css/style.css"><script src="https://alili.tech/lib/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://alili.tech/lib/jquery/jquery.min.js"></script><script>document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);</script><script type="application/ld+json">{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https://alili.tech/archive/eed8d24e/",
+				"appid": "1613049289050283", 
+				"title": "在公司搭建私有的cnpm服务器 | 前端大爆炸! - WEB BANG! BANG!! BANG!!!", 
+				"images": [],
+				"pubDate": "2017-11-24T22:30:05"
+			}</script></head><body><div id="header-post"><a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a> <span id="menu"><span id="nav"><ul><li><a href="/">Home</a></li><li><a href="/archive/">Archives</a></li><li><a href="/about/">About</a></li><li><a href="http://github.com/Fantasy9527" target="_blank">Github</a></li></ul></span><br><span id="actions"><ul><li><a class="icon" href="https://alili.tech/archive/b36fefc7/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li><li><a class="icon" href="https://alili.tech/archive/7cb6734b/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li><li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li><li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li></ul><span id="i-prev" class="info" style="display:none;">Previous post</span> <span id="i-next" class="info" style="display:none;">Next post</span> <span id="i-top" class="info" style="display:none;">Back to top</span> <span id="i-share" class="info" style="display:none;">Share post</span></span><br><div id="share" style="display: none"><ul><li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2falili.tech%2farchive%2feed8d24e%2f&text=%e5%9c%a8%e5%85%ac%e5%8f%b8%e6%90%ad%e5%bb%ba%e7%a7%81%e6%9c%89%e7%9a%84cnpm%e6%9c%8d%e5%8a%a1%e5%99%a8"><i class="fa fa-weibo" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2falili.tech%2farchive%2feed8d24e%2f"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2falili.tech%2farchive%2feed8d24e%2f&text=%e5%9c%a8%e5%85%ac%e5%8f%b8%e6%90%ad%e5%bb%ba%e7%a7%81%e6%9c%89%e7%9a%84cnpm%e6%9c%8d%e5%8a%a1%e5%99%a8"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2falili.tech%2farchive%2feed8d24e%2f&title=%e5%9c%a8%e5%85%ac%e5%8f%b8%e6%90%ad%e5%bb%ba%e7%a7%81%e6%9c%89%e7%9a%84cnpm%e6%9c%8d%e5%8a%a1%e5%99%a8"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li><li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2falili.tech%2farchive%2feed8d24e%2f&is_video=false&description=%e5%9c%a8%e5%85%ac%e5%8f%b8%e6%90%ad%e5%bb%ba%e7%a7%81%e6%9c%89%e7%9a%84cnpm%e6%9c%8d%e5%8a%a1%e5%99%a8"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li><li><a class="icon" href="mailto:?subject=%e5%9c%a8%e5%85%ac%e5%8f%b8%e6%90%ad%e5%bb%ba%e7%a7%81%e6%9c%89%e7%9a%84cnpm%e6%9c%8d%e5%8a%a1%e5%99%a8&body=Check out this article: https%3a%2f%2falili.tech%2farchive%2feed8d24e%2f"><i class="fa fa-envelope" aria-hidden="true"></i></a></li><li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2falili.tech%2farchive%2feed8d24e%2f&title=%e5%9c%a8%e5%85%ac%e5%8f%b8%e6%90%ad%e5%bb%ba%e7%a7%81%e6%9c%89%e7%9a%84cnpm%e6%9c%8d%e5%8a%a1%e5%99%a8"><i class="fa fa-get-pocket" aria-hidden="true"></i></a></li><li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2falili.tech%2farchive%2feed8d24e%2f&title=%e5%9c%a8%e5%85%ac%e5%8f%b8%e6%90%ad%e5%bb%ba%e7%a7%81%e6%9c%89%e7%9a%84cnpm%e6%9c%8d%e5%8a%a1%e5%99%a8"><i class="fa fa-reddit" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2falili.tech%2farchive%2feed8d24e%2f&title=%e5%9c%a8%e5%85%ac%e5%8f%b8%e6%90%ad%e5%bb%ba%e7%a7%81%e6%9c%89%e7%9a%84cnpm%e6%9c%8d%e5%8a%a1%e5%99%a8"><i class="fa fa-stumbleupon" aria-hidden="true"></i></a></li><li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2falili.tech%2farchive%2feed8d24e%2f&title=%e5%9c%a8%e5%85%ac%e5%8f%b8%e6%90%ad%e5%bb%ba%e7%a7%81%e6%9c%89%e7%9a%84cnpm%e6%9c%8d%e5%8a%a1%e5%99%a8"><i class="fa fa-digg" aria-hidden="true"></i></a></li></ul></div><div id="toc"><nav id="TableOfContents"><ul><li><ul><li><a href="#安装的基本步骤">安装的基本步骤</a></li><li><a href="#开始吧">开始吧</a><ul><li><a href="#在linux安装mysql">在linux安装mysql</a></li><li><a href="#在代码里配置sql信息">在代码里配置sql信息</a></li><li><a href="#安装cnpm-org-的相关js依赖-这是jser们再熟悉不过的了">安装cnpm.org 的相关js依赖（这是jser们再熟悉不过的了）</a></li><li><a href="#尝试使用">尝试使用</a></li></ul></li><li><a href="#cnpm-org的相关配置">cnpm.org的相关配置</a></li></ul></li></ul></nav></div></span></div><div class="content index width mx-auto px3 my3"><section id="wrapper" class="home"><article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header><h1 class="posttitle" itemprop="name headline">在公司搭建私有的cnpm服务器</h1><div class="meta"><div class="postdate"><time datetime="2017-11-24" itemprop="datePublished">2017-11-24</time></div><div class="article-tag"><i class="fa fa-eye"></i> <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span></span></div><div class="article-tag"><i class="fa fa-tag"></i> <a href="/tags/nodejs">Nodejs</a></div><div class="article-tag-box"></div></div></header><div class="content" itemprop="articleBody"><p>现在的js的项目越来越多。如果我们把代码开源。我们会把这些代码发布到npm。 但是npm是公共的，公司的代码毕竟不会公开在网上。 于是我们就有必要搭建一个自己的npm服务器。把公司私有的代码发布在自己公司的npm服务器上。 这样我们就可以即方便的下载我们想要的代码。也可以不把这些代码放在开源平台上面</p><h2 id="安装的基本步骤">安装的基本步骤</h2><ol><li>在linu安装mysql</li><li>npm install cnpm.org 下载cnpm.org的代码</li><li>配置好cnpm.org的数据库配置</li><li>npm start</li></ol><p>在安装过程中，我们只有这简单的4步。不管哪里遇到各种各样的问题，都不会脱离这4个步骤。</p><h2 id="开始吧">开始吧</h2><h3 id="在linux安装mysql">在linux安装mysql</h3><p>网上有很多相关教程，请自行搜索。如果有需要我会重新开一篇来讲述安装步骤。 我们假设这里我们创建了一个用户为：root 密码：root1234 1. 创建数据库</p><pre><code>CREATE DATABASE cnpmjs
+</code></pre><ol><li>建表：</li></ol><p>在cnpm.org代码里，doc/db.sql文件里面有创建cnpm.org的相关表的sql语句</p><pre><code>mysql&gt; use cnpmjs;
+mysql&gt; source docs/db.sql
+</code></pre><h3 id="在代码里配置sql信息">在代码里配置sql信息</h3><p>在cnpm.org代码里的 config/config.js配置我们的数据库连接信息.</p><p>找到以下mysqlServers相关代码,配置大致如下：</p><pre><code class="language-javascript">    mysqlServers: [
+      {
+        host: 'localhost',
+        port: 3306,
+        user: 'root',
+        password: 'root1234',  // 这是我们刚刚创建的账户跟密码
+      }
+    ],
+</code></pre><h3 id="安装cnpm-org-的相关js依赖-这是jser们再熟悉不过的了">安装cnpm.org 的相关js依赖（这是jser们再熟悉不过的了）</h3><p>进入cnpm.org代码目录</p><pre><code> npm install
+</code></pre><p>### 最后一步 当里的js依赖装好了之后，cnpm.org的数据库配置也配置好了以后。 再命令行里 运行一下命令：</p><pre><code>npm start
+</code></pre><p>好了，我们的cnpm服务器就这样简单的搭建成功了。</p><ul><li><p>默认web端口为：7002，当你浏览器输入这台机器的ip加端口便可以访问 cnpm.org应用的web页面了。 本机访问则是：<a href="http://localhost:7002">http://localhost:7002</a></p></li><li><p>registry 默认端口为： 7001</p></li></ul><blockquote><p>如果在其他机器始终访问不了你的应用。请检查你的服务器防火墙哦。</p></blockquote><h3 id="尝试使用">尝试使用</h3><pre><code>    npm install webpack -g --registry=http://192.168.0.100:7001 // IP为你搭建服务器的地址，不要忘加端口号
+</code></pre><p>如果你觉得以上方式麻烦可以设置里本机npm 默认registry</p><pre><code>npm config set registry http://192.168.0.100:7001
+</code></pre><h2 id="cnpm-org的相关配置">cnpm.org的相关配置</h2><pre><code class="language-javascript">{
+enableCluster：是否启用 cluster-worker 模式启动服务，默认 false，生产环节推荐为 true;
+registryPort： API 专用的 registry 服务端口，默认 7001；
+webPort： Web 服务端口，默认 7002；
+bindingHost：监听绑定的 Host ，默认为 127.0.0.1，如果外面架了一层本地的 Nginx 反向代理或者 Apache 反向代理的话推荐不用改；
+sessionSecret：session 用的盐；
+logdir：日志目录；
+uploadDir：临时上传文件目录；
+viewCache：视图模板缓存是否开启，默认为 false；
+enableCompress：是否开启 gzip 压缩，默认为 false；
+admins：管理员们，这是一个 JSON Object，对应各键名为各管理员的用户名，键值为其邮箱，默认为 { fengmk2: 'fengmk2@gmail.com', admin: 'admin@cnpmjs.org', dead_horse: 'dead_horse@qq.com' }；
+logoURL：Logo 地址，不过对于我这个已经把 CNPM 前端改得面目全非的人来说已经忽略了这个配置了；
+adBanner：广告 Banner 的地址；
+customReadmeFile：实际上我们看到的 cnpmjs.org 首页中间一大堆冗长的介绍是一个 Markdown 文件转化而成的，你可以设置该项来自行替换这个文件；
+customFooter：自定义页脚模板；
+npmClientName：默认为 cnpm，如果你有自己开发或者 fork 的 npm 客户端的话请改成自己的 CLI 命令，这个应该会在一些页面的说明处替换成你所写的；
+backupFilePrefix：备份目录；
+database：{
+    //数据库相关配置，为一个对象，默认如果不配置将会是一个 ~/.cnpmjs.org/data.sqlite 的 SQLite ；
+    db：数据的库名；
+    username：数据库用户名；
+    password：数据库密码；
+    dialect：数据库适配器，可选 &quot;mysql&quot;、&quot;sqlite&quot;、&quot;postgres&quot;、&quot;mariadb&quot;，默认为 &quot;sqlite&quot;；
+    hsot：数据库地址；
+    port：数据库端口；
+    pool：{
+        //数据库连接池相关配置，为一个对象；
+        maxConnections：最大连接数，默认为 10；
+        minConnections：最小连接数，默认为 0；
+        maxIdleTime：单条链接最大空闲时间，默认为 30000 毫秒；
+    }
+    storege：仅对 SQLite 配置有效，数据库地址，默认为 ~/.cnpmjs/data.sqlite；
+},
+nfs：包文件系统处理对象，为一个 Node.js 对象，默认是 fs-cnpm 这个包，并且配置在 ~/.cnpmjs/nfs 目录下，也就是说默认所有同步的包都会被放在这个目录下；开发者可以使用别的一些文件系统插件（如上传到又拍云等）,又或者自己去按接口开发一个逻辑层，这些都是后话了；
+registryHost：暂时还未试过，我猜是用于 Web 页面显示用的，默认为 r.cnpmjs.org；
+enablePrivate：是否开启私有模式，默认为 false；
+//如果是私有模式则只有管理员能发布包，其它人只能从源站同步包；
+//如果是非私有模式则所有登录用户都能发布包；
+scopes：非管理员发布包的时候只能用以 scopes 里面列举的命名空间为前缀来发布，如果没设置则无法发布，也就是说这是一个必填项，默认为 [ '@cnpm', '@cnpmtest', '@cnpm-test' ]，据苏千大大解释是为了便于管理以及让公司的员工自觉按需发布；更多关于 NPM scope 的说明请参见 npm-scope；
+privatePackages：就如该配置项的注释所述，出于历史包袱的原因，有些已经存在的私有包（可能之前是用 Git 的方式安装的）并没有以命名空间的形式来命名，而这种包本来是无法上传到 CNPM 的，这个配置项数组就是用来加这些例外白名单的，默认为一个空数组；
+sourceNpmRegistry：更新源 NPM 的 registry 地址，默认为 https://registry.npm.taobao.org；
+sourceNpmRegistryIsCNpm：源 registry 是否为 CNPM ，默认为 true，如果你使用的源是官方 NPM 源，请将其设为 false；
+syncByInstall：如果安装包的时候发现包不存在，则尝试从更新源同步，默认为 true；
+syncModel：更新模式（不过我觉得是个 typo），有下面几种模式可以选择，默认为 &quot;none&quot;;
+// &quot;none&quot;：永不同步，只管理私有用户上传的包，其它源包会直接从源站获取；
+// &quot;exist&quot;：定时同步已经存在于数据库的包；
+// &quot;all&quot;：定时同步所有源站的包；
+syncInterval：同步间隔，默认为 &quot;10m&quot; 即十分钟；
+syncDevDependencies：是否同步每个包里面的 devDependencies 包们，默认为 false；
+badgeSubject：包的 badge 显示的名字，默认为 cnpm；
+userService：用户验证接口，默认为 null，即无用户相关功能也就是无法有用户去上传包，该部分需要自己实现接口功能并配置，如与公司的 Gitlab 相对接，这也是后话了；
+alwaysAuth：是否始终需要用户验证，即便是 $ cnpm install 等命令；
+httpProxy：代理地址设置，用于你在墙内源站在墙外的情况。
+}
+
+</code></pre><p>参考文章： <a href="https://www.v2ex.com/t/292046">https://www.v2ex.com/t/292046</a></p><h2>本文链接：</h2><a href="https://alili.tech/archive/eed8d24e/" target="_blank">https://alili.tech/archive/eed8d24e/</a></div></article><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><div class="blog-post-comments"></div><script>new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'ItyOVb4I33bTwprf3cY6uqMc-gzGzoHsz', 
+        app_key: 'hLhtmd4tT0qJbyO2SgQ8odya', 
+        placeholder: '说点什么?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });</script></section></div><footer id="footer"><div class="footer-left">Copyright © 2019 Fan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">浙ICP备18045521号</a></div><div class="footer-right"><nav><ul><li><a href="/">Home</a></li><li><a href="/archive/">Archives</a></li><li><a href="/about/">About</a></li><li><a href="http://github.com/Fantasy9527" target="_blank">Github</a></li></ul></nav></div></footer><script src="https://alili.tech/lib/justified-gallery/jquery.justifiedGallery.min.js"></script><script src="https://alili.tech/lib/typed.js"></script><script src="https://alili.tech/js/main.js"></script><script async src=""></script><script>(function(){
+  if(location.host!=='alili.tech')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()</script><script>(function(){
+    if(location.host!=='alili.tech')return;
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }</script></body></html>

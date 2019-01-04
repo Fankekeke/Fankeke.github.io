@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Angularjs on Alili</title>
+    <link>https://alili.tech/tags/angularjs/</link>
+    <description>Recent content in Angularjs on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 22 Feb 2017 16:14:25 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/angularjs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一个关于微信SPA页面webview的缓存问题</title>
+      <link>https://alili.tech/archive/613bb601/</link>
+      <pubDate>Wed, 22 Feb 2017 16:14:25 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/613bb601/</guid>
+      <description> 一个低级问题 因为公司微信项目用的是angular路由的单页面应用.所以切换页面是基于hash值做到的.
+我们遇到了一个问题,每一次部署新的网页代码到服务器上. 在Android微信客户端,总是要过好多天.甚至要重新卸载微信.重新打开页面之后,才会更新页面.(iPhone上却没有这个问题)
+如果版本正式上线之后,遇到了紧急bug.那将是一场灾难啊.
+解决办法 给url加上时间戳 首先想到的解决办法是,在网址后面加上时间戳,就像是这样:
+xxx.com#/home/test/page/?t=(我是时间戳)  可是页面在安卓客户端却没有任何改善
+这是为什么,是微信客户端的bug吗?
+并不是,是时间戳加错了位置.
+我们换一种方式.
+xxx.com?t=(我是时间戳)#/home/test/page/  这个时候,我们发现安卓微信客户端的缓存问题迎刃而解了.
+牵引出一个问题 为什么我们的时间戳放在最后面,浏览器取了缓存的代码.
+首先我们看看URL的格式:
+protocol :// hostname[:port] / path / [;parameters][?query]#hash  我们的时间戳用的是 &amp;ldquo;?&amp;rdquo; 分隔符,也就是query参数.
+第一次,我们把query参数放在了&amp;rdquo;#&amp;ldquo;后面.于是我们的时间戳,也就是所谓的query参数,成了hash值.
+不管是什么符号,什么字符,只要是放在了&amp;rdquo;#&amp;ldquo;后面的,都是hash值.
+因为HTTP请求并不包括hash,所以不管我们怎么修改#号后面的时间戳,服务器接收到的请求,都是一样的.
+重要的事情说三遍:
+ HTTP请求不包括hash HTTP请求不包括hash HTTP请求不包括hash  </description>
+    </item>
+    
+    <item>
+      <title>Angularjs的按需加载(3)</title>
+      <link>https://alili.tech/archive/f9c22b08/</link>
+      <pubDate>Wed, 01 Jun 2016 23:55:35 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/f9c22b08/</guid>
+      <description>上一篇大概的描述了一下Angular的启动过程,
+如果想要在自己的项目里,异步的加载第三方模块,就是按照上一篇的主要逻辑再跑一遍.
+这样子,第三方的模块的方法才能全部加载到angular里.
+app.config([ &#39;$controllerProvider&#39;, &#39;$compileProvider&#39;, &#39;$filterProvider&#39;, &#39;$provide&#39;, &#39;$injector&#39;, function($controllerProvider, $compileProvider, $filterProvider, $provide, $injector) { //像第一篇说的那样,把内部方法暴露出来 app.controller = $controllerProvider.register; app.directive = $compileProvider.directive; app.filter = $filterProvider.register; app.factory = $provide.factory; app.service = $provide.service; app.provider = $provide.provider; app.value = $provide.value; app.constant = $provide.constant; app.decorator = $provide.decorator; //并且定义一个全局的函数,方便以后随便调用 //加载三方模块下的代码, window.addModule=function(moduleName){ var module = angular.module(moduleName); var ngProviders = { &#39;$controllerProvider&#39;: $controllerProvider, &#39;$compileProvider&#39;: $compileProvider, &#39;$filterProvider&#39;: $filterProvider, &#39;$provide&#39;: $provide }; if (module.requires) { for (var i = 0; i &amp;lt; module.</description>
+    </item>
+    
+    <item>
+      <title>Angularjs的按需加载(2)</title>
+      <link>https://alili.tech/archive/e0d91a49/</link>
+      <pubDate>Tue, 31 May 2016 20:34:35 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/e0d91a49/</guid>
+      <description>上一篇我们实现了最简单的Angularjs的按需加载,
+可以通过替换Angular的内部方法,再使用require.js配合$q完成了按需加载.
+今天来说说Angular如何按需加载第三方module;
+在此之前,我们得先弄清楚Angular是如何启动的.
+setupModuleLoader方法 在上图中,我们得注意一个非常主要的方法;
+setupModuleLoader方法,顾名思义 —— 模块加载器;
+此方法最后返回的对象为:
+var moduleInstance = { _invokeQueue: invokeQueue, _runBlocks: runBlocks, requires: requires, name: name, provider: invokeLater(&#39;$provide&#39;, &#39;provider&#39;), factory: invokeLater(&#39;$provide&#39;, &#39;factory&#39;), service: invokeLater(&#39;$provide&#39;, &#39;service&#39;), value: invokeLater(&#39;$provide&#39;, &#39;value&#39;), constant: invokeLater(&#39;$provide&#39;, &#39;constant&#39;, &#39;unshift&#39;), animation: invokeLater(&#39;$animateProvider&#39;, &#39;register&#39;), filter: invokeLater(&#39;$filterProvider&#39;, &#39;register&#39;), controller: invokeLater(&#39;$controllerProvider&#39;, &#39;register&#39;), directive: invokeLater(&#39;$compileProvider&#39;, &#39;directive&#39;), config: config, run: function(block) { runBlocks.push(block); return this; } }  看着这对象的格式,有没有特别熟悉?
+当我们运行
+angular.module(&#39;app&#39;,[]); //或者 angular.module(&#39;app&#39;)  我们新建一个module或者获取一个module的时候, 返回的就是这个对象.</description>
+    </item>
+    
+    <item>
+      <title>Angularjs的按需加载(1)</title>
+      <link>https://alili.tech/archive/cbf4498a/</link>
+      <pubDate>Mon, 30 May 2016 16:14:25 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/cbf4498a/</guid>
+      <description>今天来聊一聊一直困扰了我很久的问题.Angularjs的按需加载.
+angular的好处这里就不用多说, 但是用久了你会发现,一个网站所有的 Controller, Service, Directive等等,全部加载完了, 页面才开始跑.
+小项目,代码少.不会感觉太大问题.
+但是页面多了,那主页越来越臃肿.有用的,没用的通通加载进来. 虽说全部加载,页面第一次打开会慢很多,之后打开的页面速度会极快. 但是,这一点都不Smart.
+那有什么办法可以做到按需加载呢? 其实很简单,看代码:
+app.config([ &#39;$controllerProvider&#39;, &#39;$compileProvider&#39;, &#39;$filterProvider&#39;, &#39;$provide&#39;, function($controllerProvider, $compileProvider, $filterProvider, $provide) { app.controller = $controllerProvider.register; app.directive = $compileProvider.directive; app.filter = $filterProvider.register; app.factory = $provide.factory; app.service = $provide.service; app.provider = $provide.provider; app.value = $provide.value; app.constant = $provide.constant; app.decorator = $provide.decorator; } ]);  我们要先把angular的方法替换成内部使用的方法,
+这样我们在后面才可以正常的按需加载Controller, Service, Directive&amp;hellip;
+接下来,我们选择一个模块加载器, 流行的加载器有很多,Require.js,Sea.js,System.js 等等.
+选一个最经典的 Require.js;
+下面是按需加载的小demo Github Demo
+我们先配置好,require的config;
+app.bootstrap.js
+require.config({ paths: { &#39;angular&#39;: &#39;http://cdn.</description>
+    </item>
+    
+    <item>
+      <title>源码分析Angularjs中的Provider们的小小区别</title>
+      <link>https://alili.tech/archive/41effd04/</link>
+      <pubDate>Mon, 22 Feb 2016 16:14:25 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/41effd04/</guid>
+      <description>AngularJS的provider Angular中有以下创建供应商(provider)的方法: * provider() * service() * factory()
+Provider使用方式 angular.module(&amp;quot;app&amp;quot;, []) .provider(&amp;quot;HelloAngular&amp;quot;, function() { return { $get: function() { var name = &amp;quot;小明&amp;quot;; function getName() { return name; } return { getName: getName } } } }) .controller(&#39;MyCtrl&#39;, [&#39;$scope&#39;, &#39;HelloAngular&#39;, function($scope, helloAngular) { $scope.gameName = helloAngular.getName(); } ]);  Service使用方式 angular.module(&amp;quot;app&amp;quot;, []) .service(&amp;quot;HelloAngular&amp;quot;, function() { this.name = &amp;quot;小明&amp;quot;; this.getName=function(){ return this.name; } }) .controller(&#39;MyCtrl&#39;, [&#39;$scope&#39;, &#39;HelloAngular&#39;, function($scope, helloAngular) { $scope.</description>
+    </item>
+    
+    <item>
+      <title>烦人的Angularjs注解 - grunt-ng-annotate的使用</title>
+      <link>https://alili.tech/archive/c38cfa0d/</link>
+      <pubDate>Fri, 12 Jun 2015 23:15:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/c38cfa0d/</guid>
+      <description>angular加入了依赖注入
+编写代码的时候,大致的写法如下
+app.controller(&#39;tempController&#39;, function($scope, $http, $state, $timeout) { ... })  可是这样的代码,压缩后会造成一个问题. 函数的参数:$scope, $http, $state, $timeout会变成: a,b,c,d
+导致这个函数找不到需要注入的服务,因为每个参数的命名都是严格规定的.
+如下:
+app.controller(&#39;tempController&#39;, function(a,b,c,d) { ... })  为了解决这个问题,angular支持如下写法:
+app.controller(&#39;tempController&#39;, [&amp;quot;$scope&amp;quot;, &amp;quot;$http&amp;quot;, &amp;quot;$state&amp;quot;, &amp;quot;$timeout&amp;quot;, function($scope, $http, $state, $timeout) { }])  那么问题来了:
+每一次添加一个服务的时候,都需要写两遍. 每一次删除一个服务的时候,都需要删两遍.
+表示大大降低了变成的愉悦.
+那么我们怎么解决这个问题呢?
+今天的主角来了,那就是grunt-ng-annotate
+这是一个grunt的插件,当然在glup上也有.因为我的项目主要是用grunt写的. 那么这次主要讲grunt版本的ng-annotate.
+首先我们需要安装ng-annotate:
+npm install grunt-ng-annotate --save-dev  在你的Gruntfile里运行这个插件:
+grunt.loadNpmTasks(&#39;grunt-ng-annotate&#39;);  配置代码:
+grunt.initConfig({ ngAnnotate: { dist: { files: [{ expand: true, cwd: &#39;&amp;lt;%= yeoman.dist %&amp;gt;&#39;, //相对路径 src: &#39;**/*Controller.</description>
+    </item>
+    
+    <item>
+      <title>Angularjs 指令模版</title>
+      <link>https://alili.tech/archive/baa7d23b/</link>
+      <pubDate>Thu, 21 May 2015 22:17:36 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/baa7d23b/</guid>
+      <description>myModule.directive(&#39;namespaceDirectiveName&#39;, function factory(injectables) { var directiveDefinitionObject = { restrict: string,//指令的使用方式，包括标签，属性，类，注释 priority: number,//指令执行的优先级 template: string,//指令使用的模板，用HTML字符串的形式表示 templateUrl: string,//从指定的url地址加载模板 replace: bool,//是否用模板替换当前元素，若为false，则append在当前元素上 transclude: bool,//是否将当前元素的内容转移到模板中 scope: bool or object,//指定指令的作用域 controller: function controllerConstructor($scope, $element, $attrs, $transclude){...},//定义与其他指令进行交互的接口函数 require: string,//指定需要依赖的其他指令 link: function postLink(scope, iElement, iAttrs) {...},//以编程的方式操作DOM，包括添加监听器等 compile: function compile(tElement, tAttrs, transclude){ return: { pre: function preLink(scope, iElement, iAttrs, controller){...}, post: function postLink(scope, iElement, iAttrs, controller){...} } }//编程的方式修改DOM模板的副本，可以返回链接函数 }; return directiveDefinitionObject; });  </description>
+    </item>
+    
+  </channel>
+</rss>

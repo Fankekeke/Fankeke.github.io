@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="zh"><head><meta name="generator" content="Hugo 0.51"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="HandheldFriendly" content="True"><meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta name="wap-font-scale" content="no"><meta name="360-site-verification" content="0903ba33c82867d1f7bd8831e32a7e34"><meta name="sogou_site_verification" content="E8uWFBcf4a"><meta name="author" content="Fan"><meta name="description" itemprop="description" content="React的全家桶实在太过于庞大。如果初学者想直接品味React的魅力，这里介绍一个官方的脚手架。使用方法特别简单。
+create-react-app 大概使用方法 安装
+npm install -g create-react-app  创建一个app
+create-react-app my-app cd my-app/  文件结构：
+my-app ├── README.md ├── node_m"><meta name="keywords" content="react,脚手架,create-react-app"><meta property="og:locale" content="en_US"><meta property="og:title" content="React系列之从一个脚手架开始说起:create-react-app"><meta property="og:image" content="https://alili.tech/images/logo2.png"><meta property="og:description" content="React的全家桶实在太过于庞大。如果初学者想直接品味React的魅力，这里介绍一个官方的脚手架。使用方法特别简单。
+create-react-app 大概使用方法 安装
+npm install -g create-react-app  创建一个app
+create-react-app my-app cd my-app/  文件结构：
+my-app ├── README.md ├── node_m"><meta property="og:site_name" content="Alili"><title>React系列之从一个脚手架开始说起:create-react-app | 前端大爆炸! - WEB BANG! BANG!! BANG!!!</title><link rel="shortcut icon" href="https://alili.tech/images/favicon.ico"><link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="https://alili.tech/lib/font-awesome/css/font-awesome.min.css"><link rel="stylesheet" href="https://alili.tech/lib/justified-gallery/justifiedGallery.min.css"><link rel="stylesheet" href="https://alili.tech/css/style.css"><script src="https://alili.tech/lib/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://alili.tech/lib/jquery/jquery.min.js"></script><script>document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);</script><script type="application/ld+json">{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https://alili.tech/archive/7a6daf6e/",
+				"appid": "1613049289050283", 
+				"title": "React系列之从一个脚手架开始说起:create-react-app | 前端大爆炸! - WEB BANG! BANG!! BANG!!!", 
+				"images": [],
+				"pubDate": "2017-07-12T19:33:33"
+			}</script></head><body><div id="header-post"><a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a> <span id="menu"><span id="nav"><ul><li><a href="/">Home</a></li><li><a href="/archive/">Archives</a></li><li><a href="/about/">About</a></li><li><a href="http://github.com/Fantasy9527" target="_blank">Github</a></li></ul></span><br><span id="actions"><ul><li><a class="icon" href="https://alili.tech/archive/99619c4e/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li><li><a class="icon" href="https://alili.tech/archive/10fba257/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li><li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li><li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li></ul><span id="i-prev" class="info" style="display:none;">Previous post</span> <span id="i-next" class="info" style="display:none;">Next post</span> <span id="i-top" class="info" style="display:none;">Back to top</span> <span id="i-share" class="info" style="display:none;">Share post</span></span><br><div id="share" style="display: none"><ul><li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2falili.tech%2farchive%2f7a6daf6e%2f&text=React%e7%b3%bb%e5%88%97%e4%b9%8b%e4%bb%8e%e4%b8%80%e4%b8%aa%e8%84%9a%e6%89%8b%e6%9e%b6%e5%bc%80%e5%a7%8b%e8%af%b4%e8%b5%b7%3acreate-react-app"><i class="fa fa-weibo" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2falili.tech%2farchive%2f7a6daf6e%2f"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2falili.tech%2farchive%2f7a6daf6e%2f&text=React%e7%b3%bb%e5%88%97%e4%b9%8b%e4%bb%8e%e4%b8%80%e4%b8%aa%e8%84%9a%e6%89%8b%e6%9e%b6%e5%bc%80%e5%a7%8b%e8%af%b4%e8%b5%b7%3acreate-react-app"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2falili.tech%2farchive%2f7a6daf6e%2f&title=React%e7%b3%bb%e5%88%97%e4%b9%8b%e4%bb%8e%e4%b8%80%e4%b8%aa%e8%84%9a%e6%89%8b%e6%9e%b6%e5%bc%80%e5%a7%8b%e8%af%b4%e8%b5%b7%3acreate-react-app"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li><li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2falili.tech%2farchive%2f7a6daf6e%2f&is_video=false&description=React%e7%b3%bb%e5%88%97%e4%b9%8b%e4%bb%8e%e4%b8%80%e4%b8%aa%e8%84%9a%e6%89%8b%e6%9e%b6%e5%bc%80%e5%a7%8b%e8%af%b4%e8%b5%b7%3acreate-react-app"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li><li><a class="icon" href="mailto:?subject=React%e7%b3%bb%e5%88%97%e4%b9%8b%e4%bb%8e%e4%b8%80%e4%b8%aa%e8%84%9a%e6%89%8b%e6%9e%b6%e5%bc%80%e5%a7%8b%e8%af%b4%e8%b5%b7%3acreate-react-app&body=Check out this article: https%3a%2f%2falili.tech%2farchive%2f7a6daf6e%2f"><i class="fa fa-envelope" aria-hidden="true"></i></a></li><li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2falili.tech%2farchive%2f7a6daf6e%2f&title=React%e7%b3%bb%e5%88%97%e4%b9%8b%e4%bb%8e%e4%b8%80%e4%b8%aa%e8%84%9a%e6%89%8b%e6%9e%b6%e5%bc%80%e5%a7%8b%e8%af%b4%e8%b5%b7%3acreate-react-app"><i class="fa fa-get-pocket" aria-hidden="true"></i></a></li><li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2falili.tech%2farchive%2f7a6daf6e%2f&title=React%e7%b3%bb%e5%88%97%e4%b9%8b%e4%bb%8e%e4%b8%80%e4%b8%aa%e8%84%9a%e6%89%8b%e6%9e%b6%e5%bc%80%e5%a7%8b%e8%af%b4%e8%b5%b7%3acreate-react-app"><i class="fa fa-reddit" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2falili.tech%2farchive%2f7a6daf6e%2f&title=React%e7%b3%bb%e5%88%97%e4%b9%8b%e4%bb%8e%e4%b8%80%e4%b8%aa%e8%84%9a%e6%89%8b%e6%9e%b6%e5%bc%80%e5%a7%8b%e8%af%b4%e8%b5%b7%3acreate-react-app"><i class="fa fa-stumbleupon" aria-hidden="true"></i></a></li><li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2falili.tech%2farchive%2f7a6daf6e%2f&title=React%e7%b3%bb%e5%88%97%e4%b9%8b%e4%bb%8e%e4%b8%80%e4%b8%aa%e8%84%9a%e6%89%8b%e6%9e%b6%e5%bc%80%e5%a7%8b%e8%af%b4%e8%b5%b7%3acreate-react-app"><i class="fa fa-digg" aria-hidden="true"></i></a></li></ul></div><div id="toc"><nav id="TableOfContents"><ul><li><ul><li><a href="#create-react-app">create-react-app</a><ul><li><a href="#大概使用方法">大概使用方法</a></li></ul></li><li><a href="#特点">特点</a></li></ul></li></ul></nav></div></span></div><div class="content index width mx-auto px3 my3"><section id="wrapper" class="home"><article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header><h1 class="posttitle" itemprop="name headline">React系列之从一个脚手架开始说起:create-react-app</h1><div class="meta"><div class="postdate"><time datetime="2017-07-12" itemprop="datePublished">2017-07-12</time></div><div class="article-tag"><i class="fa fa-eye"></i> <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span></span></div><div class="article-tag"><i class="fa fa-tag"></i> <a href="/tags/react">React</a></div><div class="article-tag-box"></div></div></header><div class="content" itemprop="articleBody"><p>React的全家桶实在太过于庞大。如果初学者想直接品味React的魅力，这里介绍一个官方的脚手架。使用方法特别简单。</p><h2 id="create-react-app">create-react-app</h2><h3 id="大概使用方法">大概使用方法</h3><p>安装</p><pre><code>npm install -g create-react-app
+</code></pre><p>创建一个app</p><pre><code>create-react-app my-app
+cd my-app/
+</code></pre><p>文件结构：</p><pre><code>my-app
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── public
+│   └── favicon.ico
+│   └── index.html
+│   └── manifest.json
+└── src
+    └── App.css
+    └── App.js
+    └── App.test.js
+    └── index.css
+    └── index.js
+    └── logo.svg
+    └── registerServiceWorker.js
+</code></pre><p>启动应用：</p><pre><code>npm start
+</code></pre><p>用浏览器打开 <a href="http://localhost:3000/">http://localhost:3000/</a> 就可以直接看到你的应用了。</p><p><img src="https://camo.githubusercontent.com/506a5a0a33aebed2bf0d24d3999af7f582b31808/687474703a2f2f692e696d6775722e636f6d2f616d794e66434e2e706e67" alt=""></p><p>如果你想打包你的应用：</p><pre><code>npm run build
+</code></pre><h2 id="特点">特点</h2><ul><li>不需要配置；</li><li>对 React, JSX, ES6 和 Flow 可以直接编译；</li><li>开发服务器；</li><li>浏览器热加载的功能；</li><li>JavaScript 文件中可以直接 import CSS 和图片；</li><li>自动处理 CSS 的兼容问题，无需添加 -webkit 前缀；</li><li>集成好了编译命令，编译后直接发布成产品，包含 sourcemaps。</li></ul><p>哎哟，路边又捡了一个叫 create-react-native-app 的脚手架:</p><p><a href="https://github.com/react-community/create-react-native-app/">create-react-native-app</a></p><h2>本文链接：</h2><a href="https://alili.tech/archive/7a6daf6e/" target="_blank">https://alili.tech/archive/7a6daf6e/</a></div></article><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><div class="blog-post-comments"></div><script>new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'ItyOVb4I33bTwprf3cY6uqMc-gzGzoHsz', 
+        app_key: 'hLhtmd4tT0qJbyO2SgQ8odya', 
+        placeholder: '说点什么?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });</script></section></div><footer id="footer"><div class="footer-left">Copyright © 2019 Fan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">浙ICP备18045521号</a></div><div class="footer-right"><nav><ul><li><a href="/">Home</a></li><li><a href="/archive/">Archives</a></li><li><a href="/about/">About</a></li><li><a href="http://github.com/Fantasy9527" target="_blank">Github</a></li></ul></nav></div></footer><script src="https://alili.tech/lib/justified-gallery/jquery.justifiedGallery.min.js"></script><script src="https://alili.tech/lib/typed.js"></script><script src="https://alili.tech/js/main.js"></script><script async src=""></script><script>(function(){
+  if(location.host!=='alili.tech')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()</script><script>(function(){
+    if(location.host!=='alili.tech')return;
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }</script></body></html>

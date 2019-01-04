@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Typescript on Alili</title>
+    <link>https://alili.tech/tags/typescript/</link>
+    <description>Recent content in Typescript on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 25 Dec 2018 19:33:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Typescript的福音:Json To Interface</title>
+      <link>https://alili.tech/archive/ijfdh4ry66c/</link>
+      <pubDate>Tue, 25 Dec 2018 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/ijfdh4ry66c/</guid>
+      <description> 在我们使用ts的时候,我们需要写大量的 Interface.
+但是我们一条json数据的字段实在是太多了,一个一个写的话不仅会花费大量的时间.
+在团队内部推广Typescript,因为使用问题导致推广层层阻碍,最后放弃使用屡见不鲜.
+今天推荐的这个插件,希望可以帮到你.
+JSON to TS 插件 安装 ext install json-to-ts  复制到剪贴板后 运行快捷键 (Ctrl + Alt + V) 鼠标选中后 运行快捷键 (Ctrl + Alt + S) 已知问题 linux 已知问题 Command failed: xclip -selection clipboard -o  解决方法 sudo apt-get install xclip  </description>
+    </item>
+    
+  </channel>
+</rss>

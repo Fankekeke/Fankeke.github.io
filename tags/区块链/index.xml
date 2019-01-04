@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>区块链 on Alili</title>
+    <link>https://alili.tech/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</link>
+    <description>Recent content in 区块链 on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 10 Oct 2018 19:33:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Eggjs(koa) &amp; web3.js开发你的以太坊Dapp</title>
+      <link>https://alili.tech/archive/69a6fd18/</link>
+      <pubDate>Wed, 10 Oct 2018 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/69a6fd18/</guid>
+      <description>Eggjs Eggjs 是阿里开源的企业级基于Koa2的Node.js框架. eggjs基本上是开箱即用,奉行『约定优于配置』.在日常开发中,用起来非常顺畅. 而且生态也比较完善,koa2的插件都可以对接到框架中来.
+Egg.js 目录结构 egg-project ├── package.json ├── app.js (可选) ├── agent.js (可选) ├── app | ├── router.js │ ├── controller │ | └── home.js │ ├── service (可选) │ | └── user.js │ ├── middleware (可选) │ | └── response_time.js │ ├── schedule (可选) │ | └── my_task.js │ ├── public (可选) │ | └── reset.css │ ├── view (可选) │ | └── home.tpl │ └── extend (可选) │ ├── helper.</description>
+    </item>
+    
+    <item>
+      <title>以太坊开发之搭建宠物商店</title>
+      <link>https://alili.tech/archive/b75b18ec/</link>
+      <pubDate>Sat, 21 Apr 2018 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/b75b18ec/</guid>
+      <description>truffle的宠物商店是一个了解以太坊开发的一个很不错的例子. 跟着官方提供的demo与教程,可以完整的感受一下整个流程的开发.
+Ganache 为了环境需要,并且快速的在本地搭建一个私有链环境. truffle推出了一个可视化私有链客户端: Ganache下载地址 下载之后运行,你会看到这样一个界面: 初始化你的项目 首先我们新建一个目录,并且初始化一下项目
+$ mkdir pet-shop $ cd pet-shop $ truffle unbox pet-shop  项目目录结构 这里只列出了重要的目录与文件
+├── bs-config.json ├── contracts //合约目录 │ └── Migrations.sol //合约文件 ├── migrations // 部署脚本 │ └── 1_initial_migration.js ├── package-lock.json ├── package.json ├── src // 前端代码目录 ├── test // 测试代码目录 └── truffle.js // truffle配置文件  编写智能合约 在contracts/目录中,创建一个Adoption.sol文件 文件内容:
+pragma solidity ^0.4.17; contract Adoption { address[16] public adopters; // 声明一个地址变量,用于保存领养者地址 // 领养宠物 function adopt(uint petId) public returns (uint) { require(petId &amp;gt;= 0 &amp;amp;&amp;amp; petId &amp;lt;= 15); // 确保宠物id正确,为0到15之间, // 如果不符合条件就会回滚 //msg.</description>
+    </item>
+    
+    <item>
+      <title>以太坊开发之Solidity初学者的编辑器 -- remix-ide</title>
+      <link>https://alili.tech/archive/ecce3d6/</link>
+      <pubDate>Fri, 20 Apr 2018 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/ecce3d6/</guid>
+      <description>在以太坊应用的开发中智能合约的开发是避不开的. 就目前来说,我发现的remix-ide是对新人最有好的开发工具了. 不需要其他任何的环境,就可以直接部署调试. 如果我发现了更加友好的,我会在以后的博客里推荐.
+安装 remix就是一个普通的npm包
+$ npm i remix-ide -g  启动 $ remix-ide  默认会启动本地8080端口,打开浏览器 http://localhost:8080
+使用  首先我们要勾选自动编译   2. 切换到 Run ,环境选择 javascript VM 部署你的程序 点击create按钮,就可以部署你的智能合约了. 如下图,便是部署了智能合约的样子,因为每次部署都会消耗掉相应的余额. 所以这个用户的余额从刚才的 100以太币变成了现在的 99.999999999... 调试你的程序 部署完成之后,我们发现下面出现了一个有函数名称的按钮与输入框. 输入框内可填写该函数的参数.点击一下函数名,便可执行该函数了. 执行结果,会在中间下面的控制台显示. 点击一下控制台信息的detail按钮,便可看到函数详细的输出信息</description>
+    </item>
+    
+    <item>
+      <title>以太坊开发之一切从脚手架truffle开始</title>
+      <link>https://alili.tech/archive/bc28cb6c/</link>
+      <pubDate>Thu, 19 Apr 2018 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/bc28cb6c/</guid>
+      <description>这个礼拜开始学习区块链开发,为了公司区块链项目开始之前有一定的知识储备. 在博客做一下知识复盘.
+truffle是什么 Truffle是针对基于以太坊的Solidity语言的一套开发框架。本身是基于Javascript实现的。 虽然是使用我们熟悉的Javascript实现, 但是truffle主要还只是一个编译与发布智能合约的一个工具(当然还有其他的功能).
+Solidity是什么 在区块链应用的开发中,Solidity语言你或许大致的可以理解为编写后台的一种语言. 在专业术语里,这种后台代码叫做 智能合约
+truffle的主要作用 Truffle在区块链应用的开发中,主要是提供两个重要的功能. 1. 编译智能合约 2. 发布智能合约
+安装 跟普通的npm包一样,用npm直接安装
+# 全局安装truffle $ npm i truffle -g  初始化你的项目 # 我们新建一个目录 $ mkdir myproject $ cd myproject #初始化 $ truffle init # 执行命令后 Downloading... Unpacking... Setting up... Unbox successful. Sweet! Commands: # truffle的其他操作 编译,发布,测试 Compile: truffle compile Migrate: truffle migrate Test contracts: truffle test  完成之后你会看到以下目录
+ contract/ - 智能合约Solidity代码 migrations/ - 智能合约发布的脚本 test/ - 测试文件 truffle.</description>
+    </item>
+    
+  </channel>
+</rss>

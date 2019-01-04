@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on Alili</title>
+    <link>https://alili.tech/tags/javascript/</link>
+    <description>Recent content in Javascript on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 26 Nov 2018 11:46:35 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>从前端角度来看声明式编程与命令式编程</title>
+      <link>https://alili.tech/archive/sdwn0mwjjj8/</link>
+      <pubDate>Mon, 26 Nov 2018 11:46:35 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/sdwn0mwjjj8/</guid>
+      <description>引入概念  声明式编程：告诉“机器”你想要的是什么(what)，让机器想出如何去做(how)。 命令式编程：命令“机器”如何去做事情(how)，这样不管你想要的是什么(what)，它都会按照你的命令实现。  怎么去解释以上两句话呢?
+我们带着这两个概念,用我们最熟悉的技术来解释两种编程范式
+声明式编程 （Declarative Programming） 告诉“机器”你想要的是什么(what)，让机器想出如何去做(how)。
+...more code &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;box&amp;quot;&amp;gt;声明式编程&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  #box { width: 100px; height: 100px; color: #fff; background: #000; }  命令式编程 (Imperative Programming） 命令“机器”如何去做事情(how)，这样不管你想要的是什么(what)，它都会按照你的命令实现。
+var oDIv = document.createElement(&amp;quot;div&amp;quot;); var text = document.createTextNode(&amp;quot;命令式编程&amp;quot;); oDIv.appendChild(text); oDIv.id = &amp;quot;box&amp;quot;; oDIv.style.width = 100 + &amp;quot;px&amp;quot;; oDIv.style.height = 100 + &amp;quot;px&amp;quot;; oDIv.style.color = &amp;quot;#FFF&amp;quot;; oDIv.style.background = &amp;quot;#000&amp;quot;; document.body.appendChild(oDIv);  总结 以上两个例子,得到的结果是一模一样的.
+在我看来,声明式的背后是代码实现的高度抽象,声明式会让工作得到简化.</description>
+    </item>
+    
+    <item>
+      <title>跨域还可以这样玩,使用CSS3特性做跨域</title>
+      <link>https://alili.tech/archive/b0bb249b/</link>
+      <pubDate>Tue, 20 Jun 2017 16:14:25 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/b0bb249b/</guid>
+      <description>CSST (CSS Text Transformation) 通过CSS3的content获取内容。
+ 利用js动态创建一个link插入到文档中, 请求css文件.
+ 利用 computedStyle = window.getComputedStyle 获取指定元素的style 对象
+ 利用 computedStyle .content 获取内容
+  服务端可以返回的 css 文件内容：
+@keyframes anima { from {} to { opacity: 0; } } @-webkit-keyframes anima { from {} to { opacity: 0; } } #CSST { content: &amp;quot;${text}&amp;quot;; animation: anima 2s; -webkit-animation: anima 2s; }  ${text}就是我们要填充的数据
+监听函数 animationstart/webkitAnimationStart 来判断css是否加载完成
+给#CSST元素设置动画
+js逻辑：
+function handle () { var computedStyle = getComputedStyle(span, false); var content = computedStyle.</description>
+    </item>
+    
+    <item>
+      <title>Object.defineProperty与Proxy的共同之处</title>
+      <link>https://alili.tech/archive/4c861783/</link>
+      <pubDate>Thu, 01 Jun 2017 11:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/4c861783/</guid>
+      <description>在看vue文档的时候发现一个有意思的地方. 就是关于Object.defineProperty的利用与Proxy有相似之处.非常有意思.
+文档是这样说的:
+ 把一个普通 JavaScript 对象传给 Vue 实例的 data 选项，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。
+ Object.defineProperty 语法：
+Object.defineProperty(obj, prop, descriptor)   obj：必需。目标对象 prop：必需。需定义或修改的属性的名字 descriptor：必需。目标属性所拥有的特性  返回值:
+传入函数的对象。即第一个参数obj
+getter/setter 存取器描述 当使用存取器描述属性的特性的时候，允许设置以下特性属性：
+var obj = {}; Object.defineProperty(obj,&amp;quot;newKey&amp;quot;,{ get:function (){} | undefined, set:function (value){} | undefined });  当设置或获取对象的某个属性的值的时候，可以提供getter/setter方法。
+var obj = {}; var initValue = &#39;hello&#39;; Object.defineProperty(obj,&amp;quot;newKey&amp;quot;,{ get:function (){ //当获取值的时候触发的函数 return initValue; }, set:function (value){ //当设置值的时候触发的函数,设置的新值通过参数value拿到 initValue = value; } }); //获取值 console.</description>
+    </item>
+    
+    <item>
+      <title>POST请求要比GET安全吗</title>
+      <link>https://alili.tech/archive/b50a8cab/</link>
+      <pubDate>Mon, 16 Jan 2017 11:46:35 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/b50a8cab/</guid>
+      <description>从学习发送请求的第一天,老师就告诉我们. POST请求,要比GET请求要安全.
+为什么? 在利用from发送请求的时代.get请求会夹带信息在地址栏里,而post不会.post会把信息放在body里面.
+因为参数放在地址栏里的get请求,会让别人看得见.一些信息难免会暴露.
+所以得出,post要比get更加安全.
+ 后来公司新来了一名后台小哥,他说post要比get更安全,于是没有经过任何人同意,把所有的新增接口都设计成了post.当我联调的时候,看着这一连串的post请求,一脸懵逼.开发这么久,我从来不觉得这会有安全问题的存在.
+ 公司前端都是AngularJs的SPA应用. 所以每次发送请求的方式都是Ajax.并不存在get请求的参数会暴露在地址栏的情况.
+如果所有的接口,全部变成了post,那我们的代码会变成什么样子呢?
+//查找数据 $http.post(&amp;quot;xxx.xxx.xxx&amp;quot;) //增加数据 $http.post(&amp;quot;xxx.xxx.xxx&amp;quot;) //修改数据 $http.post(&amp;quot;xxx.xxx.xxx&amp;quot;) //删除数据 $http.post(&amp;quot;xxx.xxx.xxx&amp;quot;)  所有的请求都是post,根本没有任何语义,一塌糊涂,非常不利于查看.
+大家都知道,请求方式都好几种.
+ GET POST HEAD PUT DELETE OPTIONS TRACE CONNECT  对于增删改查都有相应的方式,那我们的代码:
+//查找数据 $http.get(&amp;quot;xxx.xxx.xxx&amp;quot;) //增加数据 $http.post(&amp;quot;xxx.xxx.xxx&amp;quot;) //修改数据 $http.put(&amp;quot;xxx.xxx.xxx&amp;quot;) //删除数据 $http.delete(&amp;quot;xxx.xxx.xxx&amp;quot;)  小结: 在SPA应用里,POST并没有跟GET上有所谓安全性的差异.我们应该使用更加适合的请求方式,来发送以及请求数据.</description>
+    </item>
+    
+    <item>
+      <title>关于我在工作中项目调试的方法</title>
+      <link>https://alili.tech/archive/cb56039f/</link>
+      <pubDate>Wed, 04 Jan 2017 11:46:35 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/cb56039f/</guid>
+      <description>移动端调试 想要在pc上调试移动端页面,需要做下面几个步骤
+PC 1.下载 微信web开发者工具;
+2.打开微信开发者工具,选择移动调试
+3.选择一个请求,把cookie复制出来
+4.在电脑chrome打开开发者工具,切换到console输入以下代码 (用于鉴权)
+ document.cookie=&amp;quot;你刚刚复制的cookie&amp;quot;  5.如果是微信页面,需要用chrome模拟微信浏览器的 user-agent,教程如下:
+模拟UA实现访问只能在微信上打开的网页
+如果觉得麻烦,可以直接使用微信开发者工具自带的浏览器打开微信页面,里面的user agent,默认是为心里的
+做完以上步骤,你就可以正常在电脑上打开移动页面,或者微信网页了
+微信开发者模式 如果你的微信帐号被添加到了公众号web开发者名列. 你可以在微信web开发者工具 直接输入最原始的链接地址,便可以在电脑上调试了.(因为后台需要跳转好几次,来拿到cookie.最终微信复制出来的地址,是拿不到数据的)
+该方法,要把代码部署到服务器上,才可以调试.目前项目的自动化做得还算方便.只要 grunt $build,代码就会自动部署到服务器.
+如果想在本地开发环境,直接调试.只要拿到cookie,就可以解决所有问题.
+微信web开发者工具的调试器与chrome一致,所以复制出cookie也是很方便的了.接下来,参照以上PC的调试方法.
+mac 如果你用mac 并且有iphone,可以使用以下方法
+使用safari对webview进行调试
+注:无视教程第三步,也不需要xcode.只要是webview 都可以直接调试</description>
+    </item>
+    
+    <item>
+      <title>我也写一个Canvas惊悚的粒子效果</title>
+      <link>https://alili.tech/archive/95852f7d/</link>
+      <pubDate>Sun, 04 Sep 2016 11:46:35 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/95852f7d/</guid>
+      <description>预览: Canvas简单粒子效果预览
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Canvas简单粒子效果预览&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;canvas id=&amp;quot;dotCanvas&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt; &amp;lt;script&amp;gt; (function () { //创建canvas对象 var domConvas = document.getElementById(&amp;quot;dotCanvas&amp;quot;); var oCanvas = domConvas.getContext(&amp;quot;2d&amp;quot;); var winWidth = document.documentElement.clientWidth; var winHeight = document.documentElement.clientHeight; //设置宽高 domConvas.width = winWidth; domConvas.height = winHeight; //初始化点,并且随机给出每一个点的位置与速度 var dots = []; for (var i = 0; i &amp;lt; 300; i++) { dots.</description>
+    </item>
+    
+    <item>
+      <title>Javascript的运算符优先级</title>
+      <link>https://alili.tech/archive/6e692504/</link>
+      <pubDate>Thu, 25 Aug 2016 11:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/6e692504/</guid>
+      <description>JavaScript 运算符 下表列出了 JavaScript 运算符，并按优先级顺序从高到低排列。 具有相同优先级的运算符按从左至右的顺序计算
+运算符 | 说明 &amp;ndash;|&amp;ndash; .[ ] ( )|字段访问、数组索引、函数调用和表达式分组 ++ &amp;ndash; - ~ ! delete new typeof void|一元运算符、返回数据类型、对象创建、未定义的值 * / %|相乘、相除、求余数 + - +|相加、相减、字符串串联 &amp;lt;&amp;lt; &amp;gt;&amp;gt; &amp;gt;&amp;gt;&amp;gt;|移位 &amp;lt; &amp;lt;= &amp;gt; &amp;gt;= instanceof|小于、小于或等于、大于、大于或等于、是否为特定类的实例 == != === !==|相等、不相等、全等，不全等 &amp;amp; |按位“与” ^|按位“异或” &amp;#124; | 按位“或” &amp;amp;&amp;amp; |逻辑“与” &amp;#124;&amp;#124; | 逻辑“或” ?: |条件运算 = OP=|赋值、赋值运算（如 += 和 &amp;amp;=） , |多个计算</description>
+    </item>
+    
+    <item>
+      <title>关于HTML5 History API</title>
+      <link>https://alili.tech/archive/e8e7fab1/</link>
+      <pubDate>Mon, 06 Jun 2016 23:52:35 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/e8e7fab1/</guid>
+      <description>关于HTML5 History API
+html5加强了history, 在spa页面里面,有两种方法可以修改了网址页面不用刷新, 1. 修改页面的hash值, 2. 利用html5加强后了的pushState
+先说所有浏览器都可以使用hash hash 就是我们以前所说的锚点 我们对他并不陌生, 我们可以通过
+location.hash=&amp;quot;212345&amp;quot;  就可以设置网址的hash值,下面是表现形式:
+ www.xxx.com#212345
+ 在html里利用a标签也是可以修改hash的
+&amp;lt;a href=&amp;quot;#123456&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;  当我们修改hash的时候,我们会触发一个事件:
+window.onhashchange = function(){ //do something }  hash暂且说到这里,下面我们说 pushState
+pushState 是history下面的方法
+所以我们调用的时候是:
+history.pushState()  pushState系列 一共有两个方法,一个事件
+history.pushState(state, title, url); history.replaceState(state, title, url); window.onpopstate  pushState pushState一共有三个参数,
+state: 可以放任意你想放的数据，它将附加到新url上，作为该页面信息的一个补充。
+title: 顾名思义，就是document.title。不过这个参数目前并无作用，浏览器目前会选择忽略它。
+url: 新url，也就是你要显示在地址栏上的url。
+pushState 运行之后,可以记录history
+replaceState 也三个参数,作用跟上面是一样的
+唯一的不同点是不会记录history
+window.onpopstate history.pushState()不会触发这个事件 history.replaceState()也不会触发这个事件,
+当页面前进回退的时候会触发这个事件
+事件可以拿到PopStateEvent对象,可以获取到很多关于state的信息</description>
+    </item>
+    
+    <item>
+      <title>Javascript的奇淫技巧</title>
+      <link>https://alili.tech/archive/7807a0b7/</link>
+      <pubDate>Wed, 25 May 2016 11:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/7807a0b7/</guid>
+      <description>类型转换 数组转字符串 var arr = [1,2,3,4,5,6]; var str = arr+&#39;&#39;; //1,2,3,4,5,6  字符串转数字 var str = &#39;999&#39;; var num = str * 1; //999 var str = &#39;999&#39;; var num = str - 0; //999  字符串转数字 var str = &#39;999&#39;; var num = str * 1; // 999  向下取整 var num = ~~1.23232656; // 1 var num = 563.933333 &amp;gt;&amp;gt; 0; // 563  boolean 转换 var bool = !</description>
+    </item>
+    
+    <item>
+      <title>浏览器常用的本地储存方式</title>
+      <link>https://alili.tech/archive/884e3459/</link>
+      <pubDate>Fri, 29 Apr 2016 17:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/884e3459/</guid>
+      <description>日常开发中,难免会遇到一些要求浏览器储存一些数据的需求.目前常用的储存方法有:
+cookie cookie设计之初,本身不是用来储存数据.而是区别http请求. 所以每一次http请求,都会带上cookie.如果cookie储存的量实在过大,肯定会造成http的性能问题.
+// 设置cookie(储存数据) function setcookie(name,value,expired,path,domain){ var now=new Date(); if(name==null){ throw &amp;quot;Cookie Name Must not be Null&amp;quot;; }else if (value==null){ throw &amp;quot;Cookie Value Must not be Null&amp;quot;; }else if(expired==null){ expired=0; } if(path==null){ path=&amp;quot;/&amp;quot;; } if(domain==null){ domain=window.location.host; } now.setTime(now.getTime()+expired*1000); document.cookie=name+&amp;quot;=&amp;quot;+escape(value)+&amp;quot;;expires=&amp;quot;+now.toGMTString()+&amp;quot;;path=&amp;quot;+path+&amp;quot;;domain=&amp;quot;+domain; } // 读取cookie(读取数据) function getcookie(name){ var allcookie=document.cookie; thiscookie=allcookie.match(name+&amp;quot;=[^\\s]*&amp;quot;); mycookie=thiscookie[0].split(&amp;quot;=&amp;quot;); a=mycookie[1].substring(0,mycookie[1].length-1); return unescape(a); }  localStorage 相对cookie的读取操作,localStorage会简单非常多. 另外localStorage每一次更新,都会触发一次onstorage事件
+localStorage.xxx=&amp;quot;alili.tech&amp;quot;; localStorage[&#39;xxx&#39;]=&amp;quot;alili.tech&amp;quot;; localStorage.setItem(&amp;quot;xxx&amp;quot;,&amp;quot;alili.tech&amp;quot;); //获取 localStorage.xxx; localStorage[&#39;xxx&#39;]; localStorage.getItem(&amp;quot;xxx&amp;quot;); //删除 localStorage.removeItem(&amp;quot;xxx&amp;quot;); //清空locaStorage localStorage.clear(); //onstorage事件 window.</description>
+    </item>
+    
+  </channel>
+</rss>

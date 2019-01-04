@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Slides on Alili</title>
+    <link>https://alili.tech/tags/slides/</link>
+    <description>Recent content in Slides on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 13 Dec 2018 21:32:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/slides/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>记2018年最后一次前端分享(提供Slides)</title>
+      <link>https://alili.tech/archive/unui11c01ml/</link>
+      <pubDate>Thu, 13 Dec 2018 21:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/unui11c01ml/</guid>
+      <description>   $(function(){ let str = &#34;&#34; for(var i = 2;i=10){ count = &#34;0&#34;+ i; } str = str + &#39;&#39; } $(&#39;.imageBox&#39;).html(str) var images = document.querySelectorAll(&#34;.lazyload&#34;); lazyload(images); })   </description>
+    </item>
+    
+  </channel>
+</rss>

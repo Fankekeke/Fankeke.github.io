@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="zh"><head><meta name="generator" content="Hugo 0.51"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="HandheldFriendly" content="True"><meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta name="wap-font-scale" content="no"><meta name="360-site-verification" content="0903ba33c82867d1f7bd8831e32a7e34"><meta name="sogou_site_verification" content="E8uWFBcf4a"><meta name="author" content="Fan"><meta name="description" itemprop="description" content="在code review的时候,代码风格是其中审查的指标之一.在审查代码风格其实是有一定工作量的.
+为了减少代码审查的工作量,我们何不把代码风格在提交代码之前就规范掉?
+这样我们就可以在代码审查中节约出很多时间,来做更多的其他更有意义的事情.
+git hooks 在git中提供了hook,就是在触发代码提交,push等一系列操作的时候,提供了触发其他程序的钩子.
+如何操作,本文不多赘述.
+有兴趣的"><meta name="keywords" content="Alili, 前端大爆炸, WEB BANG BANG BANG, web前端博客, 前端模块化, 前端工程化, 前端数据监控, 性能优化, 网页制作, 前端, js, html5, css, 踩坑小报告, 微前端, 树莓派, 前端开发, 区块链, 网络, Mongodb, Vue.js, Angular.js, node.js"><meta property="og:locale" content="en_US"><meta property="og:title" content="使用husky提升Code Review的效率"><meta property="og:image" content="https://alili.tech/images/logo2.png"><meta property="og:description" content="在code review的时候,代码风格是其中审查的指标之一.在审查代码风格其实是有一定工作量的.
+为了减少代码审查的工作量,我们何不把代码风格在提交代码之前就规范掉?
+这样我们就可以在代码审查中节约出很多时间,来做更多的其他更有意义的事情.
+git hooks 在git中提供了hook,就是在触发代码提交,push等一系列操作的时候,提供了触发其他程序的钩子.
+如何操作,本文不多赘述.
+有兴趣的"><meta property="og:site_name" content="Alili"><title>使用husky提升Code Review的效率 | 前端大爆炸! - WEB BANG! BANG!! BANG!!!</title><link rel="shortcut icon" href="https://alili.tech/images/favicon.ico"><link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="https://alili.tech/lib/font-awesome/css/font-awesome.min.css"><link rel="stylesheet" href="https://alili.tech/lib/justified-gallery/justifiedGallery.min.css"><link rel="stylesheet" href="https://alili.tech/css/style.css"><script src="https://alili.tech/lib/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://alili.tech/lib/jquery/jquery.min.js"></script><script>document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);</script><script type="application/ld+json">{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https://alili.tech/archive/i9t0x2tvleo/",
+				"appid": "1613049289050283", 
+				"title": "使用husky提升Code Review的效率 | 前端大爆炸! - WEB BANG! BANG!! BANG!!!", 
+				"images": [],
+				"pubDate": "2018-12-04T00:00:00"
+			}</script></head><body><div id="header-post"><a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a> <span id="menu"><span id="nav"><ul><li><a href="/">Home</a></li><li><a href="/archive/">Archives</a></li><li><a href="/about/">About</a></li><li><a href="http://github.com/Fantasy9527" target="_blank">Github</a></li></ul></span><br><span id="actions"><ul><li><a class="icon" href="https://alili.tech/archive/2v0tq4tlwiy/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li><li><a class="icon" href="https://alili.tech/archive/9owegk001xd/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li><li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li><li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li></ul><span id="i-prev" class="info" style="display:none;">Previous post</span> <span id="i-next" class="info" style="display:none;">Next post</span> <span id="i-top" class="info" style="display:none;">Back to top</span> <span id="i-share" class="info" style="display:none;">Share post</span></span><br><div id="share" style="display: none"><ul><li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2falili.tech%2farchive%2fi9t0x2tvleo%2f&text=%e4%bd%bf%e7%94%a8husky%e6%8f%90%e5%8d%87Code%20Review%e7%9a%84%e6%95%88%e7%8e%87"><i class="fa fa-weibo" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2falili.tech%2farchive%2fi9t0x2tvleo%2f"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2falili.tech%2farchive%2fi9t0x2tvleo%2f&text=%e4%bd%bf%e7%94%a8husky%e6%8f%90%e5%8d%87Code%20Review%e7%9a%84%e6%95%88%e7%8e%87"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2falili.tech%2farchive%2fi9t0x2tvleo%2f&title=%e4%bd%bf%e7%94%a8husky%e6%8f%90%e5%8d%87Code%20Review%e7%9a%84%e6%95%88%e7%8e%87"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li><li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2falili.tech%2farchive%2fi9t0x2tvleo%2f&is_video=false&description=%e4%bd%bf%e7%94%a8husky%e6%8f%90%e5%8d%87Code%20Review%e7%9a%84%e6%95%88%e7%8e%87"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li><li><a class="icon" href="mailto:?subject=%e4%bd%bf%e7%94%a8husky%e6%8f%90%e5%8d%87Code%20Review%e7%9a%84%e6%95%88%e7%8e%87&body=Check out this article: https%3a%2f%2falili.tech%2farchive%2fi9t0x2tvleo%2f"><i class="fa fa-envelope" aria-hidden="true"></i></a></li><li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2falili.tech%2farchive%2fi9t0x2tvleo%2f&title=%e4%bd%bf%e7%94%a8husky%e6%8f%90%e5%8d%87Code%20Review%e7%9a%84%e6%95%88%e7%8e%87"><i class="fa fa-get-pocket" aria-hidden="true"></i></a></li><li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2falili.tech%2farchive%2fi9t0x2tvleo%2f&title=%e4%bd%bf%e7%94%a8husky%e6%8f%90%e5%8d%87Code%20Review%e7%9a%84%e6%95%88%e7%8e%87"><i class="fa fa-reddit" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2falili.tech%2farchive%2fi9t0x2tvleo%2f&title=%e4%bd%bf%e7%94%a8husky%e6%8f%90%e5%8d%87Code%20Review%e7%9a%84%e6%95%88%e7%8e%87"><i class="fa fa-stumbleupon" aria-hidden="true"></i></a></li><li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2falili.tech%2farchive%2fi9t0x2tvleo%2f&title=%e4%bd%bf%e7%94%a8husky%e6%8f%90%e5%8d%87Code%20Review%e7%9a%84%e6%95%88%e7%8e%87"><i class="fa fa-digg" aria-hidden="true"></i></a></li></ul></div><div id="toc"><nav id="TableOfContents"><ul><li><a href="#git-hooks">git hooks</a></li><li><a href="#husky">husky</a><ul><li><ul><li><a href="#安装">安装</a></li></ul></li></ul></li><li><a href="#lint-staged">lint-staged</a><ul><li><ul><li><a href="#安装-1">安装</a></li><li><a href="#修改-package-json-配置">修改 package.json 配置：</a></li></ul></li><li><a href="#在lint-staged执行前执行更多的自定义命令">在lint-staged执行前执行更多的自定义命令</a><ul><li><a href="#修改-package-json-配置-1">修改 package.json 配置：</a></li></ul></li></ul></li></ul></nav></div></span></div><div class="content index width mx-auto px3 my3"><section id="wrapper" class="home"><article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header><h1 class="posttitle" itemprop="name headline">使用husky提升Code Review的效率</h1><div class="meta"><div class="postdate"><time datetime="2018-12-04" itemprop="datePublished">2018-12-04</time></div><div class="article-tag"><i class="fa fa-eye"></i> <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span></span></div><div class="article-tag"><i class="fa fa-tag"></i> <a href="/tags/code-review">Code Review</a></div><div class="article-tag-box"></div></div></header><div class="content" itemprop="articleBody"><p>在code review的时候,代码风格是其中审查的指标之一.在审查代码风格其实是有一定工作量的.</p><p>为了减少代码审查的工作量,我们何不把代码风格在提交代码之前就规范掉?</p><p>这样我们就可以在代码审查中节约出很多时间,来做更多的其他更有意义的事情.</p><h1 id="git-hooks">git hooks</h1><p>在git中提供了hook,就是在触发<code>代码提交</code>,<code>push</code>等一系列操作的时候,提供了触发其他程序的钩子.</p><p>如何操作,本文不多赘述.</p><p>有兴趣的同学可以查看文档: <a href="https://git-scm.com/docs/githooks">https://git-scm.com/docs/githooks</a></p><h1 id="husky">husky</h1><p>如果看过githooks的文档,是不是觉得会有一点繁琐?</p><p>这里介绍一个工具 <code>husky</code> 可以解决你的问题.</p><h3 id="安装">安装</h3><pre><code class="language-bash">npm install husky --save-dev
+</code></pre><p>然后修改 package.json，增加配置：</p><pre><code class="language-json">{
+  &quot;husky&quot;: {
+    &quot;hooks&quot;: {
+      &quot;pre-commit&quot;: &quot;eslint .&quot;
+    }
+  },
+}
+</code></pre><p>如果你只是局部安装了 <code>eslint</code>,请使用以下配置</p><pre><code class="language-json">{
+    &quot;lint-staged&quot;: {
+    &quot;src/**/*.js&quot;: [
+      &quot;node_modules/.bin/eslint&quot;
+    ]
+  },
+}
+</code></pre><p>最后尝试 Git 提交，你就会很快收到反馈：</p><pre><code class="language-bash">git commit -m &quot;this is a commit&quot;
+</code></pre><p>这样,我们就可以在代码提交之前验证一下我们的代码lint是否通过.</p><p>对于一些以前从来没有用过eslint的项目来说.突然引入这种工具.</p><p>你可能面临的是把所有文件都按照eslint都格式化一遍.那不是疯了吗?</p><h1 id="lint-staged">lint-staged</h1><p>这里再安利一个工具,可以实现 eslint只检查本次提交的文件. 这样我们就可以做到渐进式的改善我们的代码质量.</p><h3 id="安装-1">安装</h3><pre><code class="language-bash">npm install lint-staged --save-dev
+</code></pre><h3 id="修改-package-json-配置">修改 package.json 配置：</h3><pre><code class="language-json">{
+  &quot;husky&quot;: {
+    &quot;hooks&quot;: {
+      &quot;pre-commit&quot;: &quot;lint-staged&quot;
+    }
+  },
+  &quot;lint-staged&quot;: {
+    &quot;src/**/*.js&quot;: &quot;eslint&quot;
+  }
+}
+</code></pre><h2 id="在lint-staged执行前执行更多的自定义命令">在lint-staged执行前执行更多的自定义命令</h2><p>这一点让我非常的喜欢,为我们提供了更多的自由度.</p><h3 id="修改-package-json-配置-1">修改 package.json 配置：</h3><pre><code class="language-json">{
+  &quot;scripts&quot;: {
+    &quot;precommit&quot;: &quot;lint-staged&quot;
+  },
+  &quot;lint-staged&quot;: {
+    &quot;src/**/*.js&quot;: [&quot;eslint --fix&quot;, &quot;git add&quot;]
+  }
+}
+</code></pre><p>完美,一切都看起来是那么的美好~</p><h2>本文链接：</h2><a href="https://alili.tech/archive/i9t0x2tvleo/" target="_blank">https://alili.tech/archive/i9t0x2tvleo/</a></div></article><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><div class="blog-post-comments"></div><script>new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'ItyOVb4I33bTwprf3cY6uqMc-gzGzoHsz', 
+        app_key: 'hLhtmd4tT0qJbyO2SgQ8odya', 
+        placeholder: '说点什么?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });</script></section></div><footer id="footer"><div class="footer-left">Copyright © 2019 Fan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">浙ICP备18045521号</a></div><div class="footer-right"><nav><ul><li><a href="/">Home</a></li><li><a href="/archive/">Archives</a></li><li><a href="/about/">About</a></li><li><a href="http://github.com/Fantasy9527" target="_blank">Github</a></li></ul></nav></div></footer><script src="https://alili.tech/lib/justified-gallery/jquery.justifiedGallery.min.js"></script><script src="https://alili.tech/lib/typed.js"></script><script src="https://alili.tech/js/main.js"></script><script async src=""></script><script>(function(){
+  if(location.host!=='alili.tech')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()</script><script>(function(){
+    if(location.host!=='alili.tech')return;
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }</script></body></html>

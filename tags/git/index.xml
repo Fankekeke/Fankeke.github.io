@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Alili</title>
+    <link>https://alili.tech/tags/git/</link>
+    <description>Recent content in Git on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 30 Oct 2018 19:33:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git删除所有提交记录解决方案</title>
+      <link>https://alili.tech/archive/ed854758/</link>
+      <pubDate>Tue, 30 Oct 2018 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/ed854758/</guid>
+      <description>如果你之前的项目提交了一些敏感数据,或者要清除以前提交的记录,给出下面解决方案.
+# 1. 检出一个新的分支 git checkout --orphan latest_branch # 2. 暂存所有文件 git add -A # 3. 提交刚刚暂存的文件 git commit -am &amp;quot;commit message&amp;quot; # 4. 删除最原始的分支 git branch -D master # 5. 重命名当的第分支 git branch -m master # 6. 提交你的记录到远程仓库 git push -f origin master  </description>
+    </item>
+    
+    <item>
+      <title>Git push卡住解决办法</title>
+      <link>https://alili.tech/archive/629795fd/</link>
+      <pubDate>Mon, 09 Apr 2018 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/629795fd/</guid>
+      <description>博客的每天英语是直接爬的扇贝英语,为了不直接请求代理接口(会相对比较慢). 所以每天我的程序每天会生成相应的数据文件,前端直接ajax获取就好了. 博客内容也会每天自动发布,达到每天更新名言名句的效果. 好久没管,发现很多git提交的内容没有push.手动直接push之后发现有800多个修改地方没有push.
+手动push的时候直接卡住了. 就像这样:
+[master 9447645] 1 file changed, 1 insertion(+) Counting objects: 20, done. Compressing objects: 100% (876/876), done. Writing objects: 100% (876/876)  网上找了个方法,解决了这个问题: 添加sendpack.sideband属性并置为false
+# 全局的： git config –global sendpack.sideband false # 仓库的： git config –local sendpack.sideband false  我只在我的本地仓库设置一下,然后再执行 git push就成功了</description>
+    </item>
+    
+    <item>
+      <title>Git系列之关于add命令的一些事</title>
+      <link>https://alili.tech/archive/638cc3cd/</link>
+      <pubDate>Sun, 10 Sep 2017 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/638cc3cd/</guid>
+      <description> 基本用法 通常是通过git add 的形式把添加到索引库中，
+可以是文件也可以是目录:
+git add &amp;lt;path&amp;gt;  如果有很多改动,可以用以下命令来一次添加所有改变的文件:
+ git add -A .  将所有修改添加到暂存区,包括添加新文件和编辑过的文件不包括删除的文件:
+$ git add .  表示添加所有内容:
+git add -A  表示添加编辑或者删除的文件，不包括新添加的文件:
+git add -u  如果不小心执行了以下命令:
+git add * -f(force) //添加被忽略的文件。  可以吃一个后悔药:
+git reset HEAD  </description>
+    </item>
+    
+  </channel>
+</rss>

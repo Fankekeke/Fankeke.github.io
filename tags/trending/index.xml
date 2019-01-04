@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trending on Alili</title>
+    <link>https://alili.tech/tags/trending/</link>
+    <description>Recent content in Trending on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/trending/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2018年12月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/zm2u9iewb9d/</link>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/zm2u9iewb9d/</guid>
+      <description>GitSquared / edex-ui : 5,808 stars this month
+A science fiction terminal emulator designed for large touchscreens that runs on all major OSs.
+vuejs / vue : 3,471 stars this month
+🖖 A progressive, incrementally-adoptable JavaScript framework for building UI on the web.
+leonardomso / 33-js-concepts : 3,471 stars this month
+📜 33 concepts every JavaScript developer should know.
+tensorspace-team / tensorspace : 3,205 stars this month
+Neural network 3D visualization framework, build interactive and intuitive model in browsers, support pre-trained deep learning models from TensorFlow, Keras, TensorFlow.</description>
+    </item>
+    
+    <item>
+      <title>2018年11月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/e57d7fd7/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/e57d7fd7/</guid>
+      <description>leonardomso / 33-js-concepts : 18,540 stars this month
+📜 33 concepts every JavaScript developer should know.
+GoogleChromeLabs / carlo : 6,053 stars this month
+Web rendering surface for Node applications
+stephentian / 33-js-concepts : 5,258 stars this month
+📜 每个 JavaScript 工程师都应懂的33个概念 @leonardomso
+30-seconds / 30-seconds-of-code : 3,785 stars this month
+Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
+Tencent / omi : 3,734 stars this month</description>
+    </item>
+    
+    <item>
+      <title>2018年09月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/f2c7a3e5/</link>
+      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/f2c7a3e5/</guid>
+      <description>felixrieseberg / windows95 : 11,905 stars this month
+💩🚀 Windows 95 in Electron. Runs on macOS, Linux, and Windows.
+trekhleb / javascript-algorithms : 3,745 stars this month
+Algorithms and data structures implemented in JavaScript with explanations and links to further readings
+antvis / f2 : 3,915 stars this month
+📱📈An elegant, interactive and flexible charting library for mobile.
+vuejs / vue : 3,579 stars this month
+🖖 A progressive, incrementally-adoptable JavaScript framework for building UI on the web.</description>
+    </item>
+    
+    <item>
+      <title>2018年08月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/c4353316/</link>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/c4353316/</guid>
+      <description>felixrieseberg / windows95 : 10,485 stars this month
+💩🚀 Windows 95 in Electron. Runs on macOS, Linux, and Windows.
+trekhleb / javascript-algorithms : 5,249 stars this month
+Algorithms and data structures implemented in JavaScript with explanations and links to further readings
+klauscfhq / taskbook : 4,754 stars this month
+📓 Tasks, boards &amp;amp; notes for the command-line habitat
+vuejs / vue : 3,740 stars this month
+🖖 A progressive, incrementally-adoptable JavaScript framework for building UI on the web.</description>
+    </item>
+    
+    <item>
+      <title>2018年07月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/280d4016/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/280d4016/</guid>
+      <description>vuejs / vue : 10,466 stars this month
+🖖 A progressive, incrementally-adoptable JavaScript framework for building UI on the web.
+facebook / react : 8,581 stars this month
+A declarative, efficient, and flexible JavaScript library for building user interfaces.
+trekhleb / javascript-algorithms : 5,758 stars this month
+Algorithms and data structures implemented in JavaScript with explanations and links to further readings
+Netflix / pollyjs : 5,719 stars this month</description>
+    </item>
+    
+    <item>
+      <title>2018年06月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/1effd0e5/</link>
+      <pubDate>Fri, 08 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/1effd0e5/</guid>
+      <description>trekhleb / javascript-algorithms : 20,629 stars this month
+Algorithms and data structures implemented in JavaScript with explanations and links to further readings
+klauscfhq / signale : 5,210 stars this month
+👋 Hackable console logger
+wiredjs / wired-elements : 4,991 stars this month
+Collection of elements that appear hand drawn. Great for wireframes.
+vuejs / vue : 3,987 stars this month
+🖖 A progressive, incrementally-adoptable JavaScript framework for building UI on the web.</description>
+    </item>
+    
+    <item>
+      <title>2018年05月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/45e861f0/</link>
+      <pubDate>Tue, 08 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/45e861f0/</guid>
+      <description>xx45 / dayjs : 7,739 stars this month
+⏰Fast 2KB immutable date library alternative to Moment.js with the same modern API
+vuejs / vuepress : 6,363 stars this month
+📝 Minimalistic Vue-powered static site generator
+RelaxedJS / ReLaXed : 4,305 stars this month
+Create PDF documents using web technologies
+vuejs / vue : 3,964 stars this month
+🖖 A progressive, incrementally-adoptable JavaScript framework for building UI on the web.</description>
+    </item>
+    
+    <item>
+      <title>2018年04月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/731af103/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/731af103/</guid>
+      <description>Meituan-Dianping / mpvue : 7,052 stars this month
+基于 Vue.js 的小程序开发框架，从底层支持 Vue.js 语法和构建工具体系。
+kamranahmedse / driver.js : 7,035 stars this month
+A light-weight, no-dependency, vanilla JavaScript engine to drive the user&amp;rsquo;s focus across the page
+tensorflow / tfjs : 5,005 stars this month
+A WebGL accelerated, browser based JavaScript library for training and deploying ML models.
+vuejs / vue : 4,280 stars this month
+🖖 A progressive, incrementally-adoptable JavaScript framework for building UI on the web.</description>
+    </item>
+    
+    <item>
+      <title>2018年03月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/f3c703da/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/f3c703da/</guid>
+      <description>yangshun / front-end-interview-handbook : 10,617 stars this month
+🕸 Almost complete answers to &amp;ldquo;Front-end Job Interview Questions&amp;rdquo; which you can use to interview potential candidates, test yourself or completely ignore
+chaozh / awesome-blockchain-cn : 5,626 stars this month
+收集所有区块链(BlockChain)技术开发相关资料，包括Fabric和Ethereum开发资料
+automerge / automerge : 2,096 stars this month
+A JSON-like data structure that can be modified concurrently by different users, and merged again automatically.
+octref / polacode : 3,811 stars this month</description>
+    </item>
+    
+    <item>
+      <title>2018年02月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/c5359329/</link>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/c5359329/</guid>
+      <description>yangshun / front-end-interview-handbook : 7,459 stars this month
+🕸 Almost complete answers to &amp;ldquo;Front-end Job Interview Questions&amp;rdquo; which you can use to interview potential candidates, test yourself or completely ignore
+automerge / automerge : 4,434 stars this month
+A JSON-like data structure that can be modified concurrently by different users, and merged again automatically.
+dawnlabs / carbon : 4,728 stars this month
+🎨 Create and share beautiful images of your source code</description>
+    </item>
+    
+    <item>
+      <title>2017年12月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/408ec5a5/</link>
+      <pubDate>Fri, 08 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/408ec5a5/</guid>
+      <description>thedaviddias / Front-End-Checklist : 7,455 stars this month
+🗂 The perfect Front-End Checklist for modern websites and meticulous developers
+parcel-bundler / parcel : 5,488 stars this month
+📦🚀 Blazing fast, zero configuration web application bundler
+moment / luxon : 4,510 stars this month
+⏱ A library for working with dates and times in JS
+vuejs / vue : 3,332 stars this month
+A progressive, incrementally-adoptable JavaScript framework for building UI on the web.</description>
+    </item>
+    
+    <item>
+      <title>2017年11月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/1b9974b0/</link>
+      <pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/1b9974b0/</guid>
+      <description>frappe / charts : 6,574 stars this month
+Simple, responsive, modern SVG Charts with zero dependencies: https://frappe.github.io/charts
+vuejs / vue : 4,033 stars this month
+A progressive, incrementally-adoptable JavaScript framework for building UI on the web.
+facebook / react : 3,110 stars this month
+A declarative, efficient, and flexible JavaScript library for building user interfaces.
+GoogleChrome / puppeteer : 3,267 stars this month
+Headless Chrome Node API
+ant-design / ant-design-pro : 3,147 stars this month</description>
+    </item>
+    
+    <item>
+      <title>2017年09月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/53fea45f/</link>
+      <pubDate>Fri, 08 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/53fea45f/</guid>
+      <description>GoogleChrome / puppeteer : 12,857 stars this month
+Headless Chrome Node API
+vuejs / vue : 3,633 stars this month
+A progressive, incrementally-adoptable JavaScript framework for building UI on the web.
+denysdovhan / wtfjs : 3,387 stars this month
+A list of funny and tricky JavaScript examples
+mikeal / r2 : 3,105 stars this month
+HTTP client. Spiritual successor to request.
+colebemis / feather : 2,970 stars this month</description>
+    </item>
+    
+    <item>
+      <title>2017年08月Github Javascript开源项目精选</title>
+      <link>https://alili.tech/archive/650c34ac/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/650c34ac/</guid>
+      <description>denysdovhan / wtfjs : 6,613 stars this month
+A list of funny and tricky JavaScript examples
+toddmotto / public-apis : 6,326 stars this month
+A collective list of public JSON APIs for use in web development.
+jaredreich / pell : 6,202 stars this month
+📝 the simplest and smallest (1kB) WYSIWYG text editor for web, with no dependencies
+wearehive / project-guidelines : 5,102 stars this month
+A set of best practices for JavaScript projects</description>
+    </item>
+    
+  </channel>
+</rss>

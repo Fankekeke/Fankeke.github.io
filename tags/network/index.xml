@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on Alili</title>
+    <link>https://alili.tech/tags/network/</link>
+    <description>Recent content in Network on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 12 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>利用ngrok给你的机器打个洞 - 内网穿透</title>
+      <link>https://alili.tech/archive/df8d5e8d/</link>
+      <pubDate>Wed, 12 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/df8d5e8d/</guid>
+      <description>我有很多自己的个人代码是跑在家里的服务器中的.一般来说都是自动化的处理我的一些生活问题,与数据收集等相关活动. 所以一般没有客户端访问家里服务器的需求. 但是很多时候脑子突发奇想.有一些小点子,一些小的bug或者小的优化,代码修改完成之后,有一个部署到需求. 因为家里服务器没有一个稳定的外网IP的,外网不能直接连接服务器. 所以我们需要 内网穿透.
+内网穿透 家里用的是小米路由器,小米路由器里面集成了花生壳,理论上是可以做到内网穿透的.无奈的是,一直都没有配置成功过.
+网上找过很多内网穿透的工具: * 花生壳 * NAT * frp * ngrok * localtunnel
+ngrok 选择ngrok的原因很简单,配置方便,并且支持tcp协议. 支持tcp协议代表,我可以直接在外面用SSH来访问家里的机器.
+用法  首先你需要去官网注册一个账号 下载ngrok,并且解压到一个你喜欢的目录下面 去官网复制你的授权码 授权ngrok  ngrok authtoken 授权码  http ngrok http 8080  tcp ngrok tcp 22  最终你会得到,一个外网可以访问的地址. 用这个地址就可以直接访问到你本机的端口了.
+当我们拥有这样一个公网地址之后,我们就可以ssh来控制家里的机器 或者使用github的webhook来做一切你想要做的事情.</description>
+    </item>
+    
+    <item>
+      <title>Network笔记整理 - 网络协议与网络分层</title>
+      <link>https://alili.tech/archive/ef96a5b6/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/ef96a5b6/</guid>
+      <description>《圣经》中有一个通天塔的故事,上帝为了阻止人类联合起来，就让人类说不同的语言。人类没法儿沟通，达不成“协议”，通天塔的计划就失败了。
+千年之后,一群工程师为了解决这一问题,制定了各种协议与标准,让各种设备可以通过协议通信,进而通过互联网实现了让世界互联.
+就像我们现在写的代码,用着通用的程序语言,世界也就随之打通了.我们的计算机语言也算是一种协议.
+想要让世界互联,让计算机们都联合起来,就必须要用到网络协议让他们相互协作,来完成共同的目标.
+协议三要素 (1) 语义。每一段内容需要代表某种意义 (2) 语法。每一段内容符合一定规则的格式, (3) 时序。每一段任务的执行顺序.
+网络分层 网络分层就是将网络节点所要完成的数据的发送或转发、打包或拆包，控制信息的加载或拆出等工作，分别由不同的硬件和软件模块去完成。
+简单的来说一个完整的HTTP请求,途中需要经过数次传送,期间需要不通的都软件与硬件模块去完成相应的工作. 我们对相应的阶段的不通特性做出来相应的分类.每种网络分层,都有相应的协议标准做数据传送.
+就像是一家公司,不通层级的人会用着不通的沟通方式来打交道.网络也大概如此.
+我们常用的网络协议有哪些? 我们的网络在通讯过程中,要通过哪些设备,哪些协议才能做到一次完整的通讯?
+网络层次可划分为五层因特网协议栈和七层因特网协议栈
+五层模型 因特网协议栈共有五层：应用层、传输层、网络层、链路层和物理层。不同于OSI七层模型这也是实际使用中使用的分层方式。 （1）应用层 支持网络应用，应用协议仅仅是网络应用的一个组成部分，运行在不同主机上的进程则使用应用层协议进行通信。 （2）传输层 负责为信源和信宿提供应用程序进程间的数据传输服务，这一层上主要定义了两个传输协议，传输控制协议即TCP和用户数据报协议UDP。 （3）网络层 负责将数据报独立地从信源发送到信宿，主要解决路由选择、拥塞控制和网络互联等问题。 （4）数据链路层 负责将IP数据报封装成合适在物理网络上传输的帧格式并传输，或将从物理网络接收到的帧解封，取出IP数据报交给网络层。 （5）物理层 负责将比特流在结点间传输，即负责物理传输。该层的协议既与链路有关也与传输介质有关
+五层模型对应的协议 物理层：以太网 · 调制解调器 · 电力线通信(PLC) · SONET/SDH · G.709 · 光导纤维 · 同轴电缆 · 双绞线等
+数据链路层：Wi-Fi(IEEE 802.11) · WiMAX(IEEE 802.16) ·ATM · DTM · 令牌环 · 以太网 ·FDDI · 帧中继 · GPRS · EVDO ·HSPA · HDLC · PPP · L2TP ·PPTP · ISDN·STP 等</description>
+    </item>
+    
+  </channel>
+</rss>

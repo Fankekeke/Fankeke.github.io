@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on Alili</title>
+    <link>https://alili.tech/tags/mac/</link>
+    <description>Recent content in Mac on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 04 Nov 2018 22:30:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>升级Mac 10.14 mojave后辅助功能空白无法添加问题</title>
+      <link>https://alili.tech/archive/b8bdc73c/</link>
+      <pubDate>Sun, 04 Nov 2018 22:30:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/b8bdc73c/</guid>
+      <description> 最近系统升级到Mac mojave 10.14后发现安全性与隐私中的辅助功能是空白的,而且App无论如何都添加不了。 我的macbook pro正常,但是我的mac mini 出现了该问题.让人很是头疼.
+问题原因 应该是升级导致/Library/Application\ Support/com.apple.TCC损坏或权限异常,出现了问题.
+解决方法 执行下面两行命令后重启系统,就可以恢复正常.
+sudo chmod 777 /Library/Application\ Support/com.apple.TCC sudo rm -rf /Library/Application\ Support/com.apple.TCC/TCC.db # 重启系统  </description>
+    </item>
+    
+    <item>
+      <title>Macbook Pro蓝牙不可用问题</title>
+      <link>https://alili.tech/archive/a8e3f4c2/</link>
+      <pubDate>Sun, 16 Jul 2017 22:30:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/a8e3f4c2/</guid>
+      <description>前两天早上去公司,电脑一开机.发现鼠标不能用了.
+乱鼓捣了一翻,原来电脑蓝牙变成了一个波浪线.显示蓝牙不可用.
+鼓捣了好久,电脑系统也升级到最新版本了.重启好几次,蓝牙还是不可用状态.
+百度了一下,网上也有类似的问题的解决办法.
+1.关机 2.同时按下shift+control+option+power,保持5秒 3.先按下power键，紧接着同时按下option+command+p+r, 等待mac发出4声Duang~的声音后松手，系统就会自动开机 4.蓝牙恢复正常  但是有网友试过之后,是成功的呀.
+我照着这方法,试了好几次,蓝牙还是不可用.但是在电脑的恢复模式,鼠标是可用的.说明蓝牙并没有坏.
+ 最后我把电脑所有连接usb的设备全部拔掉.重新再试了一次.
+ 奇迹发生了,蓝牙恢复正常了.如果有朋友遇到了类似情况,最好跟我一样把所有USB设备拔掉.然后照着上面方法试着弄一次.应该是可以解决问题的.</description>
+    </item>
+    
+    <item>
+      <title>关闭Mac系统的SIP与卸载Mac上的输入法</title>
+      <link>https://alili.tech/archive/760c8e37/</link>
+      <pubDate>Sat, 21 Jan 2017 22:30:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/760c8e37/</guid>
+      <description>mac电脑上,有的多余的输入法,发现竟然删不掉.每次切换输入法的时候总是要多按几次切换.表示极其的不爽.
+首先就是系统默认的输入法.
+关闭 mac 系统的 SIP  重启系统，按住 Command + R 进入恢复模式。
+ 点击顶部菜单栏 实用工具 中的 终端 。
+ 输入以下命令来禁用 SIP 保护机制。
+  csrutil disable   执行后输出以下信息表示禁用成功。
+Successfully disabled System Integrity Protection. Please restart the machine for the changes to take effect.  最后重启系统即可。
+  重新打开 SIP 方法 在恢复模式下的终端输入以下命令
+csrutil enable  卸载系统输入法  安装Xcode或下载“Property List Editor”，因为需要打开(.plist)格式文件
+ 打开“终端”
+ 在“终端”里输入命令
+sudo open ~/Library/Preferences/com.apple.HIToolbox.plist  回车，输入用户账户的密码</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wechat on Alili</title>
+    <link>https://alili.tech/tags/wechat/</link>
+    <description>Recent content in Wechat on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 26 May 2016 11:43:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/wechat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>微信浏览器动态修改Title</title>
+      <link>https://alili.tech/archive/1e2d080b/</link>
+      <pubDate>Thu, 26 May 2016 11:43:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/1e2d080b/</guid>
+      <description>微信浏览器动态修改Title 为什么会有这么一篇文章?之前在做spa页面开发的时候,发现了一件非常匪夷所思的事情.
+下面这段代码在微信浏览器里,是无效的.
+document.title = &amp;quot;我是标题&amp;quot;  标题第一次生成后,就无法在改变.
+不过没有关系,
+下面我们用黑魔法般的代码,来完成微信浏览器里title的修改.
+document.title = &amp;quot;我是标题&amp;quot;; var iframe = document.createElement(&amp;quot;iframe&amp;quot;); iframe.src = &amp;quot;/favicon.ico&amp;quot;; document.body.appendChild(iframe); iframe.onload = function() { setTimeout(function() { document.body.removeChild(iframe); }, 0) }  就是这样,title改变了.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on Alili</title>
+    <link>https://alili.tech/tags/vue/</link>
+    <description>Recent content in Vue on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 25 May 2017 19:33:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>聊聊Vue.js的事件修饰符</title>
+      <link>https://alili.tech/archive/9ca26edd/</link>
+      <pubDate>Thu, 25 May 2017 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/9ca26edd/</guid>
+      <description>事件修饰符 说到vue的事件修饰符,相对angularJs来说,实在是太爽了,大大增加了可读性.
+在日常开发中,经常要调用event.preventDefault 或者event.stopPropagation等方法.
+没有事件修饰符的话,我们会这样写:
+//Angularjs $scope.fn=function(message,event){ if (event) event.preventDefault() alert(message) } }  //vue 也可以这样 methods: { fn: function (message, event) { // 现在我们可以访问原生事件对象 if (event) event.preventDefault() alert(message) } }  在vue中提供了更加方便的写法:
+&amp;lt;!-- 阻止单击事件冒泡 --&amp;gt; &amp;lt;a v-on:click.stop=&amp;quot;doThis&amp;quot;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;!-- 提交事件不再重载页面 --&amp;gt; &amp;lt;form v-on:submit.prevent=&amp;quot;onSubmit&amp;quot;&amp;gt;&amp;lt;/form&amp;gt; &amp;lt;!-- 修饰符可以串联 --&amp;gt; &amp;lt;a v-on:click.stop.prevent=&amp;quot;doThat&amp;quot;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;!-- 只有修饰符 --&amp;gt; &amp;lt;form v-on:submit.prevent&amp;gt;&amp;lt;/form&amp;gt; &amp;lt;!-- 添加事件侦听器时使用事件捕获模式 --&amp;gt; &amp;lt;div v-on:click.capture=&amp;quot;doThis&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 --&amp;gt; &amp;lt;div v-on:click.self=&amp;quot;doThat&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;!-- 点击事件将只会触发一次 --&amp;gt; &amp;lt;a v-on:click.once=&amp;quot;doThis&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;  修饰键 在键盘的事件里,Vue也提供了很方便的处理.</description>
+    </item>
+    
+  </channel>
+</rss>

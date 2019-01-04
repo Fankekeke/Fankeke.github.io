@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Alili</title>
+    <link>https://alili.tech/tags/linux/</link>
+    <description>Recent content in Linux on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 24 Dec 2018 20:32:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos7 如何使用yum升级git到最新版本</title>
+      <link>https://alili.tech/archive/cue4m2rioxl/</link>
+      <pubDate>Mon, 24 Dec 2018 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/cue4m2rioxl/</guid>
+      <description> yum upgrade 并不能升级git到最新版本 在centos7 默认的git版本是1.8.x
+查看本机git版本 git --version git version 1.8.3.1  如果你想使用yum升级到2.0+的版本
+直接yum升级并不会升级到最新版本 yum -y upgrade git git version 1.8.3.1  但是我又不想下载源码包,在本机编译然后输出环境变量那种方式. 还是太麻烦了.
+yum升级git版本到2.0+ Git第三方仓库安装（IUS） # 安装使用里面说的自动化安装脚本 curl https://setup.ius.io | sh yum search git # 删除本机git,安装git2u yum remove -y git | yum -y install git2u # 查看当前版本 git --version # 成功升级 &amp;gt; git version 2.16.4  </description>
+    </item>
+    
+    <item>
+      <title>Linux -  Centos 时区设置</title>
+      <link>https://alili.tech/archive/3f6742b1/</link>
+      <pubDate>Mon, 30 Jul 2018 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/3f6742b1/</guid>
+      <description> timedatectl 命令 查看当前时区状态 $ timedatectl status Local time: Fri 2018-08-31 13:42:42 CST Universal time: Fri 2018-08-31 05:42:42 UTC RTC time: n/a Time zone: Asia/Shanghai (CST, +0800) NTP enabled: n/a NTP synchronized: yes RTC in local TZ: no DST active: n/a  设置时区为上海 $ timedatectl set-timezone Asia/Shanghai # 设置系统时区为上海  其他操作 $ timedatectl list-timezones # 列出所有时区 $ timedatectl set-local-rtc 1 # 将硬件时钟调整为与本地时钟一致, 0 为设置为 UTC 时间  </description>
+    </item>
+    
+    <item>
+      <title>Linux -  SSH连接远程服务器直接执行command时PATH不全解决方案</title>
+      <link>https://alili.tech/archive/a5e195cc/</link>
+      <pubDate>Thu, 15 Mar 2018 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/a5e195cc/</guid>
+      <description>non-interactive mode下PATH不全 ssh username@desktop.domain &amp;lsquo;command&amp;rsquo;这种是典型的non-interactive shell，PATH不全.
+原因 Linux系统中一种常用的判断是否是交互shell的方式就是通过PS1变量，虽然还有其他的方式，不过现在.bashrc中是通过PS1来判断是否为interactive mode。
+# .bashrc文件 # If not running interactively, don&#39;t do anything [ -z &amp;quot;PS1&amp;quot; ] &amp;amp;&amp;amp; return  解决方案 将必要的export PATH的声明，全部移到[ -z &amp;ldquo;PS1&amp;rdquo; ] &amp;amp;&amp;amp; return 之前。保证在non-interactive mode下，PATH的设置也都会生效。</description>
+    </item>
+    
+    <item>
+      <title>Linux - vim vi学习笔记</title>
+      <link>https://alili.tech/archive/7f7747d0/</link>
+      <pubDate>Sat, 17 Feb 2018 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/7f7747d0/</guid>
+      <description>很多时候在mac也好linux也好,因为经常要使用到,但是操作与其他的编辑器差别又很大,所以专门学习一下,在使用的时候也不至于非常多迷惑.在学习中要多练多用才会熟练于心.
+vim/vi 的三种模式  命令模式（Command mode） 输入模式（Insert mode） 底线命令模式（Last line mode）  命令模式（Command mode） 当我们使用vim打开一个文件的时候,会进入命令模式.在命令模式下并不能输入编辑文本. 在命令模式下,可以输入以下切换到其他模式
+切换到输入模式 i  想要会到命令模式需要按一下 esc 按键.
+切换到底线命令模式 :  想要会到命令模式需要按一下 esc 按键.
+具体操作 光标的移动 光标的移动我们可以使用普通的方向键,也可以有vi独有的方式
+   按键 行为     h 或 向左箭头键(←) 光标向左移动一个字符   j 或 向下箭头键(↓) 光标向下移动一个字符   k 或 向上箭头键(↑) 光标向上移动一个字符   l 或 向右箭头键(→) 光标向右移动一个字符    各种输入模式的切换    按键 行为     i, I 进入输入模式(Insert mode)：为『从目前光标所在处输入』， I 为『在目前所在行的第一个非空格符处开始输入』   a A 为『从目前光标所在的下一个字符处开始输入』， A 为『从光标所在行的最后一个字符处开始输入』。(常用)   o, O 进入输入模式(Insert mode) 这是英文字母 o 的大小写。o 为『在目前光标所在的下一行处输入新的一行』； O 为在目前光标所在处的上一行输入新的一行！(常用)   r, R 取代模式: r 只会取代光标所在的那一个字符一次；R会一直取代光标所在的文字，直到按下 ESC 为止；(常用)   [Esc] 退出编辑模式，回到一般模式中(常用)    复制与删除    按键 行为     x, X 在一行字当中，x 为向后删除一个字符 (相当于 [del] 按键)， X 为向前删除一个字符(相当[backspace] 亦即是退格键) (常用)   nx n 为数字，连续向后删除 n 个字符。举例来说，我要连续删除 10 个字符， 『10x』。   dd 删除游标所在的那一整行(常用)   ndd n 为数字。删除光标所在的向下 n 行，例如 20dd 则是删除 20 行 (常用)   d1G 删除光标所在到第一行的所有数据   dG 删除光标所在到最后一行的所有数据   d$ 删除游标所在处，到该行的最后一个字符   d0 那个是数字的 0 ，删除游标所在处，到该行的最前面一个字符   yy 复制游标所在的那一行(常用)   nyy n 为数字。复制光标所在的向下 n 行，例如 20yy 则是复制 20 行(常用)   y1G 复制游标所在行到第一行的所有数据   yG 复制游标所在行到最后一行的所有数据   y0 复制光标所在的那个字符到该行行首的所有数据   y$ 复制光标所在的那个字符到该行行尾的所有数据   p, P p 为将已复制的数据在光标下一行贴上，P 则为贴在游标上一行！ 举例来说，我目前光标在第 20 行，且已经复制了 10 行数据。则按下 p 后， 那 10 行数据会贴在原本的 20 行之后，亦即由 21 行开始贴。但如果是按下 P 呢？ 那么原本的第 20 行会被推到变成 30 行。 (常用)   J 将光标所在行与下一行的数据结合成同一行   c 重复删除多个数据，例如向下删除 10 行，[ 10cj ]   u 复原前一个动作。(常用)   [Ctrl]+r 重做上一个动作。(常用)   .</description>
+    </item>
+    
+    <item>
+      <title>Linux - 安装nginx步骤</title>
+      <link>https://alili.tech/archive/d150fc3c/</link>
+      <pubDate>Tue, 16 Jan 2018 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/d150fc3c/</guid>
+      <description>安装nginx相关的依赖 yum install gcc yum install pcre-devel yum install zlib zlib-devel yum install openssl openssl-devel  当然你也可以一起安装
+yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel  下载nginx的tar压缩包 进入网页 http://nginx.org/download/
+选择你需要的版本:
+# 进入local文件夹 cd /usr/local # 我选择了一个相对较新的版本,下载到当前目录 wget http://nginx.org/download/nginx-1.13.9.tar.gz # 解压 tar -xvf nginx-1.13.9.tar.gz # 重命名 mv nginx-1.13.9.tar.gz nginx #进入nginx目录 cd nginx #执行以下命令 ./configure #编译 make  进行以上步骤之后,你的nginx就已经安装完毕了
+nginx常用命令 以下操作全都是在nginx目录下进行
+启动: ./sbin/nginx  停止: ./sbin/nginx -s stop #或者 ./sbin/nginx -s quit  重启: .</description>
+    </item>
+    
+    <item>
+      <title>Linux -  使用ssh-copy-id命令实现ssh Linux免密码登陆</title>
+      <link>https://alili.tech/archive/5f4cf684/</link>
+      <pubDate>Sat, 16 Dec 2017 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/5f4cf684/</guid>
+      <description>1. 生成公钥和私钥 ssh-keygen -t rsa  按照提示输入完后，会在~/.ssh目录下生成id_rsa和id_rsa.pub这两个文件
+2.与服务器建立联系 ssh-copy-id root@192.168.0.100 //示例ip  接下来会要求输入连接密码，验证成功后
+3.无密码登陆服务器 尝试以下命令，看是不是直接登陆成功了：
+ssh root@192.168.0.100  就是这么简单</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>持续集成 on Alili</title>
+    <link>https://alili.tech/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</link>
+    <description>Recent content in 持续集成 on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 20 Nov 2018 16:14:25 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Travis CI自动化部署你的Hugo,Hexo博客</title>
+      <link>https://alili.tech/archive/oj8dtatmwzg/</link>
+      <pubDate>Tue, 20 Nov 2018 16:14:25 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/oj8dtatmwzg/</guid>
+      <description>Travis CI是什么? Travis CI是在线托管的CI服务，用Travis来进行持续集成，不需要自己搭服务器。最重要的是，它对开源项目是免费的。 如果公司是用的是 gitlab,也有提供相应的持续集成服务.这里就过多赘述.
+Travis CI 配置文件 Travis 要求项目的根目录下面，必须有一个.travis.yml文件。
+当你的仓库有提交的时候,travis会自动执行你下面配置的行为.
+Travis CI 的钩子与生命周期 Travis的钩子 Travis 有不同的阶段,他提供了7个钩子。
+ before_install：install 阶段之前执行 before_script：script 阶段之前执行 after_failure：script 阶段失败时执行 after_success：script 阶段成功时执行 before_deploy：deploy 步骤之前执行 after_deploy：deploy 步骤之后执行 after_script：script 阶段之后执行  生命周期  before_install install before_script script aftersuccess or afterfailure [OPTIONAL] before_deploy [OPTIONAL] deploy [OPTIONAL] after_deploy after_script  .travis.yml 下面是我的博客部署配置,也是我项目.travis.yml文件的内容.
+hugo 这是我的hugo部署配置,仅供参考
+language: node_js node_js: 10.13.0 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.51/hugo_0.51_Linux-64bit.deb - sudo dpkg -i hugo*.deb - hugo version - rm -rf public - npm install script: - hugo --buildFuture - gulp - echo &#39;Build done!</description>
+    </item>
+    
+    <item>
+      <title>自动化部署前端代码 - grunt-ftp-deploy的使用</title>
+      <link>https://alili.tech/archive/20901007/</link>
+      <pubDate>Sun, 14 Jun 2015 23:36:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/20901007/</guid>
+      <description>每一次修改完代码之后,要部署到远程的服务器,我的操作步骤是:
+修改代码 &amp;ndash;&amp;gt; grunt build &amp;ndash;&amp;gt; 打开FileZilla &amp;ndash;&amp;gt;登录ftp服务器 &amp;ndash;&amp;gt;找到本地文件夹 &amp;ndash;&amp;gt; 找到远程服务器目标文件夹 &amp;ndash;&amp;gt;全选本地文件 &amp;ndash;&amp;gt; 上传
+因为部署代码,在某个时候会特别频繁.每一次都要重复上面的八个操作.表示要做点什么,改变一下.
+今天我们的主角:grunt-ftp-deploy
+如果是sftp可以使用grunt-sftp-deploy
+安装:
+npm install grunt-ftp-deploy --save-dev or npm install grunt-sftp-deploy --save-dev  在与Gruntfile文件同一目录,我们新建一个&amp;rdquo;.ftppass&amp;rdquo;的文件, 里面是ftp的授权信息, 内容如下:
+{ &amp;quot;key1&amp;quot;: { &amp;quot;username&amp;quot;: &amp;quot;username&amp;quot;, &amp;quot;password&amp;quot;: &amp;quot;password&amp;quot; } }  Gruntfile配置代码:
+//ftp-deploy grunt.initConfig({ &#39;ftp-deploy&#39;: { build: { auth: { host: &#39;192.168.1.245&#39;, //ftp服务器的ip地址 port: 21,//服务器端口 authKey: &#39;key1&#39;//.ftppass文件里,key1的授权信息 }, src: &#39;path/to/source/folder&#39;,//本地文件夹 dest: &#39;/path/to/destination/folder&#39;,//服务器的目标文件夹 exclusions: [&#39;path/to/source/folder/**/.DS_Store&#39;]//不上传的文件 } } })  or
+//sftp-deploy grunt.</description>
+    </item>
+    
+    <item>
+      <title>烦人的Angularjs注解 - grunt-ng-annotate的使用</title>
+      <link>https://alili.tech/archive/c38cfa0d/</link>
+      <pubDate>Fri, 12 Jun 2015 23:15:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/c38cfa0d/</guid>
+      <description>angular加入了依赖注入
+编写代码的时候,大致的写法如下
+app.controller(&#39;tempController&#39;, function($scope, $http, $state, $timeout) { ... })  可是这样的代码,压缩后会造成一个问题. 函数的参数:$scope, $http, $state, $timeout会变成: a,b,c,d
+导致这个函数找不到需要注入的服务,因为每个参数的命名都是严格规定的.
+如下:
+app.controller(&#39;tempController&#39;, function(a,b,c,d) { ... })  为了解决这个问题,angular支持如下写法:
+app.controller(&#39;tempController&#39;, [&amp;quot;$scope&amp;quot;, &amp;quot;$http&amp;quot;, &amp;quot;$state&amp;quot;, &amp;quot;$timeout&amp;quot;, function($scope, $http, $state, $timeout) { }])  那么问题来了:
+每一次添加一个服务的时候,都需要写两遍. 每一次删除一个服务的时候,都需要删两遍.
+表示大大降低了变成的愉悦.
+那么我们怎么解决这个问题呢?
+今天的主角来了,那就是grunt-ng-annotate
+这是一个grunt的插件,当然在glup上也有.因为我的项目主要是用grunt写的. 那么这次主要讲grunt版本的ng-annotate.
+首先我们需要安装ng-annotate:
+npm install grunt-ng-annotate --save-dev  在你的Gruntfile里运行这个插件:
+grunt.loadNpmTasks(&#39;grunt-ng-annotate&#39;);  配置代码:
+grunt.initConfig({ ngAnnotate: { dist: { files: [{ expand: true, cwd: &#39;&amp;lt;%= yeoman.dist %&amp;gt;&#39;, //相对路径 src: &#39;**/*Controller.</description>
+    </item>
+    
+  </channel>
+</rss>

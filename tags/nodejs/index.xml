@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nodejs on Alili</title>
+    <link>https://alili.tech/tags/nodejs/</link>
+    <description>Recent content in Nodejs on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 29 Nov 2018 20:32:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>cheeriojs加载html时中文会默认解析成unicode的问题</title>
+      <link>https://alili.tech/archive/lbpnt17e1sc/</link>
+      <pubDate>Thu, 29 Nov 2018 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/lbpnt17e1sc/</guid>
+      <description> cheeriojs 解析中文为unicode问题 在使用cheeriojs的时候我发现,每当使用html方法,中文会默认解析成 unicode.
+使用方式如下:
+var cheerio = require(&#39;cheerio&#39;); var $ = cheerio.load(&#39;&amp;lt;title&amp;gt;我是中文,我将会被解析成unicode&amp;lt;/title&amp;gt;&#39;); console.log($(&#39;title&#39;).html());  当使用text方法的时候,并不会出现以上问题
+var cheerio = require(&#39;cheerio&#39;); var $ = cheerio.load(&#39;&amp;lt;title&amp;gt;我是中文,我将会被解析成unicode&amp;lt;/title&amp;gt;&#39;); $(&#39;title&#39;).text()  解决 默认配置 当我们load html内容的时候,其实cheerio是有默认配置的. html解析是使用的htmlparser2这个库,所以htmlparser2的配置在cheerio也是适用的.
+var cheerio = require(&#39;cheerio&#39;); var $ = cheerio.load(&#39;&amp;lt;title&amp;gt;我是中文,我将会被解析成unicode&amp;lt;/title&amp;gt;&#39;,{ withDomLvl1: true, normalizeWhitespace: false, xmlMode: false, decodeEntities: true });  修改默认配置 我们只需要将decodeEntities修改成 false,就可以解决我们的问题.
+{ decodeEntities: false }  像这样
+var cheerio = require(&#39;cheerio&#39;); var $ = cheerio.load(&#39;&amp;lt;title&amp;gt;我是中文,我将不会被解析成unicode&amp;lt;/title&amp;gt;&#39;,{ decodeEntities: false });  </description>
+    </item>
+    
+    <item>
+      <title>使用verdaccio搭建更加简单的私有npm服务器</title>
+      <link>https://alili.tech/archive/9713e794/</link>
+      <pubDate>Tue, 10 Apr 2018 22:30:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/9713e794/</guid>
+      <description>cnpm.org这种私有npm服务器搭建已经很简单了, 但是相对于verdaccio的简单那是完全没有办法比的. 因为verdaccio实在是太简单了.
+介绍 verdaccio是一个轻量级的私有NPM的Registry（从 Sinopia fork过来的，sinopia最后一次更新是在几年前了）。最开始是打算使用cnpmjs这个来搭建私有的npm仓库但是搭建完成之后存在一些问题，所以使用了Sinopia;
+接下来我将简单介绍一下 verdaccio的使用.
+在你的服务器安装verdaccio $ npm i verdaccio -g  启动 #直接输入 verdaccio 命令 $ verdaccio // 如果启动成功会显示以下信息 Verdaccio doesn‘t need superuser privileges. Don‘t run it und warn --- config file - /root/.config/verdaccio/config.yaml warn --- http address - http://localhost:4873/ - verdaccio/  我们也可以用pm2启动 (也是我选择使用的方法)
+$ pm2 start verdaccio  配置 系统默认的配置文件在 /root/.config/verdaccio/config.yaml 下面是我现在的配置,大家可以简单的参考一下. 基本上没有改什么.
+# # This is the default config file. It allows all users to do anything, # so don&#39;t use it on production systems.</description>
+    </item>
+    
+    <item>
+      <title>基于shipit-deploy实现的多服务器自动化部署方案</title>
+      <link>https://alili.tech/archive/fba46182/</link>
+      <pubDate>Sun, 17 Dec 2017 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/fba46182/</guid>
+      <description>为什么要自动化部署，我这里就不多赘述了。
+基于shipit-deploy的自动化部署，可以实现以下效果
+ 一键部署多台服务器。 一键回滚多台服务器。 本地操作，不需要登录服务器。 方便定制，方便扩展，实现自动化。  使用 1.下载安装 npm install --save-dev shipit-cli npm install --save-dev shipit-deploy  2.与服务器建立信任关系 ssh-copy-id USER@REMOTE_HOST  3.配置 module.exports = function (shipit) { require(&#39;shipit-deploy&#39;)(shipit); require(&#39;shipit-pm2&#39;)(shipit); require(&#39;shipit-cnpmjs&#39;)(shipit); shipit.initConfig({ default: { workspace: &#39;/tmp/github-monitor&#39;, deployTo: &#39;/tmp/deploy_to&#39;, //服务器的目标路径 repositoryUrl: &#39;https://github.com/user/repo.git&#39;, //git仓库地址 ignores: [&#39;.git&#39;, &#39;node_modules&#39;], //排除的文件 keepReleases: 2, //发布保留的版本数量 deleteOnRollback: false, key: &#39;/path/to/key&#39;, shallowClone: true, cnpm: { remote: false } }, dev: { //开发服务器部署 servers: [&#39;user@devServer1&#39;, &#39;user@devServer1&#39;], branch: &#39;dev&#39; //需要发布的git分支, pm2: { json: &#39;pm2-dev-app.</description>
+    </item>
+    
+    <item>
+      <title>开启Express，Egg.js，Koa.js 的Gzip模式</title>
+      <link>https://alili.tech/archive/a8ce80b/</link>
+      <pubDate>Wed, 13 Dec 2017 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/a8ce80b/</guid>
+      <description>为了缩小接口与静态文件的下载体积，在服务器资源可观的情况下我们可以开启Gzip。
+Express Express 4.0以下版本
+var express = require(&#39;express&#39;); var app = express(); app.use(express.compress()); //主要是这句  Express 4.0以上版本(包含4.0)
+var compression = require(&#39;compression&#39;); var express = require(&#39;express&#39;); var app = express(); app.use(compression());  Egg.js // app/middleware/compress.js // koa-compress 暴露的接口(`(options) =&amp;gt; middleware`)和框架对中间件要求一致 module.exports = require(&#39;koa-compress&#39;)  // config/config.default.js module.exports = { middleware: [ &#39;compress&#39; ], compress: { threshold: 2048, }, };  Koa.js const koa = require(&#39;koa&#39;); const compress = require(&#39;koa-compress&#39;); const app = koa(); const options = { threshold: 2048 }; app.</description>
+    </item>
+    
+    <item>
+      <title>Apache,Nginx,Express,Egg.js 支持前端HTML5 History 模式</title>
+      <link>https://alili.tech/archive/6eff5ac9/</link>
+      <pubDate>Sat, 02 Dec 2017 22:30:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/6eff5ac9/</guid>
+      <description>当你使用 history 模式时，URL 就像正常的 url，例如 http://xxx.com/user/id。
+想要完美支持这种模式，还需要后台配置支持。当应用是个单页客户端应用，如果后台没有正确的配置，当用户在浏览器直接访问 http://xxx.com/user/id 就会返回 404。
+后端支持案例：
+Apache &amp;lt;IfModule mod_rewrite.c&amp;gt; RewriteEngine On RewriteBase / RewriteRule ^index\.html$ - [L] RewriteCond %{REQUEST_FILENAME} !-f RewriteCond %{REQUEST_FILENAME} !-d RewriteRule . /index.html [L] &amp;lt;/IfModule&amp;gt;  nginx location / { try_files $uri $uri/ /index.html; }  Node.js (Express) 如果是Express 可以使用connect-history-api-fallback [https://github.com/bripkens/connect-history-api-fallback]()
+Egg.js // app/middleware/history_fallback.js module.exports = () =&amp;gt; { return async function historyFallback(ctx, next) { await next(); if (ctx.status === 404 &amp;amp;&amp;amp; !</description>
+    </item>
+    
+    <item>
+      <title>Egg.js 如何支持单页面应用</title>
+      <link>https://alili.tech/archive/524de824/</link>
+      <pubDate>Fri, 01 Dec 2017 22:30:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/524de824/</guid>
+      <description>在config/plugin.js 启用ejs //其他的模板引擎也行
+exports.ejs = { enable: true, package: &#39;egg-view-ejs&#39;, };  配置静态目录
+//config/config.{env}.js config.static = { prefix: &#39;/&#39;, dir: path.join(appInfo.baseDir, &#39;app/view/&#39;) }  模板配置 ``` javascript //config/config.{env}.js
+  config.view = { defaultExt: &amp;lsquo;.html&amp;rsquo;, mapping: { &amp;lsquo;.ejs&amp;rsquo;: &amp;lsquo;ejs&amp;rsquo;, &amp;lsquo;.html&amp;rsquo;: &amp;lsquo;ejs&amp;rsquo;, } }
+ 4. 配置根目录路由映射 ``` javascript // app/router.js module.exports = app =&amp;gt; { app.router.get(&#39;/&#39;, app.controller.home.index); }   配置路由相应的控制器 ``` javascript // app/controller/home.js  const { Controller } = require(&amp;lsquo;egg&amp;rsquo;); class HomeController extends Controller { async index() { const { ctx } = this; // render index.</description>
+    </item>
+    
+    <item>
+      <title>在自己搭建的cnpm发布公司私有代码</title>
+      <link>https://alili.tech/archive/7cb6734b/</link>
+      <pubDate>Sat, 25 Nov 2017 22:30:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/7cb6734b/</guid>
+      <description>配置  需要先将原先的 config/config.js 中添加一些配置属性：
+enablePrivate: false, // 任何人都可以发布包 admins: { admin: &#39;test@company.com&#39; // 管理员权限 }, scopes: [&#39;@company&#39;], // 私有包必须依附于 scope 下  重新启动 cnpm 进入cnpm目录
+npm stop // 停止服务 npm start //启动服务  3. 在 package.json 文件中加入代码：
+ &amp;quot;name&amp;quot;: &amp;quot;@company/testjs&amp;quot;, // 包名，之前必须加入 scope 名   npm登陆  npm login --registry=http://192.168.0.100:7001 // 注册之前的用户 Username: admin // 管理员名 Password: 1234 //你想要的密码   npm publish --registry=http://192.168.80.130:7001  发布成功
+安装刚刚发布的包  npm install @company/test -registry=http://192.</description>
+    </item>
+    
+    <item>
+      <title>在公司搭建私有的cnpm服务器</title>
+      <link>https://alili.tech/archive/eed8d24e/</link>
+      <pubDate>Fri, 24 Nov 2017 22:30:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/eed8d24e/</guid>
+      <description>现在的js的项目越来越多。如果我们把代码开源。我们会把这些代码发布到npm。 但是npm是公共的，公司的代码毕竟不会公开在网上。 于是我们就有必要搭建一个自己的npm服务器。把公司私有的代码发布在自己公司的npm服务器上。 这样我们就可以即方便的下载我们想要的代码。也可以不把这些代码放在开源平台上面
+安装的基本步骤  在linu安装mysql npm install cnpm.org 下载cnpm.org的代码 配置好cnpm.org的数据库配置 npm start  在安装过程中，我们只有这简单的4步。不管哪里遇到各种各样的问题，都不会脱离这4个步骤。
+开始吧 在linux安装mysql 网上有很多相关教程，请自行搜索。如果有需要我会重新开一篇来讲述安装步骤。 我们假设这里我们创建了一个用户为：root 密码：root1234 1. 创建数据库
+CREATE DATABASE cnpmjs   建表：  在cnpm.org代码里，doc/db.sql文件里面有创建cnpm.org的相关表的sql语句
+mysql&amp;gt; use cnpmjs; mysql&amp;gt; source docs/db.sql  在代码里配置sql信息 在cnpm.org代码里的 config/config.js配置我们的数据库连接信息.
+找到以下mysqlServers相关代码,配置大致如下：
+mysqlServers: [ { host: &#39;localhost&#39;, port: 3306, user: &#39;root&#39;, password: &#39;root1234&#39;, // 这是我们刚刚创建的账户跟密码 } ],  安装cnpm.org 的相关js依赖（这是jser们再熟悉不过的了） 进入cnpm.org代码目录
+ npm install  ### 最后一步 当里的js依赖装好了之后，cnpm.org的数据库配置也配置好了以后。 再命令行里 运行一下命令：</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio Code隐藏从ts生成的额外js与map文件</title>
+      <link>https://alili.tech/archive/b36fefc7/</link>
+      <pubDate>Wed, 22 Nov 2017 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/b36fefc7/</guid>
+      <description>打开【文件】&amp;gt;【首选项】&amp;gt;【工作区设置】，放入以下代码：
+// 将设置放入此文件中以覆盖默认值和用户设置。 { &amp;quot;files.exclude&amp;quot;: { // exclude .js and .js.map files, when in a TypeScript project &amp;quot;node_modules&amp;quot;: true, &amp;quot;**/*.js&amp;quot;: { &amp;quot;when&amp;quot;: &amp;quot;$(basename).ts&amp;quot;}, &amp;quot;**/*.js.map&amp;quot;: true } }  </description>
+    </item>
+    
+    <item>
+      <title>利用Chrome DevTools调试Node.js</title>
+      <link>https://alili.tech/archive/bd292cd9/</link>
+      <pubDate>Tue, 08 Aug 2017 00:04:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/bd292cd9/</guid>
+      <description>前提  Node.js 6.3+； Chrome 55+;  配置Chrome (最新的版本已经不需要这一步);  输入url：chrome://flags/#enable-devtools-experiments 进入开发者实验室
+ 启用加亮的选项
+ 重启Chrome
+ 打开 DevTools Setting -&amp;gt; Experiments;
+ 连续按Shift 6次,显示隐藏的选项
+ 找到 Node debugging,并且勾上. (新版本已经没有这个选项,默认就是开启状态.所以chrome就不用配置了)
+  运行Nodejs 只要在命令语句 加上 &amp;ndash;inspect,后面跟上你想要执行的文件;
+node --inspect app.js  复制控制台输出的:
+chrome-devtools:// 协议地址
+ chrome-devtools://devtools/remote/serve_file/xxxxxxxxx
+ 粘贴到浏览器地址栏,你就可以使用Chrome的控制台调试你的node应用了.</description>
+    </item>
+    
+    <item>
+      <title>发布基于nodejs的阿里云API签名生成工具 -- AliToSing</title>
+      <link>https://alili.tech/archive/dd233b37/</link>
+      <pubDate>Sun, 16 Jul 2017 00:04:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/dd233b37/</guid>
+      <description>基于nodejs的阿里云API签名生成工具
+Github AliToSign
+阿里云签名官方说明
+安装方法:
+npm install alitosign --save  使用方法:
+例子:添加域名
+const alitosign = require(&amp;quot;alitosign&amp;quot;); const querystring = require(&amp;quot;querystring&amp;quot;); const moment = require(&amp;quot;moment&amp;quot;); const http =require(&amp;quot;http&amp;quot;); //基本上调用接口都需要的公共参数 let originParams = { AccessKeyId: &amp;quot;xxxxxxx&amp;quot;, //AccessKeyId 获得方法请参照官方文档 Format: &amp;quot;JSON&amp;quot;, Version: &amp;quot;2015-01-09&amp;quot;, SignatureMethod: &amp;quot;HMAC-SHA1&amp;quot;, SignatureVersion: &amp;quot;1.0&amp;quot; } function AddDomain() { //复制一份公共参数 let params = Object.assign({},originParams); //在新的对象上添加你想调用的该接口必要参数, //每个接口都不一样,具体请查阅官方文档 params.Action = &amp;quot;AddDomain&amp;quot;; params.DomainName = &amp;quot;alili.tech&amp;quot;; params.GroupId = &amp;quot;2223&amp;quot;; //添加时间戳 params.Timestamp = moment.utc().format(); //要用格林威治时间; params.SignatureNonce = new Date().</description>
+    </item>
+    
+    <item>
+      <title>npm、yarn包管理工具切换淘宝源</title>
+      <link>https://alili.tech/archive/99619c4e/</link>
+      <pubDate>Sat, 01 Jul 2017 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/99619c4e/</guid>
+      <description> 因为一些特殊原因，npm、Yarn等包管理软件在国内下载总是有一点慢。 可以切换为淘宝源，直接从国内的服务器直接拉取。 这里做一个笔记：
+NPM npm config set registry https://registry.npm.taobao.org --global npm config set disturl https://npm.taobao.org/dist --global  如果不能开心的使用以上配置,可以尝试以下方法:
+npm config set registry http://registry.cnpmjs.org npm info underscore //（如果上面配置正确这个命令会有字符串response）  yarn yarn config set registry https://registry.npm.taobao.org --global yarn config set disturl https://npm.taobao.org/dist --global  如果出现EACCES: permission denied这样的权限报错， 修复/usr/local目录的所有权：
+sudo chown -R `whoami` /usr/local  </description>
+    </item>
+    
+    <item>
+      <title>Express设置CORS,让浏览器可以跨域访问你的服务器</title>
+      <link>https://alili.tech/archive/e06698c9/</link>
+      <pubDate>Sat, 18 Feb 2017 21:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/e06698c9/</guid>
+      <description> 说到前端跨域,确实让很多前端宝宝们捏了一把汗.
+跨域的解决方法可谓是八仙过海.各种黑科技,各种黑魔法.让人看的目瞪口呆.(不了解的,可以去搜)
+但是都没有相当完美的解决方案,都是可以这样却不能那样.
+今天要说的就是目前跨域的终极解决方案(IE8以及更低版本的IE浏览器不支持)
+Cross-Origin Resource Sharing (简称 CORS); var express = require(&#39;express&#39;); var app = express(); //设置CORS app.all(&#39;*&#39;, function(req, res, next) { res.header(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;*&amp;quot;); //第二个参数,是一个*号,表示任意域名下的页面都可以都可以请求请求这台服务器; //设置指定域名: //res.header(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;http://baidu.com&amp;quot;); //这样,baidu.com下面的网页,就可以ajax请求你的服务器了 res.header(&amp;quot;Access-Control-Allow-Headers&amp;quot;, &amp;quot;X-Requested-With&amp;quot;); res.header(&amp;quot;Access-Control-Allow-Methods&amp;quot;,&amp;quot;PUT,POST,GET,DELETE,OPTIONS&amp;quot;); //第二个参数,为对方可以以哪种HTTP请求方式请求你的服务器,根据自己的情况酌情设置 res.header(&amp;quot;X-Powered-By&amp;quot;,&#39; 3.2.1&#39;) res.header(&amp;quot;Content-Type&amp;quot;, &amp;quot;application/json;charset=utf-8&amp;quot;); next(); }); app.get(&#39;/&#39;, function(req, res) { res.send(&amp;quot;你已经成功访问该服务器&amp;quot;); }); app.listen(3000);  </description>
+    </item>
+    
+    <item>
+      <title>让Nodejs像浏览器一样Fetch你想要的</title>
+      <link>https://alili.tech/archive/5bc12a97/</link>
+      <pubDate>Fri, 17 Feb 2017 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/5bc12a97/</guid>
+      <description>上一篇简单的介绍了Nodejs http模块的get与post方式, 但是因为post的配置还是比较繁琐,今天推荐一个模块:
+node-fetch
+安装 npm install node-fetch --save  使用 var fetch = require(&#39;node-fetch&#39;); // HTML fetch(&#39;https://github.com/&#39;) .then(function(res) { return res.text(); }).then(function(body) { console.log(body); }); // JSON fetch(&#39;https://api.github.com/users/github&#39;) .then(function(res) { return res.json(); }).then(function(json) { console.log(json); }); // 当网络发生错误 fetch(&#39;http://domain.invalid/&#39;) .catch(function(err) { console.log(err); }); // stream 流 var fs = require(&amp;quot;fs&amp;quot;) fetch(&#39;https://assets-cdn.github.com/images/modules/logos_page/Octocat.png&#39;) .then(function(res) { var dest = fs.createWriteStream(&#39;./octocat.png&#39;); res.body.pipe(dest); }); // buffer var fileType = require(&#39;file-type&#39;); fetch(&#39;https://assets-cdn.github.com/images/modules/logos_page/Octocat.png&#39;) .then(function(res) { return res.</description>
+    </item>
+    
+    <item>
+      <title>Nodejs之http模块的get与post请求</title>
+      <link>https://alili.tech/archive/59cf5417/</link>
+      <pubDate>Thu, 16 Feb 2017 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/59cf5417/</guid>
+      <description>在前端,经常要使用ajax获取,提交数据到服务端. 服务端当然也可以像另一个服务端发起同样的请求.
+今天,说一下Nodejs如何向另一个服务端发起请求.
+GET请求 写法还是相当简单,跟angular的$http.get有一点点的像.
+var http = require(&#39;http&#39;); http.get(&amp;quot;http://baidu.com&amp;quot;, function(response) { console.log(response) }); })  POST请求 相对get,post的写法繁琐了很多.
+虽然过程很清晰,但是对于写惯了各种前端框架封装的ajax后,还是难以接受的.
+var http = require(&#39;http&#39;); var querystring = require(&#39;querystring&#39;); //json转换为字符串 var data = querystring.stringify({ id:&amp;quot;1&amp;quot;, text:&amp;quot;hello&amp;quot; }); var options = { host: &#39;xxx.xxx.xxx&#39;, path:&#39;/xxx/xxx/xxx/&#39;, method: &#39;POST&#39;, headers: { &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;, &#39;Content-Length&#39;: Buffer.byteLength(data) } }; var req = http.request(options, function(res) { res.setEncoding(&#39;utf8&#39;); res.on(&#39;data&#39;, function (chunk) { //拼接数据 console.log(&amp;quot;body: &amp;quot; + chunk); }); res.</description>
+    </item>
+    
+    <item>
+      <title>利用Nodejs获取公网IP</title>
+      <link>https://alili.tech/archive/cdd27771/</link>
+      <pubDate>Wed, 15 Feb 2017 21:30:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/cdd27771/</guid>
+      <description> 因为树莓派放在家里,因为运营商的关系,公网ip是一直会变的. 那我们要怎么样才能快捷的拿到当前网络的公网ip呢?
+今天介绍一个小工具,可以简单的获取到公网ip.
+public-ip
+安装 npm install --save public-ip  使用 const publicIp = require(&#39;public-ip&#39;); publicIp.v4().then(ip =&amp;gt; { console.log(ip); //=&amp;gt; &#39;46.5.21.123&#39; }); publicIp.v6().then(ip =&amp;gt; { console.log(ip); //=&amp;gt; &#39;fe80::200:f8ff:fe21:67cf&#39; });  设置HTTPS 如果使用https,会基于icanhazip.com  服务来查询的.
+相对来说会安全一些,但是也会稍微的慢一些.
+ publicIp.v4({ https:true //默认false }).then(ip =&amp;gt; { console.log(ip); //=&amp;gt; &#39;46.5.21.123&#39; });  设置超时时间  publicIp.v4({ timeout:5000 //默认5000毫秒 }).then(ip =&amp;gt; { console.log(ip); //=&amp;gt; &#39;46.5.21.123&#39; });  </description>
+    </item>
+    
+    <item>
+      <title>基于Github与Coding等代码托管平台的自动化部署</title>
+      <link>https://alili.tech/archive/ff76a1bd/</link>
+      <pubDate>Tue, 14 Feb 2017 22:30:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/ff76a1bd/</guid>
+      <description>自从玩起了树莓派,每天都要经常把代码更新到树莓派上.
+但是次数太频繁了,重复的事情就要做一遍又一遍.非常的浪费时间.
+发现Github跟Codeing都有webhook功能,
+于是我便有了一个想法:
+想每次git push 更新代码的时候, 利用托管平台的webhook通知我的树莓派, 接收到通知后,自动更新托管平台的最新代码,并且自动重启.
+这样不就节约很多时间了吗? 在npmjs.com上搜索有没有相关功能的模块,果然有:
+github-webhook-handler
+coding-webhook-handler
+接下来我们以coding为例,来写一个自动部署的小程序.
+先准备一段树莓派接受到通知后,运行的一段sh代码
+#! /bin/bash cd /home/pi/workspace/xxx //打开项目所在的目录 git reset --hard origin/master git clean -f git pull origin master //拉取并且合并代码 cnpm install //安装模块 pm2 reload app //pm2 重新启动程序  下面是js代码
+const http = require(&amp;quot;http&amp;quot;); const spawn =require(&#39;child_process&#39;).spawn; const createHandler = require(&amp;quot;coding-webhook-handler&amp;quot;); const handler = createHandler({ //配置好coding的参数 path: &amp;quot;/&amp;quot;, token: &amp;quot;dsdsdsdsds&amp;quot; }); http.createServer((req, res) =&amp;gt; { //开启一个服务,接收托管平台发送过来的通知 handler(req, res, (err) =&amp;gt; { res.</description>
+    </item>
+    
+    <item>
+      <title>利用Nodejs生成阿里云API签名</title>
+      <link>https://alili.tech/archive/7cafffa9/</link>
+      <pubDate>Mon, 13 Feb 2017 21:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/7cafffa9/</guid>
+      <description>想要调用阿里云的云解析API,必须要生成阿里云所要求的签名. 签名机制
+网上一直没有找到nodejs相关获取签名的代码. 按照阿里云的要求,我自己写了一段程序,便于大家轻松的生成签名.
+const querystring = require(&#39;querystring&#39;); const crypto = require(&amp;quot;crypto&amp;quot;); module.exports=function getSignatureParams(params) { StringToSign = &amp;quot;GET&amp;quot; + &amp;quot;&amp;amp;&amp;quot; + percentEncode(&amp;quot;/&amp;quot;) + &amp;quot;&amp;amp;&amp;quot; + percentEncode(uriSort(params)) var Signture = getSignture(StringToSign); params.Signature = Signture; return params; //返回带签名的完整uri } function percentEncode(str) { //百分比编码 uri var s = encodeURI(str); return s .replace(/ /g, &amp;quot;%20&amp;quot;) .replace(/\//g, &amp;quot;%2F&amp;quot;) .replace(/\+/g, &amp;quot;%20&amp;quot;) .replace(/\*/g, &amp;quot;%2A&amp;quot;) .replace(/\%7E/g, &amp;quot;~&amp;quot;) .replace(/\=/g, &amp;quot;%3D&amp;quot;) .replace(/\&amp;amp;/g, &amp;quot;%26&amp;quot;) .replace(/\:/g, &amp;quot;%253A&amp;quot;) } function getSignture(Signature) { //计算HMAC // 47awTgVxfVEBL8hewkBgYD6kEvuJn0 return crypto .</description>
+    </item>
+    
+  </channel>
+</rss>

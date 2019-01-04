@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webpack on Alili</title>
+    <link>https://alili.tech/tags/webpack/</link>
+    <description>Recent content in Webpack on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 18 Jul 2017 11:43:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>让Webpack支持sftp上传文件</title>
+      <link>https://alili.tech/archive/5e4dd5b8/</link>
+      <pubDate>Tue, 18 Jul 2017 11:43:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/5e4dd5b8/</guid>
+      <description>今天介绍两个插件,可以让你的webpack支持上传文件到你的ftp服务器.
+sftp-webpack-plugin
+安装sftp-webpack-plugin npm install sftp-webpack-plugin --save-dev  使用 const SftpWebpackPlugin = require(&#39;sftp-webpack-plugin&#39;); var config = { plugins: [new SftpWebpackPlugin({ port: &#39;your port&#39;,//服务器端口 host: &#39;your host&#39;,//服务器地址 username: &#39;your username&#39;,//用户名 password: &#39;your password&#39;,//密码 from: &#39;you neeed upload file path &#39;,//你的本地路径 to: &#39;you want to destination&#39;//服务器上的路径 })] }  webpack-sftp-client webpack-sftp-client
+安装webpack-sftp-client npm install webpack-sftp-client --save-dev  使用 var WebpackSftpClient = require(&#39;webpack-sftp-client&#39;); var config = { plugins: [new WebpackSftpClient({ port: &#39;22&#39;,//服务器端口 host: &#39;exmaple.</description>
+    </item>
+    
+  </channel>
+</rss>

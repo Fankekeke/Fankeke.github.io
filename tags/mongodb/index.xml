@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mongodb on Alili</title>
+    <link>https://alili.tech/tags/mongodb/</link>
+    <description>Recent content in Mongodb on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 18 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MongoDB - 在Egg中使用MondoDB</title>
+      <link>https://alili.tech/archive/c165a1d9/</link>
+      <pubDate>Fri, 18 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/c165a1d9/</guid>
+      <description>MongoDB官方有提供node操作数据库的 driver 及 API : node-mongodb-native
+在egg社区也有基于该插件二次封装的egg插件 egg-mongo-native
+对一些方法做了一些二次封装,也可以调用原版的方法.
+配置 官方文档也有相关的配置说明,但是我在实际使用中碰到了一些问题. 下面我给出正确的配置方法,供大家使用.其他相关知识请参照该插件都官方文档.
+// {app_root}/config/config.default.js export default (appInfo) =&amp;gt; { const config = {}; config.mongo = { client: { host: &#39;127.0.0.1&#39;, port: &#39;27017&#39;, name: &#39;dandelion&#39; }, } return config; };  开启插件 // config/plugin.js const plugin = { mongo :{ enable: true, package: &#39;egg-mongo-native&#39;, } };  要跟以上配置一样,才能正确使用该插件.
+其他复杂配置请参照该插件的官方文档. egg-mongo-native</description>
+    </item>
+    
+    <item>
+      <title>MongoDB - 文档的基本操作 (二)</title>
+      <link>https://alili.tech/archive/311875a2/</link>
+      <pubDate>Sun, 13 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/311875a2/</guid>
+      <description>文档更新  语法: update(, , )
+ #更新rank字段 &amp;gt; db.posts.update({&amp;quot;title&amp;quot;:&amp;quot;怪物猎人世界评测&amp;quot;}, {$set: {&amp;quot;rank&amp;quot;: 10} }); # 更新整条数据为:{&amp;quot;rank&amp;quot;: 99} &amp;gt; db.posts.update({&amp;quot;title&amp;quot;:&amp;quot;怪物猎人世界评测&amp;quot;}, {&amp;quot;rank&amp;quot;: 99}); # 更新多条记录multi: true,如果为false,则是更新查询到的第一条记录 &amp;gt; db.posts.update({&amp;quot;tag&amp;quot;:&amp;quot;it&amp;quot;}, {$set: {&amp;quot;rank&amp;quot;: 60}}, {multi: true});  操作文档字段的函数  $inc:递加 $mul:相乘 $rename:改名 $set:新增or修改 $unset:字段删除  # 字段值递增,结果为: 字段值 + 1 &amp;gt; db.posts.update({title:&amp;quot;怪物猎人世界评测&amp;quot;}, {$inc: {rank: 1}}); # 字段值相乘操作,结果为: 字段值 * 2 &amp;gt; db.posts.update({title:&amp;quot;怪物猎人世界评测&amp;quot;}, {$mul: {rank: 2}}); # 字段重命名 &amp;gt; db.posts.update({title:&amp;quot;怪物猎人世界评测&amp;quot;}, {$rename: {&amp;quot;rank&amp;quot;: &amp;quot;score&amp;quot;}}); # 设置或者添加字段 &amp;gt; db.</description>
+    </item>
+    
+    <item>
+      <title>MongoDB - 文档的基本操作 (一)</title>
+      <link>https://alili.tech/archive/9e29eec0/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/9e29eec0/</guid>
+      <description>文档增删 # 创建集合 &amp;gt; db.createCollection(&amp;quot;posts&amp;quot;); # 插入一条数据 &amp;gt; db.posts.insert( ... { ... title: &amp;quot;我的第一篇博客&amp;quot;, ... content: &amp;quot;已经开始写博客了，太激动了。&amp;quot; ... } ... ); # 查询数据 &amp;gt; db.posts.find(); # 插入另一条数据 &amp;gt; db.posts.insert( ... { ... title: &amp;quot;我的第二篇博客&amp;quot;, ... content: &amp;quot;写点什么好呢？&amp;quot;, ... tag: [&amp;quot;未分类&amp;quot;] ... } ... ); # 使用js for 来循环插入数据 &amp;gt; for(var i = 3; i &amp;lt;=10; i++ ) { ... db.posts.insert({ ... title: &amp;quot;我的第&amp;quot; + i + &amp;quot;篇博客&amp;quot; ... }); .</description>
+    </item>
+    
+    <item>
+      <title>MongoDB - 数据库与集合的基本操作</title>
+      <link>https://alili.tech/archive/3a26a4b/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/3a26a4b/</guid>
+      <description> 数据库基本操作 # 进入命令行 $ mongo #帮助 &amp;gt; help #退出 &amp;gt; exit #显示所有数据库 &amp;gt; show dbs; #进入或者创建集合 &amp;gt; use aliliblog; #查看当前数据库状态 &amp;gt; db.stats(); # 删除数据库 &amp;gt; db.dropDatabase();  操作集合（Collection） # 查看集合 &amp;gt; show collections; # 创建集合 &amp;gt; db.createCollection(&amp;quot;users&amp;quot;); # 集合重命名 &amp;gt; db.users.renameCollection(&amp;quot;staff&amp;quot;); // users -&amp;gt; staff # 集合删除 &amp;gt; db.staff.drop();  </description>
+    </item>
+    
+    <item>
+      <title>MongoDB - 基本概念与其他数据库对比</title>
+      <link>https://alili.tech/archive/1f77f611/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/1f77f611/</guid>
+      <description> 基本概念 NoSql 在NoSql的数据库中，操作数据都是通过指令或程序语言完成的。
+在MongoDB中使用过Javascript和JSON数据结构，来操作和管理数据的。
+MongoDB数据库与关系型数据库对比    MongoDB 关系型数据库     数据库（Database) 数据库（Database）   集合（Collection） 数据表（Table）   文档（Document） 记录（Record）    MongoDB与RDBMS对应的术语    MongoDB RDBMS     数据库 数据库   集合 表格   文档 行   字段 列   嵌入文档 表联合   主键 (MongoDB 提供了 key 为 _id ) 主键    MongoDB 数据类型    数据类型 描述     String 字符串。存储数据常用的数据类型。在 MongoDB 中，UTF-8 编码的字符串才是合法的。   Integer 整型数值。用于存储数值。根据你所采用的服务器，可分为 32 位或 64 位。   Boolean 布尔值。用于存储布尔值（真/假）。   Double 双精度浮点值。用于存储浮点值。   Min/Max keys 将一个值与 BSON（二进制的 JSON）元素的最低值和最高值相对比。   Array 用于将数组或列表或多个值存储为一个键。   Timestamp 时间戳。记录文档修改或添加的具体时间。   Object 用于内嵌文档。   Null 用于创建空值。   Symbol 符号。该数据类型基本上等同于字符串类型，但不同的是，它一般用于采用特殊符号类型的语言。   Date 日期时间。用 UNIX 时间格式来存储当前日期或时间。你可以指定自己的日期时间：创建 Date 对象，传入年月日信息。   Object ID 对象 ID。用于创建文档的 ID。   Binary Data 二进制数据。用于存储二进制数据。   Code 代码类型。用于在文档中存储 JavaScript 代码。   Regular expression 正则表达式类型。用于存储正则表达式。    </description>
+    </item>
+    
+    <item>
+      <title>MongoDB - 安装与启动</title>
+      <link>https://alili.tech/archive/f82d8042/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/f82d8042/</guid>
+      <description>什么是MongoDB？ MongoDB是一个面向文档的免费数据库，多用于数据采集和分散处理(Map/Reduce)，特别是在大数据处理方面比较擅长。
+MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。
+MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。
+MAC OS安装与启动 安装 最简单的是通过 brew 安装
+brew update # 就这样mac上就安装好了 brew install mongodb # 如果你需要最新的开发版本 brew install mongodb --devel  启动 #新建默认数据文件夹 mkdir -p /data/db # 直接启动 mongod # 指定路径启动 mongod --dbpath &amp;lt;path to data directory&amp;gt; # 连接默认端口数据库 mongo #指定端口连接数据库 mongo --host 127.0.0.1:27017  centOS安装与启动 安装 新建一个文件 /etc/yum.repos.d/mongodb-org-4.0.repo
+[mongodb-org-4.0] name=MongoDB Repository baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.0/x86_64/ gpgcheck=1 enabled=1 gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc  通过yum安装数据库
+# 就这么简单就安装成功了 sudo yum install -y mongodb-org  启动 启动</description>
+    </item>
+    
+  </channel>
+</rss>

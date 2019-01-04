@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>前端周刊 on Alili</title>
+    <link>https://alili.tech/tags/%E5%89%8D%E7%AB%AF%E5%91%A8%E5%88%8A/</link>
+    <description>Recent content in 前端周刊 on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 04 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/%E5%89%8D%E7%AB%AF%E5%91%A8%E5%88%8A/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第十四期</title>
+      <link>https://alili.tech/archive/0bx7k43lrexg/</link>
+      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/0bx7k43lrexg/</guid>
+      <description>如何监控网页崩溃？ 有什么办法可以监控网页的崩溃，并将网页崩溃上报呢？方法总是有的，比如本文提出的基于 Service Worker 的方案。
+Service Worker,监控,JavaScript
+可维护的 React 程序之复用与封装 本文针对问题：如何封装 React 中的逻辑、组件、以及各种事务？
+React,组件化,JavaScript
+聊聊 Node.js RPC（二）— 服务发现 本文讨论了 RPC 的服务发现（Service Discovery）。服务发现就是通过服务唯一标识来获取服务地址的过程，它在 RPC 里扮演了重要角色。
+Node.js,RPC,JavaScript
+App Store 十周年：应用程序的设计演变 2018 年是 App Store 成立的十周年，作者对 10 个 App Store 原始应用程序的视觉演变进行了研究。
+App Store,设计
+2018 年 ​Behance 上最值得关注的 20 个设计趋势 “2018年，智能手机依然是我们主要的信息承载工具，更为有效且颇具趣味的响应式图标必将得到关注。同时，鲜艳丰富的色彩，精彩纷呈的插图设计都会博得用户眼球。魔镜，魔镜，最酷的设计趋势是什么？”
+设计
+用户与设计师的利益矛盾 “所有相关角色都有可能与设计师产生利益矛盾。只有找到找到共同价值，才能减少无意义消耗，最大幅度提升工作效率。”
+设计,交互
+了解 HTML5 Do Not Track API “隐私本质上也是用户体验的一部分，作为前端这个与用户紧密打交道的群体，更应对其保持关注。用不用倒无所谓，但至少知道有这么个东西，至少有这方面关注的意识，那也很不错了。”
+HTML5,隐私
+深入理解 CSS 的 width: auto 关于 “width: auto” 的细节。
+CSS</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第十三期</title>
+      <link>https://alili.tech/archive/g0um565bsaq/</link>
+      <pubDate>Fri, 28 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/g0um565bsaq/</guid>
+      <description>深入解析 ES Module ESM 和 CJS 之间那些说不清的事……
+ES6,JavaScript
+wasm + ffmpeg 实现前端截取视频帧功能 有没有那么一种可能，在前端页面处理音视频？例如用户选择一个视频，然后支持他设置视频的任意一帧作为封面，就不用把整一个视频上传到后端处理了。经过作者一番摸索，基本实现了这个功能。
+wasm,ffmpeg,JavaScript
+狙杀页面卡顿 —— Performance 工具指北 “本次关于性能工具的讨论，我们从影响页面性能的因素谈起，随之引出了 Performance 工具擅长的维度 —— 前端资源渲染。接着，我们了解了 Performance 工具 4 个主要面板：控制、预览、线程、详情，还有几个实用的图表：帧率条形图、CPU 面积图、主线程火焰图、帧线程时序图、事件耗时饼状图。然后运用它们定位了一个性能问题，并着手解决了该问题。”
+Performance,DevTools,JavaScript
+TypeScript 3.0 重磅发布，新特性详解！ 3.0 虽然是个大版本，但并没有包含太多重大的突破性变更（也就是说升级很容易）。新版本引入了一种新的灵活且可扩展的方式来构建项目、对操作参数列表提供了更强大的支持、新的强制显式检查类型、更好的 JSX 支持、更好的错误 UX，等等。
+TypeScript
+Xcube 智能一键生成 H5 Xcube 是基于 QQ 空间营收类活动所搭建的H5活动页面智能生成系统，是针对框架相对固定，高频率的运营 H5 活动所设计。
+设计
+写好 shell 脚本的 13 个技巧 这篇文章将介绍如何写出具有良好开发者体验的 shell 脚本。
+SHELL
+ 标签动态图片的进化：不是 GIF，胜过 GIF 长期存在并广泛应用的 GIF 格式存在图像质量损失严重和体积庞大等不足。在最新的 Safari 浏览器预览版中，可以在标签播放视频，满足了和动态图一样的需求。经过对比测试，标签下视频的各项性能均优于 GIF 格式。本文为你详解这项技术的现状和未来前景。
+HTML5,Video,GIF</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第十二期</title>
+      <link>https://alili.tech/archive/vtkyf54oda/</link>
+      <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/vtkyf54oda/</guid>
+      <description>Vue SSR 不可不知的问题 本文主要介绍 Vue SSR 的应用场景，开发中容易遇到的一些问题，提升 SSR 性能的方法，以及 SSR 的安全性问题。
+Vue,SSR,JavaScript
+Workbox 3：Service Worker 可以如此简单 有了 Workbox 3，一切关于 Service Worker 的担心都不再是问题。
+Service Worker,JavaScript
+美团扫码付的前端可用性保障实践 影响前端服务可用性，其实就是两件事：流程规范的执行力和工程化完整程度。
+可用性,前端工程
+Flutter 的原理及美团的实践 推一次 Flutter 吧，忍了好久一直没推哈哈哈。
+移动开发,Flutter
+Dart2 正式发布，目标成为移动与 Web 开发主流语言 Dart 2 正式发布，这标志着 Dart 语言的重启。同时 Google 还宣布重构 Dart Web 平台。
+Dart
+Web 应用架构基础课 初级 Web 应用开发者必学的基础网络架构概念。
+Web,架构
+IKEA 微前端经验谈 “如今，我们常常把企业架构分割成较小的服务，即微服务。但是，对于庞大的前端，我们面临着和后端一样的问题……使用微前端架构，把前端分解成较小的部分，使团队可以自主持续部署。”
+微前端
+五个最新的 CSS 特性以及如何使用它们 @Daniel Crisp在他的博文中，探讨了CSS的五个新特性，介绍了这五个特性能做什么，以及如何将它们应用到你的项目中。
+奇舞周刊,CSS
+Icon 和文本对齐方式的探索 这篇文章主要深纠了一下 Icon 图标和文本对齐的一些原理，通过这些原理找出相应的解决方案。文章提供了两种解决思路，一种是大家时常用的近似对齐方式，另一种是精确的对齐方式解决方案。</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第十一期</title>
+      <link>https://alili.tech/archive/fva8fa69c4d/</link>
+      <pubDate>Fri, 14 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/fva8fa69c4d/</guid>
+      <description>漫谈前端性能，突破 React 应用瓶颈 当我们在谈论性能时，到底在说什么？基于 React 框架开发的应用，在性能上又有哪些特点？这篇文章我们从浏览器和 JavaScript 引擎角度来剖析前端性能，同时创新 React，充分利用浏览器能力突破局限。
+JavaScript,React,性能
+前端也需要了解的 JSONP 安全 看到这篇文章，我偷偷反思了下自己的代码。。。
+安全,JSONP,JavaScript
+mobx 源码分析 “mobx 源码分析” 包含两篇文章：《 构造响应式数据》、《订阅响应式数据》。
+JavaScript,mobx
+洞察 video 超能力系列：玩转 flv Yet another video player~ BTW 强推一波奇舞团出品的 Chimee 播放器。
+video,flv
+优化 MP4 视频以获得更快的流传输速度 “视频文件必须经过适当优化才能作为 HTML5 视频在线播放。如果没有这种优化，视频可能会延迟数百毫秒，而只是试图播放视频的访问者也可能会浪费兆字节的带宽。”
+MP4,优化,video
+CSS 实现抛物线运动效果 CSS3 animation 也能实现抛物线效果。水平和垂直运动使用不同的 timing-function 即可。
+CSS,动画
+Vue CLI 3.0正式发布，带来多项重大更新 Vue CLI 的核心目标是为基于 Webpack 4 构建的预配置提供构建设置，目标是最大限度地减少开发人员配置的次数。
+Vue
+玉伯：我们是如何从前端技术进化到体验科技的？ 玉伯分享他从前端一路进阶升级到体验科技的个人思考，并详细介绍了体验科技的历史及未来发展。
+奇舞推荐,技术发展,体验科技
+改变用户体验的滚动新特性 时至今日，CSS 中为滚动提供的相关新特性究竟能给用户带来哪些新的体验呢？
+奇舞推荐,CSS,动画
+聊聊 CSS 中的层叠相关概念 很系统的总结。</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第十期</title>
+      <link>https://alili.tech/archive/dn3bpemyttp/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/dn3bpemyttp/</guid>
+      <description>React v16.3 之后的组件生命周期函数 React v16.3 起，React 组件生命周期函数发生了巨大变化……
+奇舞推荐,React,JavaScript
+前端插拔式 SPA 应用架构实现方案 关于架构的一些思考。
+奇舞推荐,SPA,架构
+CSS 混合模式高级应用 这篇文章并不是对 CSS 的混合模式做相应的科普，而是通过几个示例，向大家展示了 CSS 混合模式的强大之处，以及可使用的场景。
+CSS,blend-mode
+实战 CSS Scroll Snapping CSS Scroll Snap（CSS 滚动捕捉）允许你在用户完成滚动后多锁定特定的元素或位置。Google 69+、Firefox、Edge 和 Safari 都支持它的某些版本。
+CSS,Scroll Snap
+聊聊 Web 中的度数单位 主要介绍了 CSS 中的角度单位，及其常见的出现场景。
+CSS
+三角函数在前端动画中的应用 如何使用三角函数让动画更顺滑。
+canvas,三角函数,动画
+JavaScript 的元系统 本文是对在第四届 FEDay 中分享的《无类继承：JavaScript面向对象的根基》的进一步讨论。
+JavaScript,ES2015
+快应用入门小结篇 快应用入门 step by step。
+快应用
+前馈：让功能找到用户，让用户体验美好 “以设计的方式解决这对日益严重的矛盾，通过自然的人机交互，改变以往「让用户找到功能」的老路，我们探索「让功能找到用户」的新路。”
+奇舞推荐,用户体验,交互
+写给设计师的机器学习指南 “在机器学习的设计中，我们可以以算法为出发点作为扩充用户用例的一种方式，但还是应该将用户为中心置于首位。”这篇文章提到的设计机器学习产品的几点注意事项很值得关注。
+奇舞推荐,机器学习,设计,产品</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第九期</title>
+      <link>https://alili.tech/archive/lywhtrtg9dm/</link>
+      <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/lywhtrtg9dm/</guid>
+      <description>Web 推送通知 Web Push Notification 文档翻译。
+奇舞推荐,Notification,Service Worker
+OffscreenCanvas 概念说明及使用解析 你现在可以在 Worker 线程调用 Canvas API 啦，通过在 Worker 线程完成 Canvas 渲染任务，可以提升 WebApp 的并发程度，从而提升性能和使用体验。另附 google 文章一篇。
+奇舞推荐,JavaScript,canvas
+Babel 7.0 正式发布，支持 TypeScript 和 JSX Fragment Babel 官方博客宣布正式推出 Babel 7.0，在过去两年内，Babel 7 经历了 4000 次提交，发布了 50 多个预览版本，这也是三年前发布 v6.0 之后的最大更新。
+Babel,JavaScript
+一口（很长的）气了解 Babel 挺全面的介绍，有 babel@7 相关的内容。
+Babel,JavaScript
+浅析 TypeScript 设计模式 “设计模式根植于面向对象思想，也就是任何实现都要区分概念（类）和实例（对象），也就是要分清楚白马和马，这样才能竟可能减轻扩展和团队协作的负担。”
+TypeScript,设计模式
+新的 V8 是如何重构提速的？ V8 进行了一次重大架构改造，包括对整个 V8 编译器体系结构以及大部分垃圾收集器的重构，用 TurboFan 取代了 Crankshaft，Orinoco 采用并行机制进行垃圾回收等，本文对这次升级改造进行了简单的介绍。
+V8,性能
+前端性能优化：2018 年 JavaScript 开销及优化工具和方法 “ 现代前端开发中性能瓶颈依然在于 JavaScript，而且前端项目中 JavaScript 开销越来越大。本文详细介绍了 JavaScript 开销及原因，更是给出了相应的前端性能优化工具和方法。”</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第八期</title>
+      <link>https://alili.tech/archive/l1gp8abhpha/</link>
+      <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/l1gp8abhpha/</guid>
+      <description>ES6 元编程资源集合 关于 Proxy &amp;amp; Reflect &amp;amp; Symbol，关于 Meta Programming。
+JavaScript,Proxy,Reflect,Symbol
+2018 你应该知道的 Web 性能信息采集指南 信息量巨大的 Web 性能信息采集指南。
+性能优化,JavaScript,性能监控
+Liftoff: V8 引擎中全新的 WebAssembly baseline 编译器 V8 引擎在 v6.9 版本中加入了一个全新的 WebAssembly baseline 编译器 —— Liftoff。它目前在桌面系统平台上是默认开启的。本文将会详细讲解引入新的编译层的动机，并介绍一下 Liftoff 的具体实现以及性能情况。
+WebAssembly,JavaScript,V8
+让你的 Webpack 起飞：考拉会员后台 Webpack 优化实战 Webpack 优化实战记录。
+Webpack
+15000 字谈程序员的职业生涯重要的几个阶段 本文内容来自于 CatChen 在第四届FEDAY上关于“点开你的技能树”的演讲。
+职业
+借助 wbr 标签实现连续英文字符的精准换行 如题。（忽略标题，直接读原文吧哈哈哈。）
+HTML
+专访尤雨溪：先别管 4.0了，Vue CLI 重构了解一下 “上个月 Vue CLI 3.0 正式发布，为很多开发者带来期待已久的新特性，尤雨溪也说 Vue CLI 3.0 经历了重构，旨在尽可能减少现代前端工具在配置上的烦恼，并尽可能在工具链中加入最佳实践，让其成为 Vue 应用程序的默认实践。”</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第七期</title>
+      <link>https://alili.tech/archive/vyetuiwpul/</link>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/vyetuiwpul/</guid>
+      <description>现代浏览器内部揭秘 “本文从高级视角对浏览器架构与多进程架构的优点进行阐述。我们也对 Chrome 中与多进程架构密切相关的服务化与站点隔离进行了讲解。”
+奇舞推荐,浏览器,Chrome
+利用剪切板 JS API 优化输入框的粘贴体验 推荐本文的目的不在 API 本身，而在文章背后的体验优化思想。
+clipboard,体验
+Web 基础体验改进：div.freeze() 一些基础体验优化。另附一篇：《Web基础体验改进五：scroll-snap》
+体验,性能优化
+NoForm：一个更好的表单解决方案 我们日常需要面对大量操作类或者表单类的场景，怎样从这些重复的 CRUD 解放出来呢？
+表单,React,JavaScript
+V8 十年故事：从农场诞生的星球最强 JS 引擎 “这个月不仅有谷歌 Chrome 的十岁生日，也有 V8 的十周年纪念日。这篇文章将为你讲述 V8 在过去 10 年中经历的主要里程碑，以及在它诞生之前的那些秘密的岁月。”
+V8,JavaScript
+精读《REST、GraphQL、Webhooks、gRPC 如何选型》 一起看看接口还可以怎么约定，分别适用于哪些场景，你现在处于哪个场景。
+REST,GraphQL,Webhooks,gRPC
+前端异常监控解决方案研究 “即使只讨论前端异常监控，其实也不能严格区分前后端界限，而要根据实际系统的设计，在最终的报表中体现出监控对开发和业务的帮助。”
+异常监控
+理解数字世界中的纸张：PDF 针对 PDF 的科普文章，“PDF 与其说是一种数字文档，不如说是实体文档在数字世界中的影像。”
+PDF,打印
+如何打造具有安全感的后台产品体验 “安全感是优秀用户体验中不可缺少的基础，用户信任产品，才可以放心的操作，减少不必要的迟疑和困惑。因此，在我们强调人身安全、财产安全、网络安全等的同时，运维操作安全应该作为基础引起后台产品设计师的更多关注。”
+奇舞推荐,设计,用户体验
+理解元数据，让人机自然交互 “从前，我们通常从用户视角来思考设计，设计往往感性和随机化；现在，我们从元数据角度，发现系统实现的背后逻辑，设计往往理性和体系化；最终，感性和理性交织，随机和体系碰撞；让功能找到用户，让用户体验美好。”
+奇舞推荐,交互</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第六期</title>
+      <link>https://alili.tech/archive/2c2b79f6/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/2c2b79f6/</guid>
+      <description>Hello Vue: Vue快速入门教程 Vue快速入门教程，此教程包括使用Kendo UI for Vue的组件。希望通过此教程能够成为你学习vue的一个很好的起点。这其中还包含一个可扩展的事例，如果你感兴趣可以深入学习下去。本教程针对的是第一次使用Vue资源管理器。我将向您展示&amp;hellip;
+VUE.JS,移动,应用,JAVASCRIPT,DOM
+Jest 23: 🔥 快速愉快的测试 今天我们很高兴地宣布Jest 23，这是我们迄今为止最大的主要版本！我们与100多名贡献者一起发布了大量功能和错误修复程序。感谢社区中的每个人让JavaScript测试更加轻松。我们也欢迎Babel 和Webpack加入Jest社区！从Mo&amp;hellip;
+REACT.JS,JAVASCRIPT,WEBPACK,DEBUG,应用
+React.js Components: 基础指南 创建和管理React组件的各种方式，涌现的大量状态管理工具等等都是这些挑战的焦点。我们今天能做的就是在React（基于社区选择）中将最常用的做法引入桌面并讨论它们。其中，我们将学习React中的一些有用的主题和术语。这些主题包括：目录。常规&amp;hellip;
+REACT.JS,移动,JAVASCRIPT,应用,ECMASCRIPT 6
+精致化的微前端开发之旅 “微前端实践中，事实上所有的需求都是为「独立开发」以及「独立部署」这两大目标服务的，或者可以认为是两者的具体实现措施或者自然衍生结果。”
+奇舞推荐,微前端
+前端安全：如何防止CSRF攻击？ 基础必读。
+奇舞推荐,安全
+Serverless 平台的下一步 最近随着微信和支付宝小程序相继发布了各自的“云开发”，国内在 Serverless 的应用上又踏出了一大步。追溯 Serverless 的发展历程和未来方向，可以了解一下这篇来自 serverless.com 公司 CEO 的分享。
+奇舞推荐,Serverless
+使用 ndb 调试 node 应用 Google Chrome 实验室发布了一款新的 node debug 工具来提升开发者体验，本文将会全面介绍 ndb 这款 node 工具。
+Node,调试
+犀利的 Async Hooks async_hooks模块是Node.js 8.0中增加的特性，旨在帮助开发者追踪 Node.js 创建的异步调用资源的生命周期情况。
+Node,Async Hooks
+如何安全地运行用户的 JavaScript 脚本 如何在浏览器和 Node.</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第五期</title>
+      <link>https://alili.tech/archive/4925322f/</link>
+      <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/4925322f/</guid>
+      <description>深入理解 ES Modules (手绘示例) 虽然花了近十年的标准化工作才走到这一步，ES 模块终于为 JavaScript 带来了正式的，标准化的模块系统。漫长的等待终于要结束了，随着即将在五月发布的 Firefox 60 (目前尚处于 beta 版本中)，所有的主流浏览器都即将支持&amp;hellip;
+JAVASCRIPT,浏览器,JQUERY,HTML,算法
+React v16.3.0：新的生命周期和上下文API - React Blog 作者 Brian Vaughn 2018年3月29日 几天前， 我们 写了一篇关于对以前的生命周期方法进行更改的文章, 包括逐步迁移策略。 在React 16.3.0中， 我们正在添加一些新的生命周期方法来辅助迁移。我们还为长期被要&amp;hellip;
+API,REACT.JS,脸书,DOM,应用
+Vertical-Align，你应该知道的一切 好，我们聊聊vertical-align。这个属性主要目的用于将相邻的文本与元素对齐。而实际上，verticle-algin可以在不同上下文中灵活地对齐元素，以及进行细粒度的控制，不必知道元素的大小。元素仍然在文档流中，因而其他元素可以根据&amp;hellip;
+移动,应用,层叠样式表,C,HTML
+JavaScript 使用 mediaDevices API 选择摄像头 大多数智能手机都有前置和后置摄像头，当你在创建视频应用时你可能想要选择或者切换前置、后置摄像头。如果你开发的是一款聊天应用，你很可能会想调用前置摄像头，但如果你&amp;hellip;
+移动,应用,JAVASCRIPT,API,HTML
+CSS网格布局（Grid）完全教程 CSS网格布局（Grid）是一套二维的页面布局系统，它的出现将完全颠覆页面布局的传统方式。创建本教程的目的是为了帮助您更好地理解和学习网格布局（Grid）。目录。网格容器。显示网格。轨道的最小最大尺寸。重复的网格轨道。定义网格间隙。用网格线&amp;hellip;
+层叠样式表,程序员,设计
+初学者应该了解的数据结构： Tree 很多（上层）数据结构，如 Map、Set 等，它们的基础数据结构都（可以）是 Tree。同时，在数据库中快速搜索（元素）用到了树。HTML 的 DOM 节点也通过树来表示对应的层次结构。以上仅仅是树的一少部分例子。在这篇文章中，我们将探讨不&amp;hellip;
+算法,移动,数据库,HTML,DOM
+使用Nuxt.js创建服务器端渲染的Vue.js应用程序 JavaScript框架/库（如Vue）可以在浏览您的网站时提供出色的用户体验。 大多数提供了一种动态更改页面内容的方式，而不必每次都向服务器发送请求。但是，这&amp;hellip;
+VUE.JS,移动,应用,JAVASCRIPT,产品
+Tobias Koppers：我当初为什么写webpack Tobias Koppers是一位自由软件开发者，家住德国纽伦堡。他因写出webpack这个已有数百万开发者使用的开源软件而名噪一时。他目前专注于JavaScr&amp;hellip;
+WEBPACK,移动,JAVASCRIPT,谷歌,应用
+使用ES6让你的React代码提升到一个新档次 ES6使您的代码更具表现力和可读性。而且它与React完美配合！现在您已了解更多基础知识：✨现在是时候将你的ES6技能提升到一个新的水平！ ✨嵌套props解构。您已经知道可以通过解构从React组件中的props中提取变量但是如果user&amp;hellip;
+ECMASCRIPT 6,REACT.JS
+像程序员一样思考：如何只使用 JavaScript，HTML 和 CSS 开发贪食蛇游戏 大家好👋欢迎上车。今天我们将开始一场激动人心的冒险，在这里我们将开发属于我们自己的贪食蛇游戏🐍。通过将其分解为一个个简短的步骤来学习如何解决问题。在这段旅程&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第四期</title>
+      <link>https://alili.tech/archive/26bbf768/</link>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/26bbf768/</guid>
+      <description>利用CSS变量实现令人震惊的悬浮效果 利用CSS变量实现令人震惊的悬浮效果。最近，我从 Grover网站上发现以一个好玩儿的悬停动画，也有了些自己的灵感。这个动画是将鼠标移动到订阅按钮上移动光标会显&amp;hellip;
+层叠样式表,移动,浏览器,应用,HTML
+React和React Native事件系统详解：和谐共存 使用它，喜欢它，但是你真的了解它吗？知道React事件如何在底层处理实现吗？已经有很多帖子解释了如何使用React的事件处理系统，但是并没有多少帖子是在解释他们&amp;hellip;
+REACT.JS,浏览器,REACT NATIVE,移动,DOM
+浏览器内核渲染：重建引擎 本文主要介绍 Blink 渲染的基本原理与开发团队近期对滚动性能、绘制合成与排版的改进。
+浏览器,Blink
+Node.js 前端开发指南 原文链接 关于作者2018年6月21日出版 ​本指南面向了解Javascript但尚未十分熟悉Node.js的前端开发人员。我这里不专注于语言本身 &amp;ndash; Node.js 使用 V8 引擎，所以和Google Chrome的解释器是一样的，这&amp;hellip;
+JAVASCRIPT,浏览器,前端,移动,应用
+Flutter for JavaScript Developers Flutter 是一个致力于“构建高性能和高精确性iOS与Android应用”的跨平台移动应用SDK。来源于文档的解释:Flutter 包含一个现代的“Reac&amp;hellip;
+移动,REACT.JS,应用,REACT NATIVE,JAVASCRIPT
+初学者应该了解的数据结构：Array、HashMap 与 List Data Structures for Beginners: Arrays, HashMaps, and Lists 当开发程序时，我们（通常）需要在内存中存储数据。根据操作数据方式的不同，可能会选择不同的数据结构。有很多常用的数据结构，如&amp;hellip;
+JAVASCRIPT,算法,C,JAVA,设计
+使用 Docker 和 Elasticsearch 构建一个全文搜索应用程序 带你探索如何配置我们自己的全文搜索应用程序。
+Elasticsearch,Docker,Node.js
+2018年你应该知道的11个Javascript实用程序库 由于Javascript在2018年仍然是最受欢迎和最广泛使用的编程语言，因此围绕它扩展了生态系统。尽管如此，Javascript的小型“标准库”仍然会保持这种状态。为填补这一空白，许多流行的实用程序库在过去几年中在GitHub上发展壮大。&amp;hellip;
+JAVASCRIPT,GITHUB,NPM,浏览器,API
+JavaScript与WebAssembly进行比较+在哪些情况下会优于JavaScript 这是专门探索JavaScript及其构建组件的系列的第6期。在识别和描述核心元素的过程中，我们还分享了构建SessionStack时使用的一些经验法则，这是一个轻量级但健壮且高性能的JavaScript应用程序，以帮助用户实时查看和重现其W&amp;hellip;
+JAVASCRIPT,移动,C,应用,浏览器
+程序员最佳网站 程序员最佳网站。作为程序员，你经常会发现自己是某些网站的永久访问者。它们可以是教程、参考或论坛。因此，在这篇文章中，让我们看看给程序员的最佳网站。W3Schools。W3Schools 是为初学者和有经验的 Web 开发人员学习各种编程语言&amp;hellip;
+程序员,编程语言,LINUX,HTML,PHP</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第三期</title>
+      <link>https://alili.tech/archive/9196ee0d/</link>
+      <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/9196ee0d/</guid>
+      <description>大型网站的 HTTPS 实践：协议层以外的实践 “ HTTPS 的全站部署，给我们提供了能解决大部分问题的选项。能让一个做技术的人看到自己的努力解决了用户的问题，这就是最棒的收获。”
+奇舞推荐,HTTPS
+面向体验的重构优化 如何从体验的角度去做重构的优化？如何用数据去证明你的优化是有效果的？
+体验,优化
+React 进阶设计与控制权问题 这篇文章以 React 框架为背景，分享了作者在开发当中对于控制权的一些想法和总结。
+React,权限,JavaScript
+ARKit：增强现实技术在美团到餐业务的实践 “本文将结合美团到餐业务场景，介绍一种基于位置服务（LBS）的 AR 应用。使用 AR 的方式展现商家相对用户的位置，这会给用户带来身临其境的沉浸式体验。”
+AR
+精准操控的滚动体验，浅谈新标准 Scroll Snap 在最近更新的 Chrome 69 稳定版中，全面支持了 CSS Scroll Snap 标准。该标准用于设置一个滚动捕捉点，让最终的滚动位置附着于就近或特定类型的捕捉点中，以达到更好的滚动体验。
+CSS
+CSS 中重要的层叠概念 一起来复习下层叠相关概念。
+层叠上下文,CSS
+精读《12 个评估 JS 库你需要关心的事》 作者给出了从 12 个角度全面分析 JS 库的可用性，分别是： 特性、稳定性、性能、包生态、社区、学习曲线、文档、工具、发展历史、团队、兼容性、趋势。
+JavaScript
+提高网页设计里文本的易读性 文本和背景颜色有一个“对比度”，了解并能正确调整这个对比度，将会让你的页面更加清晰易读，进而提高阅读效率和阅读体验。
+奇舞推荐,体验,文本,设计
+预加载视频实现快速播放 本文作者从视频预加载的各种方法入手，讨论了如何让视频播放速度更快的解决办法。
+视频,预加载,JavaScript,HTML5
+可视化布局模块开发分享 本文主要从可视化布局模块的交互逻辑的设计上展开，探讨了碰撞检测、让位处理、吸顶效果等问题。
+可视化</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第二期</title>
+      <link>https://alili.tech/archive/dc884d5f/</link>
+      <pubDate>Fri, 12 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/dc884d5f/</guid>
+      <description>JavaScript引擎基础：优化原型 本文对所有 JavaScript 引擎中常见的一些关键基础内容进行了介绍——这不仅仅局限于 V8 引擎( https://twitter.com/v8js ) 。。作为一名 JavaScript 开发者，深入了解 JavaScript 引擎是如何&amp;hellip;
+JAVASCRIPT,前端,DOM,程序员,架构
+JavaScript .filter() 方法全解析 .filter是一个内置的数组迭代方法，它接受一个“谓词（译者注: 指代一个过滤条件的函数）”，该“谓词”针对每个值进行调用，并返回一个符合该条件(“truthy值”)的数组。上面那句话包含了很多信息，让我们来逐一解答一下。“内置”只是意味&amp;hellip;
+JAVASCRIPT,应用,移动,API
+离屏Canvas — 使用Web Worker提高你的Canvas运行速度 现在因为有了离屏Canvas，你可以不用在你的主线程中绘制图像了！Canvas 是一个非常受欢迎的表现方式，同时也是WebGL的入口。它能绘制图形，图片，展示动画，甚至是处理视频内容。它经常被用来在富媒体web应用中创建炫酷的用户界面或者是&amp;hellip;
+CANVAS,DOM,API,移动,应用
+（&amp;hellip;）这三个点在JavaScript中意味着什么？ 这篇文章的标题来自我在Quora上被要求回答的一个问题。下面是我试图解释JavaScript中三个点的作用。希望这对于将来有相同问题的人来说可以消除围绕这个概念的迷雾。数组/对象扩展运算符。假设您有以下对象：假设您要创建一个具有不同名称和网&amp;hellip;
+JAVASCRIPT,程序员
+2018年值得关注的10大JavaScript动画库 原文链接现代网站的客户端依靠高质量的动画，这就使得JavaScript动画库的需求不断增加。幸运的是，供应似乎与需求相匹配，并且有多种选择。至于选择哪一个就难以&amp;hellip;
+JAVASCRIPT,NPM,浏览器,层叠样式表,程序员
+Webpack 4 和单页应用入门 很详细的 Webpack 4 入门文章。Webpack 配置工程师们看过来。
+Webpack,前端工程
+基于后编译的国际化解决方案 本文主要介绍了作者在做国际化项目的过程中所遇到的问题以及所做的思考。
+i18n,Vue,JavaScript,前端工程
+Webpack 中的 sideEffects 到底该怎么用？ webpack v4 开始新增了一个 sideEffects 特性，通过给 package.json 加入 sideEffects 声明该包/模块是否包含副作用，从而可以为 tree-shaking 提供更大的优化空间。
+Webpack
+webpack在es6和less自动更新上的简单构建 更新于2015年/11月/08 babel 6.0版本仅仅是一个开发工具包？克隆压缩 webpack-black-triangle 或是 Unicorn Standard Starter Kit的工作原理从ES2015 到es2016 已实&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Alili Weekly 前端周刊 第一期</title>
+      <link>https://alili.tech/archive/ec9ea187/</link>
+      <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/ec9ea187/</guid>
+      <description>用微前端的方式搭建类单页应用 本文介绍了“微前端构建类单页应用”在美团 HR 系统中的实践。
+奇舞推荐,微前端
+引言· 2018年前端开发工作手册 Introduction什么是前端开发人员?2017年度前端开发回顾。即将在2018的发生前端故事&amp;hellip;第一部分：前端实践。前端开发相关职位。前端开发基础知识。前端开发进阶知识。前端程序运行环境一览。在一个团队里前端开发的角色。全栈大神。前&amp;hellip;
+前端,JAVASCRIPT,程序员,移动,API
+JavaScript Functions详解（包含ES6箭头函数） 简介。JavaScript中的所有内容都发生在函数中。函数是一个代码块，可以定义一次并随时运行。函数可以选择接受参数，并返回一个值。JavaScript中的函数是对象，一种特殊的对象：函数对象。另外，函数被称为第一类函数，因为它们可以被赋值&amp;hellip;
+JAVASCRIPT,ECMASCRIPT 6,移动
+JavaScript循环和作用域 JavaScript有一个特点，也许会让开发者头痛, 是与循环和作用域相关的.举个例子:它基本是循环了5次，将一个函数添加到operations数组里面。这个函数可打印出循环变量索引值i.运行这些函数后期望的结果应该是:但实际发生的是这样的&amp;hellip;
+JAVASCRIPT,程序员,ECMASCRIPT 6
+写给工程师的十条精进原则 “以原则为中心地工作与生活，让自己与团队变得更加强大。”
+奇舞推荐,职业
+滚动视差？CSS 不在话下 主要介绍 Parallax Scrolling 的几种实现方式。
+奇舞推荐,CSS,Parallax Scrolling
+深入理解 TypeScript 《TypeScript Deep Dive》中文翻译版。
+TypeScript
+Webpack 4 配置最佳实践 本文的重点在：Webpack 4 在配置上带来了哪些便利？要迁移需要修改配置文件的哪些内容？之前的 Webpack 配置最佳实践在 Webpack 4 这个版本，还适用吗？
+Webpack
+JavaScript中的this this 在不同的地方被调用有不同的值。不知道这些细节可能会导致很多头疼的问题, 所以你不妨花5分钟的时间来了解一下这些坑。this 在严格模式下。除了在声明的对象内被调用, this 在 严格模式下 永远是 undefined。注意我提到&amp;hellip;
+JAVASCRIPT,浏览器,DOM,HTML
+在你的下一个Web应用中使用Vue.js的三个理由 Vue.js是那么地易上手，它在提供了大量开箱即用的功能的同时也提供了良好的性能。请继续阅读以下事例及代码片段以便更加了解Vue.js。选择一个JavaScript框架真是太难了——因为有太多的框架可以供我们使用，并且它们之间的差距并不是很&amp;hellip;
+VUE.JS,JAVASCRIPT,移动,应用,DOM</description>
+    </item>
+    
+  </channel>
+</rss>

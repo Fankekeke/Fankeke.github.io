@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="zh"><head><meta name="generator" content="Hugo 0.51"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="HandheldFriendly" content="True"><meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta name="wap-font-scale" content="no"><meta name="360-site-verification" content="0903ba33c82867d1f7bd8831e32a7e34"><meta name="sogou_site_verification" content="E8uWFBcf4a"><meta name="author" content="Fan"><meta name="description" itemprop="description" content="JSX是一个有趣的东西。它看似像一个模板语言，但是又具备javascript的所有能力。
+在React中，JSX用来生成React元素。
+我们使用create-react-app创建一个APP后：
+一段JSX代码 import React, { Component } from &#39;react&#39;; import ReactDOM from &#39;react-dom&#39;; class App extends"><meta name="keywords" content="react,脚手架,create-react-app"><meta property="og:locale" content="en_US"><meta property="og:title" content="React系列之JSX"><meta property="og:image" content="https://alili.tech/images/logo2.png"><meta property="og:description" content="JSX是一个有趣的东西。它看似像一个模板语言，但是又具备javascript的所有能力。
+在React中，JSX用来生成React元素。
+我们使用create-react-app创建一个APP后：
+一段JSX代码 import React, { Component } from &#39;react&#39;; import ReactDOM from &#39;react-dom&#39;; class App extends"><meta property="og:site_name" content="Alili"><title>React系列之JSX | 前端大爆炸! - WEB BANG! BANG!! BANG!!!</title><link rel="shortcut icon" href="https://alili.tech/images/favicon.ico"><link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="https://alili.tech/lib/font-awesome/css/font-awesome.min.css"><link rel="stylesheet" href="https://alili.tech/lib/justified-gallery/justifiedGallery.min.css"><link rel="stylesheet" href="https://alili.tech/css/style.css"><script src="https://alili.tech/lib/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://alili.tech/lib/jquery/jquery.min.js"></script><script>document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);</script><script type="application/ld+json">{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https://alili.tech/archive/10fba257/",
+				"appid": "1613049289050283", 
+				"title": "React系列之JSX | 前端大爆炸! - WEB BANG! BANG!! BANG!!!", 
+				"images": [],
+				"pubDate": "2017-07-13T19:33:33"
+			}</script></head><body><div id="header-post"><a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a> <span id="menu"><span id="nav"><ul><li><a href="/">Home</a></li><li><a href="/archive/">Archives</a></li><li><a href="/about/">About</a></li><li><a href="http://github.com/Fantasy9527" target="_blank">Github</a></li></ul></span><br><span id="actions"><ul><li><a class="icon" href="https://alili.tech/archive/7a6daf6e/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li><li><a class="icon" href="https://alili.tech/archive/3b5f5a23/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li><li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li><li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li></ul><span id="i-prev" class="info" style="display:none;">Previous post</span> <span id="i-next" class="info" style="display:none;">Next post</span> <span id="i-top" class="info" style="display:none;">Back to top</span> <span id="i-share" class="info" style="display:none;">Share post</span></span><br><div id="share" style="display: none"><ul><li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2falili.tech%2farchive%2f10fba257%2f&text=React%e7%b3%bb%e5%88%97%e4%b9%8bJSX"><i class="fa fa-weibo" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2falili.tech%2farchive%2f10fba257%2f"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2falili.tech%2farchive%2f10fba257%2f&text=React%e7%b3%bb%e5%88%97%e4%b9%8bJSX"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2falili.tech%2farchive%2f10fba257%2f&title=React%e7%b3%bb%e5%88%97%e4%b9%8bJSX"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li><li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2falili.tech%2farchive%2f10fba257%2f&is_video=false&description=React%e7%b3%bb%e5%88%97%e4%b9%8bJSX"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li><li><a class="icon" href="mailto:?subject=React%e7%b3%bb%e5%88%97%e4%b9%8bJSX&body=Check out this article: https%3a%2f%2falili.tech%2farchive%2f10fba257%2f"><i class="fa fa-envelope" aria-hidden="true"></i></a></li><li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2falili.tech%2farchive%2f10fba257%2f&title=React%e7%b3%bb%e5%88%97%e4%b9%8bJSX"><i class="fa fa-get-pocket" aria-hidden="true"></i></a></li><li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2falili.tech%2farchive%2f10fba257%2f&title=React%e7%b3%bb%e5%88%97%e4%b9%8bJSX"><i class="fa fa-reddit" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2falili.tech%2farchive%2f10fba257%2f&title=React%e7%b3%bb%e5%88%97%e4%b9%8bJSX"><i class="fa fa-stumbleupon" aria-hidden="true"></i></a></li><li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2falili.tech%2farchive%2f10fba257%2f&title=React%e7%b3%bb%e5%88%97%e4%b9%8bJSX"><i class="fa fa-digg" aria-hidden="true"></i></a></li></ul></div><div id="toc"><nav id="TableOfContents"><ul><li><ul><li><a href="#一段jsx代码">一段JSX代码</a></li><li><a href="#我们可以在jsx中内嵌表达式">我们可以在JSX中内嵌表达式</a></li><li><a href="#防止xxs攻击">防止XXS攻击</a></li><li><a href="#元素的class">元素的class</a></li></ul></li></ul></nav></div></span></div><div class="content index width mx-auto px3 my3"><section id="wrapper" class="home"><article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header><h1 class="posttitle" itemprop="name headline">React系列之JSX</h1><div class="meta"><div class="postdate"><time datetime="2017-07-13" itemprop="datePublished">2017-07-13</time></div><div class="article-tag"><i class="fa fa-eye"></i> <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span></span></div><div class="article-tag"><i class="fa fa-tag"></i> <a href="/tags/react">React</a></div><div class="article-tag-box"></div></div></header><div class="content" itemprop="articleBody"><p>JSX是一个有趣的东西。它看似像一个模板语言，但是又具备javascript的所有能力。</p><p>在React中，JSX用来生成React元素。</p><p>我们使用create-react-app创建一个APP后：</p><h2 id="一段jsx代码">一段JSX代码</h2><pre><code class="language-javascript">import React, { Component } from 'react';
+
+import ReactDOM from 'react-dom';
+
+class App extends Component {
+  render() {
+    return (
+      &lt;div className=&quot;App&quot;&gt;
+      我是一个APP
+      &lt;/div&gt;
+    );
+  }
+}
+
+ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
+</code></pre><h2 id="我们可以在jsx中内嵌表达式">我们可以在JSX中内嵌表达式</h2><pre><code class="language-javascript">  //插入数据  
+  const data = {name:&quot;小明&quot;}
+  const ele =  &lt;div&gt;我的名字是：{data.name} &lt;/div&gt;;
+
+  //计算
+  const ele1 =  &lt;div&gt; {1+1} &lt;/div&gt;;
+
+  //三元表达式
+  const ele2 =  &lt;div&gt; {true?&quot;我是小明&quot;：&quot;我不是小明&quot;} &lt;/div&gt;;
+
+  //在属性里
+  const ele3 =  &lt;img src={date.xxx} /&gt;;
+</code></pre><hr><p>因为JSX使用Babel编译后,本身自己就是一个对象.</p><pre><code class="language-javascript">let ele = &lt;div className=&quot;user&quot;&gt;Hello World!&lt;/div&gt;
+</code></pre><p>编译后:</p><pre><code class="language-javascript">const element = React.createElement(
+    'div',
+    {className: 'user'},
+    'Hello World!'
+);
+</code></pre><p>所以,这就是JSX可以与js代码混写的原因.</p><pre><code class="language-javascript">var a =1;
+function switchView(){
+    if(a&gt;1){
+        return &lt;div className=&quot;user&quot;&gt;Hello World!&lt;/div&gt;
+    }else{
+        return &lt;div className=&quot;user&quot;&gt;Hello Ming!&lt;/div&gt;
+    }
+}
+</code></pre><p>编译后:</p><pre><code class="language-javascript">var a =1;
+function switchView(){
+    if(a&gt;1){
+        return React.createElement('div',{className: 'user'},'Hello world!');
+    }else{
+        return React.createElement('div',{className: 'user'},'Hello Ming!');
+    }
+}
+</code></pre><h2 id="防止xxs攻击">防止XXS攻击</h2><pre><code class="language-javascript">let content =&quot;&lt;span&gt;我是HTML代码?&lt;/span&gt;&quot;
+
+let ele = &lt;div&gt;{content}&lt;/div&gt; 
+//会直接输入&lt;span&gt;我是HTML代码?&lt;/span&gt;,不会把这一段变成HTML
+</code></pre><h2 id="元素的class">元素的class</h2><p>因为在ES6里,class是关键字(不再是保留字).所以写的时候要注意,修改为className.</p><p>另外属性名都建议使用驼峰命名法.</p><pre><code class="language-javascript">//HTML
+&lt;div class=&quot;user&quot;&gt;Hello World!&lt;/div&gt;
+
+//JSX
+&lt;div className=&quot;user&quot;&gt;Hello World!&lt;/div&gt;
+</code></pre><h2>本文链接：</h2><a href="https://alili.tech/archive/10fba257/" target="_blank">https://alili.tech/archive/10fba257/</a></div></article><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><div class="blog-post-comments"></div><script>new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'ItyOVb4I33bTwprf3cY6uqMc-gzGzoHsz', 
+        app_key: 'hLhtmd4tT0qJbyO2SgQ8odya', 
+        placeholder: '说点什么?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });</script></section></div><footer id="footer"><div class="footer-left">Copyright © 2019 Fan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">浙ICP备18045521号</a></div><div class="footer-right"><nav><ul><li><a href="/">Home</a></li><li><a href="/archive/">Archives</a></li><li><a href="/about/">About</a></li><li><a href="http://github.com/Fantasy9527" target="_blank">Github</a></li></ul></nav></div></footer><script src="https://alili.tech/lib/justified-gallery/jquery.justifiedGallery.min.js"></script><script src="https://alili.tech/lib/typed.js"></script><script src="https://alili.tech/js/main.js"></script><script async src=""></script><script>(function(){
+  if(location.host!=='alili.tech')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()</script><script>(function(){
+    if(location.host!=='alili.tech')return;
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }</script></body></html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Puppeteer on Alili</title>
+    <link>https://alili.tech/tags/puppeteer/</link>
+    <description>Recent content in Puppeteer on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 23 Oct 2018 20:32:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/puppeteer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nodejs爬虫技巧-使用Puppeteer下载图片或文件</title>
+      <link>https://alili.tech/archive/84622ce5/</link>
+      <pubDate>Tue, 23 Oct 2018 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/84622ce5/</guid>
+      <description>  一些网站的图片不允许外链,我们想要下载这些网站的图片通过Puppeteer是比较好解决的. 今天就给大家介绍一个爬虫技巧,通过Puppeteer下载你想要的图片或者文件.
+ 怎么通过Puppeteer下载? 我们需要额外依赖的库 fs-extra
+代码很简单,主要代码可以简化到两三行
+const fse = require(&#39;fs-extra&#39;); // 需要依赖的库,你想用原生fs也是没有问题的 // 主要代码 var viewSource = await page.goto(url); await fse.outputFile(`path`, await viewSource.buffer()) //下载到你想要的路径  </description>
+    </item>
+    
+    <item>
+      <title>Centos7环境下启动puppeteer失败解决办法</title>
+      <link>https://alili.tech/archive/e550825/</link>
+      <pubDate>Sun, 25 Feb 2018 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/e550825/</guid>
+      <description>小贴士: 在centos6环境下,是不能启动puppeteer的,在centos6下,很多puppeteer依赖库是不存在的.所以如果你想在centos6上运行puppeteer,建议还是放弃,把时间花在其他地方比较值得.
+ 缺少依赖 在新的centos7上运行puppeteer往往会运行失败,很多时候会报这样的错:
+...node_modules/puppeteer/.local-chromium/linux-496140/chrome-linux/chrome: error while loading shared libraries: libpangocairo-1.0.so.0: cannot open shared object file: No such file or directory  这样的错表示,缺少依赖.
+下面列出,你的系统可能需要安装的依赖库,使用yum安装
+#字体 yum install ipa-gothic-fonts xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-utils xorg-x11-fonts-cyrillic xorg-x11-fonts-Type1 xorg-x11-fonts-misc -y #依赖库 yum install pango.x86_64 libXcomposite.x86_64 libXcursor.x86_64 libXdamage.x86_64 libXext.x86_64 libXi.x86_64 libXtst.x86_64 cups-libs.x86_64 libXScrnSaver.x86_64 libXrandr.x86_64 GConf2.x86_64 alsa-lib.x86_64 atk.x86_64 gtk3.x86_64 -y  禁用沙箱模式 在Linux环境下,往往还会出现以下错误:
+https://github.com/GoogleChrome/puppeteer/issues/290
+(node:30559) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): Error: Failed to connect to chrome!</description>
+    </item>
+    
+    <item>
+      <title>一个没有界面的Chrome浏览器：puppeteer</title>
+      <link>https://alili.tech/archive/b9985e69/</link>
+      <pubDate>Thu, 21 Dec 2017 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/b9985e69/</guid>
+      <description>Puppeteer介绍 Puppeteer是一个node库，提供了一组用来操纵Chrome的API。 相对PhantomJS来说，他可以直接在你的node项目里面直接调用Chrome的API。 以后很多的自动化测试，爬虫都可以基于Puppeteer来做。
+安装 npm install puppeteer  使用 截屏 const puppeteer = require(&#39;puppeteer&#39;); (async () =&amp;gt; { const browser = await puppeteer.launch(); const page = await browser.newPage(); await page.goto(&#39;https://example.com&#39;); await page.screenshot({path: &#39;example.png&#39;}); await browser.close(); })();  保存页面为PDF const puppeteer = require(&#39;puppeteer&#39;); (async () =&amp;gt; { const browser = await puppeteer.launch(); const page = await browser.newPage(); await page.goto(&#39;https://news.ycombinator.com&#39;, {waitUntil: &#39;networkidle2&#39;}); await page.pdf({path: &#39;hn.pdf&#39;, format: &#39;A4&#39;}); await browser.close(); })();  Puppeteer 还提供了很多的Chrome API [https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

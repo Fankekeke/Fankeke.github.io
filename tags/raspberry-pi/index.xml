@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry Pi on Alili</title>
+    <link>https://alili.tech/tags/raspberry-pi/</link>
+    <description>Recent content in Raspberry Pi on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 20 Jan 2017 22:30:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raspberry之时间自动校准</title>
+      <link>https://alili.tech/archive/4befbcf0/</link>
+      <pubDate>Fri, 20 Jan 2017 22:30:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/4befbcf0/</guid>
+      <description>应该是树莓派系统版本的问题,网上很多方法开启网络时间协议(时间自动校准)已经失效.对于我这样的小白来说,试了很多种方法,都没有成功.
+今天来说说正确的开启姿势;
+树莓派没有默认开启时间自动校准功能的.需要打开NTP（Network Time Protocol，网络时间协议）才可以尽可能的保证时间的准确度.
+启用NTP： sudo timedatectl set-ntp true  接下来我们来看看时间是否正确:
+pi@raspberrypi:~ $ date 2017年 03月 20日 星期一 21:38:41 CST  很明显时间都正确了.如果时间差了24小时以内,那大概是时区错了.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry之开机启动pm2</title>
+      <link>https://alili.tech/archive/9b723d04/</link>
+      <pubDate>Thu, 12 Jan 2017 20:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/9b723d04/</guid>
+      <description>我玩树莓派的过程简直可以用坎坷来形容,研究了十几个小时才安装上Nodejs.
+接下来想要做开机启动pm2,又折腾了十几个小时.网上的方法因为跟不上版本的迭代更新了,导致各种失败.
+接下来,介绍一下让pm2在树莓派上开机启动的方法
+首先下载pm2
+cnpm install pm2 -g  运行需要run的代码
+pm2 start app.js  保存这时候pm2运行的状态,以便开机启动后,pm2 可以重新跑app.js
+sudo pm2 save //系统会生成一个文件 &#39;/home/pi/.pm2/dump.pm2&#39;  (重点)接下来我们要锁定这个文件,不允许任何方式的修改
+sudo chattr +i /home/pi/.pm2/dump.pm2  设置开机启动
+sudo pm2 startup systemd -u pi --hp /home/pi sudo reboot //重启查看开机启动的效果  通过以上步骤,我们就可以成功的开机启动pm2 并且运行app.js
+如果我们以后想修改pm2 开机启动的配置,我们需要解锁dump.pm2文件,
+pm2 start xxx.js //运行另一个程序 sudo chattr -i /home/pi/.pm2/dump.pm2 //解锁文件 sudo pm2 save //保存配置 sudo chattr +i /home/pi/.pm2/dump.pm2 //重新加锁 sudo pm2 startup systemd -u pi --hp /home/pi //设置开机启动 sudo reboot 重启操作系统  以上就是修改pm2开机启动配置的方法了,是不是简单得不能再简单?</description>
+    </item>
+    
+    <item>
+      <title>Raspberry之安装Nodejs</title>
+      <link>https://alili.tech/archive/58ab432d/</link>
+      <pubDate>Wed, 11 Jan 2017 22:30:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/58ab432d/</guid>
+      <description> 我安装的树莓派系统是自带Nodejs的,但是版本非常的低.而且没有npm. 为了安装新版的nodejs,我折腾了十几个小时,网上的方法各种失败.
+最终终于安装成功了,接下来我介绍一下我的安装方法.
+下载Nodejs Nodejs 下载页面
+我们选择Linux Binaries (ARM) ARMv7的版本,复制下载链接
+wget https://nodejs.org/dist/v6.9.5/node-v6.9.5-linux-armv7l.tar.xz tar -xzf node-v6.9.5-linux-armv7l.tar.xz //解压安装包 sudo mv node-v6.9.5-linux-armv7l /usr/local/bin/node/ sudo ln /usr/local/bin/node/bin/node /usr/local/bin/node sudo ln -s /usr/local/bin/node/lib/node_modules/npm/bin/npm /usr/local/bin/npm  好了,这时候我们在任意目录下输入:
+node -v npm -v  node 是最新版本的了,npm 也有了
+因为在国内,用npm下载包的话,会经常不稳定,这时候我们可以用到 cnpm, 输入以下命令:
+$ npm install -g cnpm --registry=https://registry.npm.taobao.org  下载完成之后,我们安装模块的时候:
+$ cnpm install [name]  </description>
+    </item>
+    
+    <item>
+      <title>Raspberry之外网访问树莓派</title>
+      <link>https://alili.tech/archive/8ad4a3a8/</link>
+      <pubDate>Tue, 10 Jan 2017 20:53:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/8ad4a3a8/</guid>
+      <description>我想在公司的时候,也可以操作我家里的树莓派. 可是家里的ip地址是动态的,那我应该怎么办呢?
+经过各种网上一顿搜索之后,利用路由器的端口转发或者DMZ,可以做到外网访问内网.
+可是我设置完之后,并没有成功.折腾了好久,没有找到原因.最后以失败告终.(我怀疑我买到了假路由器).
+各种方案尝试过之后,利用花生壳可以做到外网访问内网,花生壳的叫法是:
+内网穿透
+进入花生壳的下载地址,选择树莓派版本
+下载页面
+复制最新版本的花生壳树莓派版本的最新版下载路径
+wget http://download.oray.com/peanuthull/embed/phddns_raspberry.tgz //下载花生壳 tar zxvf phddns_raspberry.tgz //解压安装包  解压完成后，在当前路径下执行cd phddns2，进入phddns2文件夹，执行./oraynewph start ，如提示Oraynewph start success说明花生壳成功安装运行。
+其实我运行oraynewph start的时候并没有成功,
+如果你也碰到同样的情况的话可以输入以下命令:
+$&amp;gt; sudo mkdir -p /usr/oray-app $&amp;gt; sudo tar -zxvf ./oraynewph.tgz -C /usr/oray-app/ $&amp;gt; sudo rm -rf oraynewph.tgz $&amp;gt; sudo mv ./parse /usr/oray-app/parse $&amp;gt; sudo mv ./oray_serve /etc/init.d/oray_serve $&amp;gt; sudo mv ./oraynewph /bin/oraynewph $&amp;gt; cd .. $&amp;gt; rm -rf phddns2 $&amp;gt; sudo touch /tmp/oraynewph_log $&amp;gt; sudo update-rc.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry之利用SSH操作树莓派</title>
+      <link>https://alili.tech/archive/467ebcb2/</link>
+      <pubDate>Tue, 10 Jan 2017 17:53:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/467ebcb2/</guid>
+      <description>各种搜索,各种折腾之后,终于给我的小树莓派安装好了操作系统. 但是,这PIXEL OS图形操作界面,各种莫名其妙点不动的bug. 折腾了好几个小时之后,让我各种抓狂.
+因为是刚刚接触Linux,很多问题需要在网上搜索,PC跟树莓派之间切换来切换去实在是不好受.
+下面就介绍,用另一台电脑通过SSH来控制树莓派的方法.来解决以上各种抓狂的问题.
+在树莓派打开命令行:
+输入 sudo raspi-config
+选择Advanced Options
+选择SSH
+选择yes
+SSH 已经启用
+然后打开PC的命令行(我用的是MAC,命令行直接可以用ssh)
+输入:
+ssh pi@192.168.1.xxx  地址为树莓派的ip地址,如果不知道,在树莓派命令行输入 ifconfig,就可以看到了
+然后输入密码,如果还没有修改过用户pi的密码的话,默认密码就是:raspberry
+随后就可以尽情的玩耍了</description>
+    </item>
+    
+    <item>
+      <title>Raspberry之系统安装</title>
+      <link>https://alili.tech/archive/2a0d2aea/</link>
+      <pubDate>Tue, 10 Jan 2017 12:43:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/2a0d2aea/</guid>
+      <description>年过完了，某宝商家终于开始工作发货了。 年前的时候，就想买一个树莓派来玩一玩。可是我运气不好，商家已经准备回家过年了。
+昨天在某宝下单。今天就拿到了。我买的是Raspberry Pi3 Modle B。
+树莓派并没有自带硬盘，所以想要安装系统的话，要自己准备TF卡或者U盘。
+接下来，就要去树莓派的官网下载系统了。 官方安装系统工具，NOOBS非常的简单。
+下载地址
+下载完成后,我们就可以按照以下步骤来安装系统了.
+1,把下载的zip包解压到TF卡里
+2,把TF卡插入树莓派,并且用HDMI接入显示器,鼠标键盘,接上电源.
+这时,树莓派被点亮,显示器会出现以下内容:
+3,这时按下shift按键,会进入恢复系统界面
+选择你想要安装的系统,点击安装.
+等待几分钟,系统就安装好了.
+重启进入桌面后,这桌面操作系统叫 PIXEL OS;基于 Debian.
+PIXEL 的意思是“Pi Improved Xwindows Environment, Lightweight”，即“树莓派改进的轻量级 Xwindows 环境”.</description>
+    </item>
+    
+  </channel>
+</rss>

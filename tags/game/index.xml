@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Game on Alili</title>
+    <link>https://alili.tech/tags/game/</link>
+    <description>Recent content in Game on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 15 Oct 2018 19:02:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/game/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>任天堂Switch 6.0&#43; 系统菜单汉化</title>
+      <link>https://alili.tech/archive/b3ccb586/</link>
+      <pubDate>Mon, 15 Oct 2018 19:02:36 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/b3ccb586/</guid>
+      <description>任天堂Switch汉化补丁  仅支持6.0 和6.0.1系统 简体中文/繁体中文 支持大气层、ReiNX、RajNX、SXOS（TXOS）  下载地址 汉化安装器 汉化安装器：https://share.weiyun.com/5HNlw1J （强烈推荐）
+覆盖版：（当安装器闪退时使用，覆盖前要把原来的文件删干净。）  简体中文：https://share.weiyun.com/59MqPxr 繁体中文：https://share.weiyun.com/52w0vp8  ReiNX汉化专用版本： 完整支持汉化，已经修复DOOM和2K19的问题 https://share.weiyun.com/58azYtc
+源码来自https://github.com/Reisyukaku/ReiNX
+地址覆盖  大气层覆盖到atmosphere/titles ReiNX覆盖到ReiNX/titles SXOS覆盖到sxos/titles  汉化安装器教程：  首先，用读卡器把SD卡插入电脑。 打开SD卡的盘。 把Nintendo Switch系统汉化补丁.exe 放入卡内。 运行Nintendo Switch系统汉化补丁.exe 看提示选择。  FAQ 汉化影响游戏吗？ 一般汉化导致游戏崩溃是文本出错的原因，新的汉化已经修复大部分的问题。当然实际效果仍需测试。
+5.1系统能用吗？ 虽然5.1系统安装6.0的汉化可以开机。但不保证稳定性。也不保证能用。
+安装程序打不开怎么办？ 安装 Visual C++ Redistributable for Visual Studio 2015 安装程序不支持32位系统，所以用覆盖版就行。
+安装汉化后无法开机怎么办？ 别急，卸载汉化即可，不会影响原系统。
+部分游戏崩溃的问题 如果你的游戏本身打了汉化补丁，是有可能崩溃的（目前已知龙珠超宇宙2）。
+部分游戏崩溃是破解工具本身的问题。比如SXOS2.0极不稳定。大气层某些游戏无法运行与存档。如果你用的是SXOS 2.xx ，运行XCI游戏有很大几率崩溃，应该与汉化无关。
+SXOS (2.0, 2.0.1, 2.1) XCI游戏待机死机的问题如果你的游戏本身使用了汉化，待机很大几率死机。与系统汉化无关。
+关于6.0.1系统 根据测试，6.0.1系统没有对文本做改动，所以6.0的汉化是完全可以兼容的。
+注意事项  文件拷贝不建议使用mac系统!!! 文件拷贝不建议使用mac系统!</description>
+    </item>
+    
+    <item>
+      <title>Switch的NSP和XCI什么区别？</title>
+      <link>https://alili.tech/archive/150b3ba6/</link>
+      <pubDate>Sun, 14 Oct 2018 19:02:36 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/150b3ba6/</guid>
+      <description>最近在折腾Switch, 在游戏安装中出现了两种游戏格式,分别是
+ xci nsp  他们之间到底有什么区别? 在实际使用中: xci，扔到内存卡里就可以使用, nsp，需要安装之后才能使用 简单理解就是，xci是绿色版软件（正确说应该是ISO），nsp是安装版软件。
+因为xci相当于卡带，不需要安装，需要切换. nsp相当于数字版，需要安装，安装完直接能玩
+所有的DLC或者更新包之类的都是nsp格式.
+当我们使用xci格式的软件的时候,想要安装更新升级包的时候,其实都是nsp格式的,直接安装nsp效果都是一样的.
+平常使用中,我喜欢nsp,安装过后就可以直接打开软件了,不需要再切换一次.个人觉得使用nsp是一劳永逸的.
+关于汉化 其实都是可以汉化的.两种格式只有使用上的差别,其他的并没有差别.</description>
+    </item>
+    
+    <item>
+      <title>Nintendo Switch破解原理</title>
+      <link>https://alili.tech/archive/33fa548c/</link>
+      <pubDate>Thu, 11 Oct 2018 19:02:36 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/33fa548c/</guid>
+      <description>Nintendo Switch Nintendo Switch ，是任天堂出品的电子游戏机 ，于2017年3月3日在日本、北美、欧洲和香港发售，同年12月1日在韩国与台湾发售。 拥有可拆卸控制器和可分离式主机，游戏载体使用了专用卡匣 。 主机处理器使用了NVIDIA定制的Tegra X1系统芯片 ，这是任天堂首次采用NVIDIA的系统芯片。 任天堂Switch主机的内置存储空间为32GB，可使用microSD进行扩充，最高支持microSDXC标准，最大支持2TB容量； 主机在初始系统1.0.0时只能支持到microSD标准，发售同日提供的系统2.0 .0更新使其可支持microSDXC标准。
+破解原理 Nintendo Switch（任天堂switch） 的CPU使用的是Nvidia X1 T210的处理器，存在一个可进入的工程模式（Recovery Mode），简称RCM， Nintendo Switch的右joycon连接口中隐藏着一个特殊金属引脚（pin10）。如果在开机时，按住音量键+，并且将这个引脚接地（pin1,7,9），Nintendo Switch就能进入工程模式（RCM），从而设法运行自制代码。
+你可以在淘宝上轻易买到这个短接器。也可以通过锡纸，别针或者3D打印等很方便的制作。短接器的作用就是将这个特殊引脚接地。 由上可知， Nintendo Switch破解依赖的是基于Nvidia X1 T210的处理器的工程模式。注入（发射）特殊代码引导自制系统或程序。达成破解。
+这个方法不会被封堵，普通的系统更新补并不会影响破解。无法通过软件层面封堵。因为工程模式启动的优先级高于系统。不论以后更新什么系统，进入RCM（工程模式是没有问题的），在即将到来的6.0版本，也只是更改了游戏文件的存储方式，变相的防范破解，目前TX1.9版本已经加入了破解。
+正因为破解是基于开机短接进入工程模式的原理，在任意一次关机后，破解就会失效，需要重新进行破解。
+破解后可做什么，有没有什么问题 Nintendo Switch 的系统本质上可以看作是一个改版的LINUX的操作系统，.通过破解后，编译新的程序，可以Dump你手中的实体卡带游戏，导出存档，甚至可以看小说，听音乐，作为其他游戏主机的模拟器。玩破解游戏只是其中的一个功能。 所以，在放入存储卡时候，因为系统格式化的不同，也会存在一次升级的情况，这是由于不同系统对于文件存储分区的逻辑不同导致的。
+扩展阅读：破解后您可以安装一个真正的发行版的Linux系统Lakka，
+着力推荐国内开发者的Lakka系统，这是独立于国外的一个项目，让我们感谢他。 最强模拟器系统 lakka修改模拟游戏分辨率和纹理和安装教程 https://www.91wii.com/thread-96053-1-1.html
+关于BAN机 由于任天堂在联网时会验证游戏文件头（每个游戏的文件头都是唯一的），所以玩破解游戏，修改存档等，都会导致被Ban，目前主要体现为两种， 普通BAN：具体的表现为无法联机游戏，无法进Eshop（商店），同时会由错误代码出现，但是目前游戏正常更新（例如更新中文语言）并不受影响。您可以理解为Ban机是限制了网络功能。 更为严厉的ban机措施，大家称之为Super Ban，具体的表现为联网后出现错误代码2137-7403，同时主机无法更新，游戏和dlc也无法更新，也就说，任天堂将你的主机序列号加入黑名单，直接断开所有同任天堂的联系。
+您可以破解之后，进行系统备份。但目前已经出现有朋友因为不熟悉备份恢复流程变砖，所以这里不放链接，如果您要做这个事情， 记得“一机一码”，自己的备份文件只能自己用，不能用别人的。同时恢复分区的时候，要留意不要恢复错的文件，一旦误操作，是不可恢复的变砖。
+我更建议，破解后断开网络，等要联网之前，重置主机再联网，可以大概率从正。这个风险较小。
+破解方式 目前，Nintendo Switch的破解存在两个大的分支。 一类是免费的大气层/REI/破解TX安装器等。此类只能支持NSP格式游戏安装。略微复杂 一类是收费的TX OS。此类支持卡带DUPM出来的XCI格式，同时支持NSP安装。
+因为代码公开，所以破解方式也变得逐渐多样化，希望您了解具体原理，而不是纠结于具体哪种破解方式，大致来说，论坛中简单热门的就是最好的破解方式。论坛中有不少不错的整合包，您可以任选其一进行安装。
+参考资料: https://www.91wii.com/thread-93105-1-1.html</description>
+    </item>
+    
+  </channel>
+</rss>

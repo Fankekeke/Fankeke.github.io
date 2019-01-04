@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Code Review on Alili</title>
+    <link>https://alili.tech/tags/code-review/</link>
+    <description>Recent content in Code Review on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 04 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/code-review/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用husky提升Code Review的效率</title>
+      <link>https://alili.tech/archive/i9t0x2tvleo/</link>
+      <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/i9t0x2tvleo/</guid>
+      <description>在code review的时候,代码风格是其中审查的指标之一.在审查代码风格其实是有一定工作量的.
+为了减少代码审查的工作量,我们何不把代码风格在提交代码之前就规范掉?
+这样我们就可以在代码审查中节约出很多时间,来做更多的其他更有意义的事情.
+git hooks 在git中提供了hook,就是在触发代码提交,push等一系列操作的时候,提供了触发其他程序的钩子.
+如何操作,本文不多赘述.
+有兴趣的同学可以查看文档: https://git-scm.com/docs/githooks
+husky 如果看过githooks的文档,是不是觉得会有一点繁琐?
+这里介绍一个工具 husky 可以解决你的问题.
+安装 npm install husky --save-dev  然后修改 package.json，增加配置：
+{ &amp;quot;husky&amp;quot;: { &amp;quot;hooks&amp;quot;: { &amp;quot;pre-commit&amp;quot;: &amp;quot;eslint .&amp;quot; } }, }  如果你只是局部安装了 eslint,请使用以下配置
+{ &amp;quot;lint-staged&amp;quot;: { &amp;quot;src/**/*.js&amp;quot;: [ &amp;quot;node_modules/.bin/eslint&amp;quot; ] }, }  最后尝试 Git 提交，你就会很快收到反馈：
+git commit -m &amp;quot;this is a commit&amp;quot;  这样,我们就可以在代码提交之前验证一下我们的代码lint是否通过.
+对于一些以前从来没有用过eslint的项目来说.突然引入这种工具.
+你可能面临的是把所有文件都按照eslint都格式化一遍.那不是疯了吗?
+lint-staged 这里再安利一个工具,可以实现 eslint只检查本次提交的文件. 这样我们就可以做到渐进式的改善我们的代码质量.
+安装 npm install lint-staged --save-dev  修改 package.</description>
+    </item>
+    
+    <item>
+      <title>让团队保持Code Review习惯的三大法宝</title>
+      <link>https://alili.tech/archive/1479pecm0mbo/</link>
+      <pubDate>Fri, 30 Nov 2018 14:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/1479pecm0mbo/</guid>
+      <description>之前跟大家聊过代码审查,想要在团队中保持团队代码审查习惯,是相当困难的. 我们必须要有合理的流程,工具与制度的支持,才能基本保证我们代码审查效率与质量.
+流程支持:Gitflow 之前有介绍Gitflow的工作流.
+大致如下:
+ 开发者在本地仓库中新建一个专门的分支开发功能。 开发者push分支修改到公开的Git仓库中。 开发者通过Git发起一个Merge Request。 团队的其它成员代码审查，讨论并修改。 项目维护者合并功能到官方仓库中并关闭Merge Request。  工具支持 强制使用eslint 强制使用eslint,在代码未提交之前,是用husky等工具做强制eslint. 保证提交之后的代码,必须先过一遍eslint.
+规范提交代码的类型 我们自己内部开发了一款简单的命令行工具,可以在我们提交代码的时候,定义本次提交的类型.
+方便我们后续在代码审查的时候,更加容易的理解修改的内容.
+类型如下  bug修复 新特性 样式修复 代码重构 测试代码 代码回滚 bug修复 文档更新 临时提交  命令行使用方式 ? What do you want to do? 代码提交 ? 请选择Git提交类型？ (Use arrow keys) ❯ * fixed : bug修复 * feature : 新特性 * style : 样式修复 * refactor : 代码重构 * test : 测试代码 * revert : 代码回滚 * doc : 文档更新 (Move up and down to reveal more choices)  Code Climate Code Climate是一款代码测试工具,它可以帮助你进行代码冗余检测、质量评估，同时支持多种语言，如PHP, Ruby, JavaScript, CSS, Golang, Python 等。</description>
+    </item>
+    
+    <item>
+      <title>Code Review工具推荐以及使用报告</title>
+      <link>https://alili.tech/archive/cf2c83a/</link>
+      <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/cf2c83a/</guid>
+      <description>随之团队的扩大，统一编码规范，提高编码质量，变得尤为重要。代码审查作为可以有效提高代码质量的方式之一,有必要在公司推行代码审查制度. 让团队养成代码审查的习惯,提高代码质量,提前规避不必要的问题.
+为了更加高效的代码审核,需要一款代码审查工具.所以才有了这份使用报告.
+下面是我在使用中,尝试使用的一些工具.以及一些使用上的评价与总结.
+1) CodeStriker CodeStriker免费和开源的web应用程序,可以帮助开发人员基于web的代码审查。开发者canensures问题,评论和决策是记录在一个数据库,并提供一个舒适的工作空间实际执行代码检查。
+
+ 价格: 免费 UI交互: ★ 安装维护 :★★★ 易学程度: ★★★★★   总结: CodeStriker 对于一个代码审查工具来说,功能上已经可以基本满足.但是因为开发时间太过久远,已经很长时间没有人在维护了,而且UI比较有历史的味道.
+ 2) RhodeCode RhodeCode也是一个很好的工具,回顾你的代码并找出代码中的bug和问题并删除后检查代码。
+
+ 价格: 社区版本免费,企业版本收费 UI交互: ★★★★ 安装维护 :★★★ 易学程度: ★★★★★   总结: RhodeCode在使用使用过程中,还是比较优秀的.工具的安装部署使用docker也比较方便.使用上比较顺畅,可以作为使用的备选软件.
+ 3) Code Brag Codebrag是一个简单的和轻量级的工具,代码审查,让这一过程为您的团队工作。它有助于解决一些问题像非阻塞的代码评审,智能电子邮件通知,内联注释,喜欢得多。
+
+ 价格: 免费 UI交互: ★★★★ 安装维护 :★★★★ 易学程度: ★★★★★   总结: Codebrag 是一款开源工具,安装起来不算难.也有一定程度上的社交属性.在使用期间官网在国内打不开,软件的安装资源不是很好获取.
+ 4) Phabricator Phabricator是一个开源软件和web应用程序包括代码评审,主持GIT / Hg / SVN,发现错误时,浏览源代码和审计等</description>
+    </item>
+    
+    <item>
+      <title>如何通过 Code Review 帮助团队提升代码质量</title>
+      <link>https://alili.tech/archive/bbaf6d07/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/bbaf6d07/</guid>
+      <description>代码审查解决方案 最近在推进公司的代码审查. 经过几天的研究之后,整理出一些问题与解决方案.
+当前面临的问题  没有一个好的工具方便代码审查 没有一个好的代码标准代码审查 没有一个流程强制执行代码审查 没有一个固定职责的人来代码审查 代码审查之后的修改跟踪问题 代码审查者与代码修复者鼓励机制 跨团队资源调配的时候,容易造成过多的代码  解决方案 加入Merge Request工作流 在Gitlab上做代码审查,我们需要在我们现有的git工作流上加入Merge Request.
+工作方式 Merge Request可以和功能分支工作流、Gitflow工作流或Forking工作流一起使用。过程是这样的：
+ 开发者在本地仓库中新建一个专门的分支开发功能。 开发者push分支修改到公开的Git仓库中。 开发者通过Git发起一个Merge Request。 团队的其它成员代码审查，讨论并修改。 项目维护者合并功能到官方仓库中并关闭Merge Request。  结合到我们现有工作流当中 我们现在代码管理的工作流叫: Gitflow工作流
+Gitflow工作流和功能分支工作流类似，但围绕项目发布定义一个严格的分支模型。
+在Gitflow工作流中使用Merge Request让开发者在发布分支或是维护分支上工作时，可以有个方便的地方对关于发布分支或是维护分支的问题进行交流。
+Gitflow工作流中Merge Request的使用过程：当一个功能、发布或是热修复分支需要Review时，开发者简单发起一个Merge Request，团队的其它成员会通过Bitbucket收到通知。
+新功能一般合并到develop分支，而发布和热修复则要同时合并到develop分支和master分支上。Merge Request可能用做所有合并的正式管理。
+审查流程 开始=&amp;gt;start: 代码作者通过git 克隆代码到本地 结束=&amp;gt;end: 结束代码审查 修改代码=&amp;gt;operation: 修改代码并且提交 pr=&amp;gt;operation: 发起 Merge Request 通知=&amp;gt;operation: gitlab 通知相关审核人员 审核=&amp;gt;operation: 审核人员开始审核代码 关闭=&amp;gt;operation: 关闭Merge Request 合并=&amp;gt;operation: 合并代码 代码审核中=&amp;gt;condition: 是否过审 开始-&amp;gt;修改代码-&amp;gt;pr-&amp;gt;通知-&amp;gt;审核-&amp;gt;代码审核中 关闭-&amp;gt;合并-&amp;gt;结束 代码审核中(yes)-&amp;gt;关闭 代码审核中(no)-&amp;gt;修改代码  结合GitLab做代码审查 项目角色介绍    角色 描述     Owner Git 系统管理员   Master Git 项目开发人员   Reporter Git 项目测试人员   Guest 访客    角色权限 我们可以看到Master跟 Owner才有权利把代码合并到受保护的分支上,对于Master角色的分配需要谨慎.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database on Alili</title>
+    <link>https://alili.tech/tags/database/</link>
+    <description>Recent content in Database on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 26 Aug 2017 23:36:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL的安全模式</title>
+      <link>https://alili.tech/archive/49f93461/</link>
+      <pubDate>Sat, 26 Aug 2017 23:36:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/49f93461/</guid>
+      <description>今天delete一条数据的时候,出现了以下错误.
+You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -&amp;gt; SQL Queries and reconnect.  因为MySql运行在safe-updates模式下.
+想要解除该模式,运行以下命令:
+SET SQL_SAFE_UPDATES = 0  为了安全，建议执行完操作后，再恢复成默认状态1</description>
+    </item>
+    
+    <item>
+      <title>MySQL的Access denied for user问题</title>
+      <link>https://alili.tech/archive/78cba2eb/</link>
+      <pubDate>Fri, 25 Aug 2017 23:36:00 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/78cba2eb/</guid>
+      <description>问题 在另一台服务器连接MySQL的时候,出现了 Access denied for user &amp;lsquo;root&amp;rsquo;@&amp;lsquo;xxx.xxx.xxx.xxx&amp;rsquo; (using password: YES) 的报错提示.
+这是数据库赋权的问题.
+解决办法 在MySQL服务器上使用root登录后，执行如下sql语句：
+mysql -u root -p  然后输入你的密码.
+然后执行以下命令:
+GRANT ALL PRIVILEGES ON *.* TO &#39;你的账户&#39;@&#39;%&#39; IDENTIFIED BY &#39;你的密码&#39; WITH GRANT OPTION;  执行成功后:
+FLUSH PRIVILEGES;  然后再尝试连接你的数据库,应该就可以了.</description>
+    </item>
+    
+  </channel>
+</rss>

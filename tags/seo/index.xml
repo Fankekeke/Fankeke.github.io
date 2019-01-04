@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Seo on Alili</title>
+    <link>https://alili.tech/tags/seo/</link>
+    <description>Recent content in Seo on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 17 Nov 2018 16:14:25 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/seo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo博客百度SEO终极优化,熊掌号自动推送</title>
+      <link>https://alili.tech/archive/0xh05yxhj3yq/</link>
+      <pubDate>Sat, 17 Nov 2018 16:14:25 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/0xh05yxhj3yq/</guid>
+      <description>在切换到Hugo平台之后,比较头疼的是之前hexo很多seo的插件不能使用了. 下面跟大家说一下我的seo优化方案.
+Meta标签优化 Description meta description，被认为是最有用的meta标签，是网站的简介信息。 content控制在100个字符以内比较好。
+&amp;lt;meta name=&#39;description&#39; itemprop=&amp;quot;description&amp;quot; content=&amp;quot;{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{substr .Summary 0 100}}{{ end }}{{ end }}&amp;quot;&amp;gt;  Keywords {{ if .Keywords }} &amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ delimit .Keywords &amp;quot;, &amp;quot; }}&amp;quot; &amp;gt; {{else}} &amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ delimit .Site.Params.Keywords &amp;quot;, &amp;quot; }}&amp;quot; &amp;gt; {{ end }}  百度熊掌号推送 说到seo熊掌号是必不可少的了,他可以做到24小时之内收录.所以这个必须不能放过.
+gulp 在这里我要使用gulp来做我的自动化任务管理工具
+安装gulp需要的模块 npm init npm install gulp --save npm install xml2js --save npm install xmlhttprequest --save  在项目根目录创建一个gulpfile.</description>
+    </item>
+    
+    <item>
+      <title>让你的Hexo博客支持熊掌号URL自动推送,百度24小时收录</title>
+      <link>https://alili.tech/archive/9d64fe09/</link>
+      <pubDate>Wed, 24 Oct 2018 21:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/9d64fe09/</guid>
+      <description> 百度推出熊掌号,为了让hexo支持熊掌号推送,我在 hexo-baidu-url-submit 这个插件的基础上加上了熊掌号推送功能. 当天推送的24小时内会直接收录. 用这个,百度的收录速度是非常快的.
+以后再也不用等百度收录等到死也不会理你了.
+熊掌号支持 package.json 里面的内容改为
+ &amp;quot;hexo-baidu-url-submit&amp;quot;: &amp;quot;https://github.com/Fantasy9527/hexo-baidu-url-submit&amp;quot;,  baidu_url_submit 配置 baidu_url_submit: count: 1000 ## 提交最新的一个链接 host: alili.tech ## 在百度站长平台中注册的域名 token: xxxxx ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里! path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里 xz_appid: &#39;xxxxxx&#39; ## 你的熊掌号 appid xz_token: &#39;xxxxxx&#39; ## 你的熊掌号 token xz_count: 10 ## 从所有的提交的数据当中选取最新的10条,该数量跟你的熊掌号而定  deploy 配置 deploy: - type: baidu_url_submitter # 百度 - type: baidu_xz_url_submitter # 百度熊掌号  </description>
+    </item>
+    
+    <item>
+      <title>Hexo的SEO优化(搜索引擎优化)</title>
+      <link>https://alili.tech/archive/4105a341/</link>
+      <pubDate>Tue, 19 Jan 2016 21:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/4105a341/</guid>
+      <description>今天给大家聊一聊hexo的seo也就是百度跟谷歌的一些搜索引擎优化.
+sitemap网站地图  安装site map网站地图插件
+npm install hexo-generator-sitemap --save npm install hexo-generator-baidu-sitemap --save  _config.yml中增加以下配置
+itemap: path: sitemap.xml baidusitemap: path: baidusitemap.xml  生成网站地图
+  hexo clean hexo g  百度主动推送  安装插件
+npm install hexo-baidu-url-submit --save  _config.yml插件配置
+  baidu_url_submit: count: 10 # 提交最新的链接数 host: alili.tech # 在百度站长平台中注册的域名,虽然官方推荐要带有 www, 但可以不带. token: your_token ## 请注意这是您的秘钥， 请不要发布在公众仓库里! path: baidu_urls.txt # 文本文档的地址,新链接会保存在此文本文档里   _config.yml发布配置 ``` deploy: type: git #部署类型 repository: xxxxx #部署的仓库 branch: master</description>
+    </item>
+    
+  </channel>
+</rss>

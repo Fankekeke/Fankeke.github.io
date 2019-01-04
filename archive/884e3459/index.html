@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="zh"><head><meta name="generator" content="Hugo 0.51"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="HandheldFriendly" content="True"><meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta name="wap-font-scale" content="no"><meta name="360-site-verification" content="0903ba33c82867d1f7bd8831e32a7e34"><meta name="sogou_site_verification" content="E8uWFBcf4a"><meta name="author" content="Fan"><meta name="description" itemprop="description" content="日常开发中,难免会遇到一些要求浏览器储存一些数据的需求.目前常用的储存方法有:
+cookie cookie设计之初,本身不是用来储存数据.而是区别http请求. 所以每一次http请求,都会带上cookie.如果cookie储存的量实在过大,肯定会造成http的性能问题.
+// 设置cookie(储存数据) function setcookie(name,value,expired,path,do"><meta name="keywords" content="Javascript,html5,cookie,localStorage,Flash,ShareObject"><meta property="og:locale" content="en_US"><meta property="og:title" content="浏览器常用的本地储存方式"><meta property="og:image" content="https://alili.tech/images/logo2.png"><meta property="og:description" content="日常开发中,难免会遇到一些要求浏览器储存一些数据的需求.目前常用的储存方法有:
+cookie cookie设计之初,本身不是用来储存数据.而是区别http请求. 所以每一次http请求,都会带上cookie.如果cookie储存的量实在过大,肯定会造成http的性能问题.
+// 设置cookie(储存数据) function setcookie(name,value,expired,path,do"><meta property="og:site_name" content="Alili"><title>浏览器常用的本地储存方式 | 前端大爆炸! - WEB BANG! BANG!! BANG!!!</title><link rel="shortcut icon" href="https://alili.tech/images/favicon.ico"><link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="https://alili.tech/lib/font-awesome/css/font-awesome.min.css"><link rel="stylesheet" href="https://alili.tech/lib/justified-gallery/justifiedGallery.min.css"><link rel="stylesheet" href="https://alili.tech/css/style.css"><script src="https://alili.tech/lib/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://alili.tech/lib/jquery/jquery.min.js"></script><script>document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);</script><script type="application/ld+json">{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https://alili.tech/archive/884e3459/",
+				"appid": "1613049289050283", 
+				"title": "浏览器常用的本地储存方式 | 前端大爆炸! - WEB BANG! BANG!! BANG!!!", 
+				"images": [],
+				"pubDate": "2016-04-29T17:33:33"
+			}</script></head><body><div id="header-post"><a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a> <span id="menu"><span id="nav"><ul><li><a href="/">Home</a></li><li><a href="/archive/">Archives</a></li><li><a href="/about/">About</a></li><li><a href="http://github.com/Fantasy9527" target="_blank">Github</a></li></ul></span><br><span id="actions"><ul><li><a class="icon" href="https://alili.tech/archive/45db7962/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li><li><a class="icon" href="https://alili.tech/archive/7807a0b7/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li><li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li><li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li></ul><span id="i-prev" class="info" style="display:none;">Previous post</span> <span id="i-next" class="info" style="display:none;">Next post</span> <span id="i-top" class="info" style="display:none;">Back to top</span> <span id="i-share" class="info" style="display:none;">Share post</span></span><br><div id="share" style="display: none"><ul><li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2falili.tech%2farchive%2f884e3459%2f&text=%e6%b5%8f%e8%a7%88%e5%99%a8%e5%b8%b8%e7%94%a8%e7%9a%84%e6%9c%ac%e5%9c%b0%e5%82%a8%e5%ad%98%e6%96%b9%e5%bc%8f"><i class="fa fa-weibo" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2falili.tech%2farchive%2f884e3459%2f"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2falili.tech%2farchive%2f884e3459%2f&text=%e6%b5%8f%e8%a7%88%e5%99%a8%e5%b8%b8%e7%94%a8%e7%9a%84%e6%9c%ac%e5%9c%b0%e5%82%a8%e5%ad%98%e6%96%b9%e5%bc%8f"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2falili.tech%2farchive%2f884e3459%2f&title=%e6%b5%8f%e8%a7%88%e5%99%a8%e5%b8%b8%e7%94%a8%e7%9a%84%e6%9c%ac%e5%9c%b0%e5%82%a8%e5%ad%98%e6%96%b9%e5%bc%8f"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li><li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2falili.tech%2farchive%2f884e3459%2f&is_video=false&description=%e6%b5%8f%e8%a7%88%e5%99%a8%e5%b8%b8%e7%94%a8%e7%9a%84%e6%9c%ac%e5%9c%b0%e5%82%a8%e5%ad%98%e6%96%b9%e5%bc%8f"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li><li><a class="icon" href="mailto:?subject=%e6%b5%8f%e8%a7%88%e5%99%a8%e5%b8%b8%e7%94%a8%e7%9a%84%e6%9c%ac%e5%9c%b0%e5%82%a8%e5%ad%98%e6%96%b9%e5%bc%8f&body=Check out this article: https%3a%2f%2falili.tech%2farchive%2f884e3459%2f"><i class="fa fa-envelope" aria-hidden="true"></i></a></li><li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2falili.tech%2farchive%2f884e3459%2f&title=%e6%b5%8f%e8%a7%88%e5%99%a8%e5%b8%b8%e7%94%a8%e7%9a%84%e6%9c%ac%e5%9c%b0%e5%82%a8%e5%ad%98%e6%96%b9%e5%bc%8f"><i class="fa fa-get-pocket" aria-hidden="true"></i></a></li><li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2falili.tech%2farchive%2f884e3459%2f&title=%e6%b5%8f%e8%a7%88%e5%99%a8%e5%b8%b8%e7%94%a8%e7%9a%84%e6%9c%ac%e5%9c%b0%e5%82%a8%e5%ad%98%e6%96%b9%e5%bc%8f"><i class="fa fa-reddit" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2falili.tech%2farchive%2f884e3459%2f&title=%e6%b5%8f%e8%a7%88%e5%99%a8%e5%b8%b8%e7%94%a8%e7%9a%84%e6%9c%ac%e5%9c%b0%e5%82%a8%e5%ad%98%e6%96%b9%e5%bc%8f"><i class="fa fa-stumbleupon" aria-hidden="true"></i></a></li><li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2falili.tech%2farchive%2f884e3459%2f&title=%e6%b5%8f%e8%a7%88%e5%99%a8%e5%b8%b8%e7%94%a8%e7%9a%84%e6%9c%ac%e5%9c%b0%e5%82%a8%e5%ad%98%e6%96%b9%e5%bc%8f"><i class="fa fa-digg" aria-hidden="true"></i></a></li></ul></div><div id="toc"><nav id="TableOfContents"><ul><li><ul><li><a href="#cookie">cookie</a></li><li><a href="#localstorage">localStorage</a></li><li><a href="#flash-shareobject">Flash ShareObject</a></li><li><a href="#google-gear">Google Gear</a></li></ul></li></ul></nav></div></span></div><div class="content index width mx-auto px3 my3"><section id="wrapper" class="home"><article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header><h1 class="posttitle" itemprop="name headline">浏览器常用的本地储存方式</h1><div class="meta"><div class="postdate"><time datetime="2016-04-29" itemprop="datePublished">2016-04-29</time></div><div class="article-tag"><i class="fa fa-eye"></i> <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span></span></div><div class="article-tag"><i class="fa fa-tag"></i> <a href="/tags/javascript">Javascript</a></div><div class="article-tag-box"></div></div></header><div class="content" itemprop="articleBody"><p>日常开发中,难免会遇到一些要求浏览器储存一些数据的需求.目前常用的储存方法有:</p><h2 id="cookie">cookie</h2><p>cookie设计之初,本身不是用来储存数据.而是区别http请求. 所以每一次http请求,都会带上cookie.如果cookie储存的量实在过大,肯定会造成http的性能问题.</p><pre><code class="language-javascript">// 设置cookie(储存数据)
+function setcookie(name,value,expired,path,domain){
+	var now=new Date();
+	if(name==null){
+		throw &quot;Cookie Name Must not be Null&quot;;
+		}else if (value==null){
+		throw &quot;Cookie Value Must not be Null&quot;;
+		}else if(expired==null){
+		expired=0;
+	}
+	if(path==null){
+		path=&quot;/&quot;;
+	}
+	if(domain==null){
+		domain=window.location.host;
+	}
+	now.setTime(now.getTime()+expired*1000);
+document.cookie=name+&quot;=&quot;+escape(value)+&quot;;expires=&quot;+now.toGMTString()+&quot;;path=&quot;+path+&quot;;domain=&quot;+domain;
+}
+
+// 读取cookie(读取数据)
+function getcookie(name){
+	var allcookie=document.cookie;
+	thiscookie=allcookie.match(name+&quot;=[^\\s]*&quot;);
+	mycookie=thiscookie[0].split(&quot;=&quot;);
+	a=mycookie[1].substring(0,mycookie[1].length-1);
+	return unescape(a);
+}
+</code></pre><h2 id="localstorage">localStorage</h2><p>相对cookie的读取操作,localStorage会简单非常多. 另外localStorage每一次更新,都会触发一次onstorage事件</p><pre><code class="language-javascript">localStorage.xxx=&quot;alili.tech&quot;;
+localStorage['xxx']=&quot;alili.tech&quot;;
+localStorage.setItem(&quot;xxx&quot;,&quot;alili.tech&quot;);
+//获取
+localStorage.xxx;
+localStorage['xxx'];
+localStorage.getItem(&quot;xxx&quot;);
+//删除
+localStorage.removeItem(&quot;xxx&quot;);
+//清空locaStorage
+localStorage.clear();
+
+//onstorage事件
+window.addEventListener(&quot;storage&quot;, function(){
+// 做一些你想做的事情
+}, false);       
+</code></pre><h2 id="flash-shareobject">Flash ShareObject</h2><p>这种方式能能解决上面提到的cookie存储的两个弊端，而且能够跨浏览器，应该说是目前最好的本地存储方案。不过，需要在页面中插入一个Flash. 缺点：需要安装Flash插件。</p><h2 id="google-gear">Google Gear</h2><p>Google开发出的一种本地存储技术。 缺点：需要安装Gear组件。</p><h2>本文链接：</h2><a href="https://alili.tech/archive/884e3459/" target="_blank">https://alili.tech/archive/884e3459/</a></div></article><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><div class="blog-post-comments"></div><script>new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'ItyOVb4I33bTwprf3cY6uqMc-gzGzoHsz', 
+        app_key: 'hLhtmd4tT0qJbyO2SgQ8odya', 
+        placeholder: '说点什么?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });</script></section></div><footer id="footer"><div class="footer-left">Copyright © 2019 Fan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">浙ICP备18045521号</a></div><div class="footer-right"><nav><ul><li><a href="/">Home</a></li><li><a href="/archive/">Archives</a></li><li><a href="/about/">About</a></li><li><a href="http://github.com/Fantasy9527" target="_blank">Github</a></li></ul></nav></div></footer><script src="https://alili.tech/lib/justified-gallery/jquery.justifiedGallery.min.js"></script><script src="https://alili.tech/lib/typed.js"></script><script src="https://alili.tech/js/main.js"></script><script async src=""></script><script>(function(){
+  if(location.host!=='alili.tech')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()</script><script>(function(){
+    if(location.host!=='alili.tech')return;
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }</script></body></html>

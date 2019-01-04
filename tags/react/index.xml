@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on Alili</title>
+    <link>https://alili.tech/tags/react/</link>
+    <description>Recent content in React on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 05 Nov 2017 19:33:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>让Visual Studio Code按照ESLint规则格式化你的代码</title>
+      <link>https://alili.tech/archive/153fb3f5/</link>
+      <pubDate>Sun, 05 Nov 2017 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/153fb3f5/</guid>
+      <description>项目加入ESLint之后,大家的代码是工整了许多. 但是因为刚刚不熟悉ESLint的规则,很多时候都在数进退多少空格,双引号还是单引号的删改切换.
+严重影响了开发效率与心情!!!! 严重影响了开发效率与心情!!!! 严重影响了开发效率与心情!!!!
+重要的事情说三遍!!!
+下面介绍一种利用Visual Studio Code ESLint插件,配置之后,可以自动格式化成ESLint规定的格式
+ 在Visual Studio Code 安装 ESLint插件 widnows 点击 文件&amp;gt;首选项&amp;gt;设置 / mac 点击Code&amp;gt;首选项 搜索 eslint.autoFixOnSave, 找到之后修改为 true  重启你的Visual Studio Code,当你打开代码文件的后,直接保存文件. 代码会自动格式化成ESLint规定的格式.大大的提高了开发效率,并且统一了代码规范
+下面分享一下我们项目里的一些ESLint规则
+{ rules: { // 具体规则 &#39;accessor-pairs&#39;: 2, // getter/setter成对出现 &#39;arrow-spacing&#39;: [1, { &#39;before&#39;: true, &#39;after&#39;: true }], // 箭头函数前后有空格 &#39;array-bracket-spacing&#39;: [1, &#39;never&#39;], // 数组内前后无空格 &#39;block-spacing&#39;: [1, &#39;always&#39;], // 单行{}前后有空格 &#39;brace-style&#39;: [2, &#39;1tbs&#39;, { &#39;allowSingleLine&#39;: true }], // {}换行，单行不用 &#39;camelcase&#39;: [2, { &#39;properties&#39;: &#39;never&#39; }], // 属性名可以不是驼峰 &#39;comma-dangle&#39;: [1, &#39;only-multiline&#39;], // 数组/对象最后一个必须有, &#39;comma-spacing&#39;: [1, { &#39;before&#39;: false, &#39;after&#39;: true }], // ,前有空格, 后无空格 &#39;comma-style&#39;: [2, &#39;last&#39;], // ,在最后，不能换行 &#39;constructor-super&#39;: 1, // super()在必须构造函数内 &#39;curly&#39;: [2, &#39;multi-line&#39;], // if/while等函数可以多行不带{} &#39;dot-location&#39;: [2, &#39;property&#39;], // .</description>
+    </item>
+    
+    <item>
+      <title>Redux先放一边,开启MobX的新玩法</title>
+      <link>https://alili.tech/archive/b3d50314/</link>
+      <pubDate>Sat, 04 Nov 2017 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/b3d50314/</guid>
+      <description>Mobx Mobx是一个简单的,高扩展的状态管理工具.Mobx与Redux一样是为了解决react管理状态的一种工具. 但是在写代码体验上,会好过Redux.
+安装 npm install mobx --save //配合React: npm install mobx-react --save  一个简单的计数器 import React, { Component } from &#39;react&#39; import ReactDOM from &#39;react-dom&#39; import { observer } from &#39;mobx-react&#39; import { observable, computed, action } from &#39;MobX&#39; class Store { @observable count = 0; @action add() { this.count ++ } minus() { this.count -- } } let countStore = new Store() @observer class CountComponent extends Component { render() { return ( &amp;lt;div&amp;gt; &amp;lt;h2&amp;gt;{ countStore.</description>
+    </item>
+    
+    <item>
+      <title>在你的React项目中使用Decorator 装饰器</title>
+      <link>https://alili.tech/archive/a280911b/</link>
+      <pubDate>Wed, 01 Nov 2017 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/a280911b/</guid>
+      <description>使用装饰器  目前只支持Babel/Typescript两种预编译器
+ Babel: npm install babel-plugin-transform-decorators-legacy --save-dev  在你的 .babelrc配置文件中开启,没有 .babelrc文件的话,可以新建一个.
+{ &amp;quot;presets&amp;quot;: [ &amp;quot;es2015&amp;quot;, &amp;quot;stage-1&amp;quot; ], &amp;quot;plugins&amp;quot;: [&amp;quot;transform-decorators-legacy&amp;quot;] }  插件的顺序千万要注意,非常重要：transform-decorators-legacy 应该放在插件的第一个。
+当使用react native的时候，下面这个预设可以代替 transform-decorators-legacy
+{ &amp;quot;presets&amp;quot;: [&amp;quot;stage-2&amp;quot;, &amp;quot;react-native-stage-0/decorator-support&amp;quot;] }  在create-react-app中使用装饰器 npm run eject  安装相关插件:
+//针对react npm install babel-preset-stage-2 --save-dev npm install babel-preset-react-native-stage-0 --save-dev  根目录下创建.babelrc { &amp;ldquo;presets&amp;rdquo;: [&amp;ldquo;react-native-stage-0/decorator-support&amp;rdquo;] }
+TypeScript 如果你的项目已经开始使用TypeScript,那我们只需要在tsconfig.json文件中的 experimentalDecorators 设置为 true
+这样,我们就可以使用ES7新特性装饰器了
+在vscode 移除不支持decorator特性的语法警告提示 在项目根目录创建tsconfig.json
+{ &amp;quot;compilerOptions&amp;quot;: { &amp;quot;experimentalDecorators&amp;quot;: true, &amp;quot;allowJs&amp;quot;: true } }  重启你的vscode,你会发现语法警告没有了.</description>
+    </item>
+    
+    <item>
+      <title>React系列之父组件如何传递Props给this.props.children</title>
+      <link>https://alili.tech/archive/7aed82f9/</link>
+      <pubDate>Fri, 08 Sep 2017 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/7aed82f9/</guid>
+      <description> 问题 React使用router之后,以下形式会经常出现.
+this.props.children  可是这样渲染出来的组件,父组件如何传递props给它呢?
+解决 我们可以这样传递porps给子组件:
+{ React.cloneElement(this.props.children,{A:xxx,B:xxx2,C:xxx3}) }  </description>
+    </item>
+    
+    <item>
+      <title>React系列之用create-react-native-app创建React Native应用</title>
+      <link>https://alili.tech/archive/bb62bab9/</link>
+      <pubDate>Sun, 30 Jul 2017 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/bb62bab9/</guid>
+      <description>之前在介绍create-react-app的时候稍微提了一下create-react-native-app.
+这东西其实用起来还是蛮有意思的.这东西最大的好处就是如果你没有安装Xcode,Android Studio这些工具的时候,也是可以在电脑上调试React Native 应用的.
+ 这里说的电脑包括 Mac Windows Linux!!!!
+ create-react-native-app
+Create React Native App 安装 $ npm install -g create-react-native-app $ create-react-native-app my-app $ cd my-app/ $ npm start  安装 Expo 这个APP在你的iphone或者安卓手机上. npm start 之后,控制台会出现一个二维码.用这个Expo 扫描这个二维码,就可以马上在你的手机上直接进行远程调试了.那是相当的方便啊.但是速度还是相对桌面模拟器调试慢一点.
+Expo的桌面开发工具 Expo XDE Expo XDE
+我们不仅可以在控制里运行整个项目,用XDE也可以.并且支持使用模拟器直接在电脑里直接调试程序.速度不错,完全可以接受.
+只不过我Mac的模拟器在安装expo的时候,花了好长的一段时间.如果大家有遇到类似的情况一定要耐心的等一等.</description>
+    </item>
+    
+    <item>
+      <title>React系列之分享一个自适应高的iframe组件</title>
+      <link>https://alili.tech/archive/b4301d9b/</link>
+      <pubDate>Mon, 17 Jul 2017 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/b4301d9b/</guid>
+      <description>在网页里面先要嵌入iframe,总是得要解决iframe高度的问题.
+那我们在React下,该怎么做到呢?
+class FullheightIframe extends Component { constructor() { super(); this.state = { iFrameHeight: &amp;quot;0px&amp;quot; }; } render() { return ( &amp;lt;iframe style={ { width: &amp;quot;100%&amp;quot;, height: this.state.iFrameHeight, overflow: &amp;quot;visible&amp;quot; }} onLoad={() =&amp;gt; { const obj = ReactDOM.findDOMNode(this); this.setState({ iFrameHeight: obj.contentWindow.document.body.scrollHeight + &amp;quot;px&amp;quot; }); }} ref=&amp;quot;iframe&amp;quot; src={this.props.src} width=&amp;quot;100%&amp;quot; height={this.state.iFrameHeight} scrolling=&amp;quot;no&amp;quot; frameBorder=&amp;quot;0&amp;quot; /&amp;gt; ); } }  </description>
+    </item>
+    
+    <item>
+      <title>React系列之让create-react-app支持导入less</title>
+      <link>https://alili.tech/archive/3b5f5a23/</link>
+      <pubDate>Fri, 14 Jul 2017 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/3b5f5a23/</guid>
+      <description>目前来说,create-react-app并不支持直接导入LESS; 这里我就介绍一下,如何让它支持LESS的导入.
+create-react-app是基于webpack的,只是没有暴露webpack.config相关的文件.想要支持less,肯定是要修改webpack的配置文件的. 以下命令可以做到暴露出配置文件来:
+npm run eject  运行完毕之后,你会看见多出了一个config文件夹. 里面有webpack.config.dev.js和webpack.config.prod.js等配置文件.
+接下来,安装less-loader
+npm install less-loader less --save-dev  然后修改webpack.config.dev.js文件,
+我们只需要修改两个地方
+第一: 找到下面代码 exclude: [ /\.html$/, /\.(js|jsx)$/, /\.css$/, /\.json$/, /\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, ]  将.css改为.(css|less)，内容变为：
+exclude: [ /\.html$/, /\.(js|jsx)$/, /\.(css|less)$/, /\.json$/, /\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, ]  第二个：找到test: /.css$/ 更改为test: /.(css|less)$/
+并在下面的use数组里面增加less-loader
+{ loader: require.resolve(&#39;less-loader&#39;) // compiles Less to CSS }  更改完以后这部分代码大概长这个样子：
+{ test: /\.(css|less)$/, use: [ require.resolve(&#39;style-loader&#39;), { loader: require.</description>
+    </item>
+    
+    <item>
+      <title>React系列之JSX</title>
+      <link>https://alili.tech/archive/10fba257/</link>
+      <pubDate>Thu, 13 Jul 2017 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/10fba257/</guid>
+      <description>JSX是一个有趣的东西。它看似像一个模板语言，但是又具备javascript的所有能力。
+在React中，JSX用来生成React元素。
+我们使用create-react-app创建一个APP后：
+一段JSX代码 import React, { Component } from &#39;react&#39;; import ReactDOM from &#39;react-dom&#39;; class App extends Component { render() { return ( &amp;lt;div className=&amp;quot;App&amp;quot;&amp;gt; 我是一个APP &amp;lt;/div&amp;gt; ); } } ReactDOM.render(&amp;lt;App /&amp;gt;, document.getElementById(&#39;root&#39;));  我们可以在JSX中内嵌表达式 //插入数据 const data = {name:&amp;quot;小明&amp;quot;} const ele = &amp;lt;div&amp;gt;我的名字是：{data.name} &amp;lt;/div&amp;gt;; //计算 const ele1 = &amp;lt;div&amp;gt; {1+1} &amp;lt;/div&amp;gt;; //三元表达式 const ele2 = &amp;lt;div&amp;gt; {true?&amp;quot;我是小明&amp;quot;：&amp;quot;我不是小明&amp;quot;} &amp;lt;/div&amp;gt;; //在属性里 const ele3 = &amp;lt;img src={date.xxx} /&amp;gt;;  因为JSX使用Babel编译后,本身自己就是一个对象.</description>
+    </item>
+    
+    <item>
+      <title>React系列之从一个脚手架开始说起:create-react-app</title>
+      <link>https://alili.tech/archive/7a6daf6e/</link>
+      <pubDate>Wed, 12 Jul 2017 19:33:33 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/7a6daf6e/</guid>
+      <description>React的全家桶实在太过于庞大。如果初学者想直接品味React的魅力，这里介绍一个官方的脚手架。使用方法特别简单。
+create-react-app 大概使用方法 安装
+npm install -g create-react-app  创建一个app
+create-react-app my-app cd my-app/  文件结构：
+my-app ├── README.md ├── node_modules ├── package.json ├── .gitignore ├── public │ └── favicon.ico │ └── index.html │ └── manifest.json └── src └── App.css └── App.js └── App.test.js └── index.css └── index.js └── logo.svg └── registerServiceWorker.js  启动应用：
+npm start  用浏览器打开 http://localhost:3000/ 就可以直接看到你的应用了。
+如果你想打包你的应用：
+npm run build  特点  不需要配置； 对 React, JSX, ES6 和 Flow 可以直接编译； 开发服务器； 浏览器热加载的功能； JavaScript 文件中可以直接 import CSS 和图片； 自动处理 CSS 的兼容问题，无需添加 -webkit 前缀； 集成好了编译命令，编译后直接发布成产品，包含 sourcemaps。  哎哟，路边又捡了一个叫 create-react-native-app 的脚手架:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="zh"><head><meta name="generator" content="Hugo 0.51"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="HandheldFriendly" content="True"><meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta name="wap-font-scale" content="no"><meta name="360-site-verification" content="0903ba33c82867d1f7bd8831e32a7e34"><meta name="sogou_site_verification" content="E8uWFBcf4a"><meta name="author" content="Fan"><meta name="description" itemprop="description" content="ECMAScript 6 已经正式发布一个月了,接下来会分享一些学习笔记以及自己的理解.
+新增的关键字 let与const 一直以来,javascript 都是用var来申明变量
+function foo(){ var a = 1; console.log(a) } foo(); //1  现在我们多了两个新的小伙伴:let与const let命令 function foo(){ let a = "><meta name="keywords" content="ECMAScript,ECMAScript2016,es6,JavaScript,前端学习"><meta property="og:locale" content="en_US"><meta property="og:title" content="ECMAScript 6 之变量那些事"><meta property="og:image" content="https://alili.tech/images/logo2.png"><meta property="og:description" content="ECMAScript 6 已经正式发布一个月了,接下来会分享一些学习笔记以及自己的理解.
+新增的关键字 let与const 一直以来,javascript 都是用var来申明变量
+function foo(){ var a = 1; console.log(a) } foo(); //1  现在我们多了两个新的小伙伴:let与const let命令 function foo(){ let a = "><meta property="og:site_name" content="Alili"><title>ECMAScript 6 之变量那些事 | 前端大爆炸! - WEB BANG! BANG!! BANG!!!</title><link rel="shortcut icon" href="https://alili.tech/images/favicon.ico"><link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="https://alili.tech/lib/font-awesome/css/font-awesome.min.css"><link rel="stylesheet" href="https://alili.tech/lib/justified-gallery/justifiedGallery.min.css"><link rel="stylesheet" href="https://alili.tech/css/style.css"><script src="https://alili.tech/lib/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://alili.tech/lib/jquery/jquery.min.js"></script><script>document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);</script><script type="application/ld+json">{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https://alili.tech/archive/573a0170/",
+				"appid": "1613049289050283", 
+				"title": "ECMAScript 6 之变量那些事 | 前端大爆炸! - WEB BANG! BANG!! BANG!!!", 
+				"images": [],
+				"pubDate": "2015-07-15T20:18:24"
+			}</script></head><body><div id="header-post"><a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a> <span id="menu"><span id="nav"><ul><li><a href="/">Home</a></li><li><a href="/archive/">Archives</a></li><li><a href="/about/">About</a></li><li><a href="http://github.com/Fantasy9527" target="_blank">Github</a></li></ul></span><br><span id="actions"><ul><li><a class="icon" href="https://alili.tech/archive/8bb9cbf7/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li><li><a class="icon" href="https://alili.tech/archive/8d0689eb/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li><li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li><li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li></ul><span id="i-prev" class="info" style="display:none;">Previous post</span> <span id="i-next" class="info" style="display:none;">Next post</span> <span id="i-top" class="info" style="display:none;">Back to top</span> <span id="i-share" class="info" style="display:none;">Share post</span></span><br><div id="share" style="display: none"><ul><li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2falili.tech%2farchive%2f573a0170%2f&text=ECMAScript%206%20%e4%b9%8b%e5%8f%98%e9%87%8f%e9%82%a3%e4%ba%9b%e4%ba%8b"><i class="fa fa-weibo" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2falili.tech%2farchive%2f573a0170%2f"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2falili.tech%2farchive%2f573a0170%2f&text=ECMAScript%206%20%e4%b9%8b%e5%8f%98%e9%87%8f%e9%82%a3%e4%ba%9b%e4%ba%8b"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2falili.tech%2farchive%2f573a0170%2f&title=ECMAScript%206%20%e4%b9%8b%e5%8f%98%e9%87%8f%e9%82%a3%e4%ba%9b%e4%ba%8b"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li><li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2falili.tech%2farchive%2f573a0170%2f&is_video=false&description=ECMAScript%206%20%e4%b9%8b%e5%8f%98%e9%87%8f%e9%82%a3%e4%ba%9b%e4%ba%8b"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li><li><a class="icon" href="mailto:?subject=ECMAScript%206%20%e4%b9%8b%e5%8f%98%e9%87%8f%e9%82%a3%e4%ba%9b%e4%ba%8b&body=Check out this article: https%3a%2f%2falili.tech%2farchive%2f573a0170%2f"><i class="fa fa-envelope" aria-hidden="true"></i></a></li><li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2falili.tech%2farchive%2f573a0170%2f&title=ECMAScript%206%20%e4%b9%8b%e5%8f%98%e9%87%8f%e9%82%a3%e4%ba%9b%e4%ba%8b"><i class="fa fa-get-pocket" aria-hidden="true"></i></a></li><li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2falili.tech%2farchive%2f573a0170%2f&title=ECMAScript%206%20%e4%b9%8b%e5%8f%98%e9%87%8f%e9%82%a3%e4%ba%9b%e4%ba%8b"><i class="fa fa-reddit" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2falili.tech%2farchive%2f573a0170%2f&title=ECMAScript%206%20%e4%b9%8b%e5%8f%98%e9%87%8f%e9%82%a3%e4%ba%9b%e4%ba%8b"><i class="fa fa-stumbleupon" aria-hidden="true"></i></a></li><li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2falili.tech%2farchive%2f573a0170%2f&title=ECMAScript%206%20%e4%b9%8b%e5%8f%98%e9%87%8f%e9%82%a3%e4%ba%9b%e4%ba%8b"><i class="fa fa-digg" aria-hidden="true"></i></a></li></ul></div><div id="toc"><nav id="TableOfContents"><ul><li><ul><li><ul><li><a href="#新增的关键字-let与const">新增的关键字 let与const</a></li><li><a href="#let命令">let命令</a><ul><li><a href="#变量提升">变量提升</a></li></ul></li><li><a href="#暂时性死区-tdz">暂时性死区 (TDZ)</a></li><li><a href="#不能重复申明">不能重复申明</a></li><li><a href="#const命令">const命令</a></li></ul></li></ul></li></ul></nav></div></span></div><div class="content index width mx-auto px3 my3"><section id="wrapper" class="home"><article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header><h1 class="posttitle" itemprop="name headline">ECMAScript 6 之变量那些事</h1><div class="meta"><div class="postdate"><time datetime="2015-07-15" itemprop="datePublished">2015-07-15</time></div><div class="article-tag"><i class="fa fa-eye"></i> <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span></span></div><div class="article-tag-box"></div></div></header><div class="content" itemprop="articleBody"><p>ECMAScript 6 已经正式发布一个月了,接下来会分享一些学习笔记以及自己的理解.</p><h3 id="新增的关键字-let与const">新增的关键字 let与const</h3><p>一直以来,javascript 都是用var来申明变量</p><pre><code class="language-javascript">function foo(){
+  var a = 1;
+  console.log(a)
+}
+
+foo(); //1
+</code></pre><p>现在我们多了两个新的小伙伴:let与const<!-- more --></p><h3 id="let命令">let命令</h3><pre><code class="language-javascript">function foo(){
+  let a = 1;
+  console.log(a)
+}
+
+foo(); //1
+</code></pre><p>这样看起来,与var没有什么区别,我们看接下来的例子</p><pre><code class="language-javascript">if(true){
+  var a =1;
+}
+
+console.log(a) //  1
+</code></pre><pre><code class="language-javascript">if(true){
+  let a =1;
+}
+
+console.log(a) //  Error: a is not defined
+</code></pre><p>在 for函数里</p><pre><code class="language-javascript">for (var i = 0; i &lt; 10; i++) {
+
+}
+
+console.log(i) //  10
+</code></pre><pre><code class="language-javascript">for (let i = 0; i &lt; 10; i++) {
+
+}
+
+console.log(i) //  Error: i is not defined
+</code></pre><p>上面的例子说明了,let只在块级作用域里有效.而var在以上情况下,是作为一个全局变量存在的;</p><p>我们再举一个例子:</p><pre><code class="language-javascript">var arr = [];
+for (var i = 0; i &lt; 3; i++) {
+  arr.push(function(){
+    return i;
+  })
+}
+
+console.log(arr[0]()) //3
+console.log(arr[1]()) //3
+console.log(arr[2]()) //3
+</code></pre><p>数组里每一个function运行后,输出的i都是10;</p><p>这好像跟我们预想的结果不太一样.</p><p>在这里var i 作为一个全局的变量,每一次 i++后,都会覆盖之前的值</p><p>所以arr里的function运行后返回的i,都是最后都是返回的全局变量 i;</p><pre><code class="language-javascript">var arr = [];
+for (let i = 0; i &lt; 3; i++) {
+  arr.push(function(){
+    return i;
+  })
+}
+
+console.log(arr[0]()) //0
+console.log(arr[1]()) //1
+console.log(arr[2]()) //2
+</code></pre><p>在这里 let i是为一个局部变量. arr里的funtion运行后,都是返回局部的i,每一次都是一个新的变量. 所以function运行后输出的都是相对应的值;</p><p>如果用var怎么做到以上的效果呢?</p><pre><code class="language-javascript">var arr = [];
+for (var i = 0; i &lt; 3; i++) {
+
+  (function(i){
+    arr.push(function(){
+      return i
+    })
+  })(i)
+
+}
+
+console.log(arr[0]()) //0
+console.log(arr[1]()) //1
+console.log(arr[2]()) //2
+</code></pre><p>我们在for函数里,新增一个自执行的函数,把i传进这个自执行函数里. 每一次运行就相当于重新在自执行函数里重新申明了一个i, 自执行函数里的i就不会受到外面的全局i的影响了;</p><h4 id="变量提升">变量提升</h4><pre><code class="language-javascript">console.log(foo) // undefined
+
+var foo =1;
+</code></pre><blockquote><p>javascript 对被var申明过的变量,如果在被赋值之前使用都先会被赋值为undefined,并不会报错</p></blockquote><pre><code class="language-javascript">console.log(foo) // 报错
+
+let foo =1;
+</code></pre><p>用let定义的变量,却报错了.let不支持变量提升, 必须得先申明后使用</p><h3 id="暂时性死区-tdz">暂时性死区 (TDZ)</h3><p>由于let的变量必须得先申明再使用; 于是这里抛出了一个叫&rdquo;暂存死区&rdquo;的概念; 什么叫暂存死区呢?</p><pre><code class="language-javascript">{
+  //暂时性死区开始
+  console.log(foo) // 报错
+
+  //foo被声明后暂时性死区结束
+  let foo =1;
+  console.log(foo);
+}
+
+</code></pre><p>在块级作用域下,从作用域执行的一开始,到变量被申明的这一段,叫做暂存死区.</p><p>在暂存死区里使用变量,是不允许的.</p><h3 id="不能重复申明">不能重复申明</h3><pre><code class="language-javascript">var foo = 1;
+var foo = 2
+console.log(foo) //2
+</code></pre><pre><code class="language-javascript">let foo = 1;
+let foo = 2; //报错
+console.log(foo);
+</code></pre><p>由let申明的变量是不允许重复申明的;</p><h3 id="const命令">const命令</h3><p>const关键字申明的是常量, 什么是常量? 由const申明出来的&rsquo;变量&rsquo;,是只读不允许修改的.</p><pre><code class="language-javascript">var foo=1;
+foo =2; //2
+</code></pre><pre><code class="language-javascript">const FOO=1;
+FOO =2; //报错 &quot;FOO&quot; is read-only
+</code></pre><blockquote><p>一般来说,常量会以全大写的方式来命名;</p></blockquote><p>const也跟let一样有着不能变量提升,暂时性死区,不允许重复申明,以及只能在所在的块级作用域下申明后使用等特性.</p><h2>本文链接：</h2><a href="https://alili.tech/archive/573a0170/" target="_blank">https://alili.tech/archive/573a0170/</a></div></article><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><div class="blog-post-comments"></div><script>new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'ItyOVb4I33bTwprf3cY6uqMc-gzGzoHsz', 
+        app_key: 'hLhtmd4tT0qJbyO2SgQ8odya', 
+        placeholder: '说点什么?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });</script></section></div><footer id="footer"><div class="footer-left">Copyright © 2019 Fan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">浙ICP备18045521号</a></div><div class="footer-right"><nav><ul><li><a href="/">Home</a></li><li><a href="/archive/">Archives</a></li><li><a href="/about/">About</a></li><li><a href="http://github.com/Fantasy9527" target="_blank">Github</a></li></ul></nav></div></footer><script src="https://alili.tech/lib/justified-gallery/jquery.justifiedGallery.min.js"></script><script src="https://alili.tech/lib/typed.js"></script><script src="https://alili.tech/js/main.js"></script><script async src=""></script><script>(function(){
+  if(location.host!=='alili.tech')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()</script><script>(function(){
+    if(location.host!=='alili.tech')return;
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }</script></body></html>

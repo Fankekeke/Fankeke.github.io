@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on Alili</title>
+    <link>https://alili.tech/tags/hexo/</link>
+    <description>Recent content in Hexo on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 20 Nov 2018 16:14:25 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Travis CI自动化部署你的Hugo,Hexo博客</title>
+      <link>https://alili.tech/archive/oj8dtatmwzg/</link>
+      <pubDate>Tue, 20 Nov 2018 16:14:25 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/oj8dtatmwzg/</guid>
+      <description>Travis CI是什么? Travis CI是在线托管的CI服务，用Travis来进行持续集成，不需要自己搭服务器。最重要的是，它对开源项目是免费的。 如果公司是用的是 gitlab,也有提供相应的持续集成服务.这里就过多赘述.
+Travis CI 配置文件 Travis 要求项目的根目录下面，必须有一个.travis.yml文件。
+当你的仓库有提交的时候,travis会自动执行你下面配置的行为.
+Travis CI 的钩子与生命周期 Travis的钩子 Travis 有不同的阶段,他提供了7个钩子。
+ before_install：install 阶段之前执行 before_script：script 阶段之前执行 after_failure：script 阶段失败时执行 after_success：script 阶段成功时执行 before_deploy：deploy 步骤之前执行 after_deploy：deploy 步骤之后执行 after_script：script 阶段之后执行  生命周期  before_install install before_script script aftersuccess or afterfailure [OPTIONAL] before_deploy [OPTIONAL] deploy [OPTIONAL] after_deploy after_script  .travis.yml 下面是我的博客部署配置,也是我项目.travis.yml文件的内容.
+hugo 这是我的hugo部署配置,仅供参考
+language: node_js node_js: 10.13.0 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.51/hugo_0.51_Linux-64bit.deb - sudo dpkg -i hugo*.deb - hugo version - rm -rf public - npm install script: - hugo --buildFuture - gulp - echo &#39;Build done!</description>
+    </item>
+    
+    <item>
+      <title>Hexo Process Out of Memory 内存溢出问题</title>
+      <link>https://alili.tech/archive/c38d0045/</link>
+      <pubDate>Tue, 13 Nov 2018 21:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/c38d0045/</guid>
+      <description>hexo内存溢出问题 当hexo生成文章大概在1000左右的时候,便有可能出现该问题.
+FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - process out of memory  解决方法: # 找到hexo 命令的位置 which hexo  编辑hexo命令的bin文件的第一行为以下内容.
+#!/usr/bin/env node --max_old_space_size=8192  便暂时解决内存溢出的问题.
+hexo的性能 hexo的性能相对hugo确实差太多,同样1000+的页面,用hugo却只用了不到2s. 这让我开始开始犹豫是否要放弃使用hexo.</description>
+    </item>
+    
+    <item>
+      <title>Hexo的DTraceProviderBindings MODULE_NOT_FOUND问题</title>
+      <link>https://alili.tech/archive/e25431a8/</link>
+      <pubDate>Sun, 19 Feb 2017 21:32:05 +0000</pubDate>
+      
+      <guid>https://alili.tech/archive/e25431a8/</guid>
+      <description>最近在mac上安装Hexo,老是报错 DTraceProviderBindings MODULE_NOT_FOUND;
+第一种报错 报错命令如下:
+{ [Error: Cannot find module &#39;./build/Release/DTraceProviderBindings&#39;] code: &#39;MODULE_NOT_FOUND&#39; } { [Error: Cannot find module &#39;./build/default/DTraceProviderBindings&#39;] code: &#39;MODULE_NOT_FOUND&#39; } { [Error: Cannot find module &#39;./build/Debug/DTraceProviderBindings&#39;] code: &#39;MODULE_NOT_FOUND&#39; }  虽然hexo的生成 发布功能没有影响.但是每次运行命令的时候,就会报错.表示很不能忍;
+网上的普遍方法是:
+npm install hexo --no-optional  但是,我的电脑还是没有效果;
+最后我重装了 hexo-cli
+npm uninstall hexo-cli -g npm install hexo-cli -g  我的报错问题就解决了.
+第二种报错 { Error: Cannot find module &#39;./build/Release/DTraceProviderBindings&#39; at Function.Module._resolveFilename (module.js:469:15) at Function.Module._load (module.js:417:25) at Module.require (module.</description>
+    </item>
+    
+  </channel>
+</rss>

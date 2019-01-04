@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About Me on Alili</title>
+    <link>https://alili.tech/about/</link>
+    <description>Recent content in About Me on Alili</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 27 May 2016 14:31:51 +0000</lastBuildDate>
+    
+	<atom:link href="https://alili.tech/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>个人简历</title>
+      <link>https://alili.tech/about/_resume/</link>
+      <pubDate>Fri, 27 May 2016 14:31:51 +0000</pubDate>
+      
+      <guid>https://alili.tech/about/_resume/</guid>
+      <description>联系方式  Email：incomparable9527@foxmail.com  个人信息  Fan/男/1992  技术博客：http://alili.tech Github：https://github.com/Fantasy9527 期望职位：前端开发工程师 期望城市：杭州  工作经历 金诚集团 （ 2017年7月 ~ 2018年8月 ）  任职为信息技术部研发五局前端团队负责人.主要负责前端内部系统的开发,部门前端规范的制定，组建团队,提高团队工作效率,前端架构设计.以及公司的前端工具的基础建设.
+  汇报对象: 信息技术部 研发五局 高级经理 下属: 12人  金诚人后台管理系统 用于管理公司组织架构,人员信息,招聘,薪资,福利,绩效,考勤,股权管理等数据
+应用类型: 单页面后台管理系统
+前端技术概要: React + Ant Design of React + 微前端架构
+项目简介: 该项目为公司重点项目,开发人数与产品线多,周期长.最终以微前端的形式开发该项目. 微前端解决了以下难题:
+ 杜绝了代码量超多的日后成为巨无霸项目 日后不限于最初技术选型 项目能选择多种技术框架 规避了多团队同时开发,部署产生相互影响  OTRS工单管理系统二次开发 (金诚助手) OTRS工单管理系统,多用于内部服务部门的工单派发与统计. 后在部门开发资源紧缺的情况下用Nodejs对该系统做了二次开发.
+后端技术概要: Perl + Nodejs (Egg) + MySQL + Redis 前端技术概要: Vue + Vuex + Hybrid</description>
+    </item>
+    
+  </channel>
+</rss>
